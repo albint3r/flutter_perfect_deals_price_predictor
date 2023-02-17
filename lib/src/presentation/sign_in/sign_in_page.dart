@@ -14,26 +14,18 @@ class SignInPage extends StatefulWidget {
   }
 }
 
-// Create a corresponding State class.
-// This class holds data related to the form.
 class SignInPageState extends State<SignInPage> {
-  // Create a global key that uniquely identifies the Form widget
-  // and allows validation of the form.
-  //
-  // Note: This is a GlobalKey<FormState>,
-  // not a GlobalKey<SignInPageState>.
-
   @override
   Widget build(BuildContext context) {
     // Build a Form widget using the _formKey created above.
     return Scaffold(
       body: BlocProvider(
         // create: (context) => getIt<SigningBloc>(),
-        create: (context) => SigningBloc(),
+        create: (context) {
+          return getIt.get<SigningBloc>()..add(const SigningEvent.started());
+        },
         child: const BodySignInForm(),
       ),
     );
   }
 }
-
-

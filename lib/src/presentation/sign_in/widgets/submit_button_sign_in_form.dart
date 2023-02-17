@@ -7,13 +7,14 @@ class SubmitButtonSignInForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        context.read<SigningBloc>().add(
-              const SigningEvent.submitForm(),
-            );
+    return BlocBuilder<SigningBloc, SigningState>(
+      builder: (context, state) {
+        return ElevatedButton(
+          onPressed: () {},
+          child: const Text('Submit'),
+        );
       },
-      child: const Text('Submit'),
     );
   }
+
 }
