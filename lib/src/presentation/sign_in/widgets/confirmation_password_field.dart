@@ -12,6 +12,7 @@ class ConfirmationPasswordField extends StatelessWidget {
       builder: (context, state) {
         return const WrapperTextField(
           controlName: 'confirmationPassword',
+          labelText: 'Confirmation Password',
           icon: Icons.password,
         );
       },

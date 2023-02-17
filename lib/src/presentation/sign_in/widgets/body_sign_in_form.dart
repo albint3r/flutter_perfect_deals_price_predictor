@@ -4,6 +4,7 @@ import 'package:perfect_deals_price_predictor/src/aplication/signin/signing_bloc
 import 'package:perfect_deals_price_predictor/src/presentation/sign_in/widgets/confirmation_password_field.dart';
 import 'package:perfect_deals_price_predictor/src/presentation/sign_in/widgets/password_field.dart';
 import 'package:perfect_deals_price_predictor/src/presentation/sign_in/widgets/submit_button_sign_in_form.dart';
+import 'package:perfect_deals_price_predictor/src/presentation/sign_in/widgets/user_name_field.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'emai_field.dart';
 
@@ -17,11 +18,12 @@ class BodySignInForm extends StatelessWidget {
     return BlocBuilder<SigningBloc, SigningState>(
       builder: (context, state) {
         return ReactiveForm(
-          formGroup: state.formController.form,
+          formGroup: state.signInFormController.form,
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
+                UserNameField(),
                 EmailField(),
                 PasswordField(),
                 ConfirmationPasswordField(),

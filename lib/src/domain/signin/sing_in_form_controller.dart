@@ -5,6 +5,8 @@ import 'package:perfect_deals_price_predictor/src/infrastructure/signin/i_sign_i
 @Injectable(as: ISignInFormController)
 class SignInFormController implements ISignInFormController {
   final FormGroup _form = FormGroup({
+    'userName': FormControl<String>(
+        validators: [Validators.required, Validators.minLength(4)]),
     'email': FormControl<String>(validators: [
       Validators.required,
       Validators.email,
@@ -13,10 +15,36 @@ class SignInFormController implements ISignInFormController {
       Validators.required,
       Validators.minLength(8),
     ]),
-    'confirmationPassword': FormControl<String>(validators: [
-      Validators.mustMatch('password', 'confirmationPassword'),
-    ]),
-  });
+    'confirmationPassword': FormControl<String>(),
+  }, validators: [
+    Validators.mustMatch('password', 'confirmationPassword'),
+  ]);
+
+  // final FormGroup _form = FormGroup({
+  //   'personalInfo': FormGroup({
+  //     'userName': FormControl<String>(
+  //         validators: [Validators.required, Validators.minLength(4)])
+  //   }),
+  //   'verificationData': FormGroup({
+  //     'email': FormControl<String>(validators: [
+  //       Validators.required,
+  //       Validators.email,
+  //     ]),
+  //     'password': FormControl<String>(validators: [
+  //       Validators.required,
+  //       Validators.minLength(8),
+  //     ]),
+  //     'confirmationPassword': FormControl<String>(validators: [
+  //       Validators.mustMatch('password', 'confirmationPassword'),
+  //     ]),
+  //   }),
+  // });
+
+  @override
+  FormGroup get form => _form;
+
+  @override
+  String get userName => form.control('userName').value;
 
   @override
   String get email => form.control('email').value;
@@ -28,5 +56,13 @@ class SignInFormController implements ISignInFormController {
   String get confirmationPassword => form.control('confirmationPassword').value;
 
   @override
-  FormGroup get form => _form;
+  Map<String, String Function(Object)>? get validationErrorMsg {
+    return {
+      ValidationMessage.required: (error) => 'This field is required',
+      ValidationMessage.email: (error) => 'You need to add a valid Email',
+      ValidationMessage.minLength: (error) =>
+          'This field need have at least ${(error as Map)['requiredLength']} Characters',
+      ValidationMessage.mustMatch: (error) => 'Is not the same as the password',
+    };
+  }
 }
