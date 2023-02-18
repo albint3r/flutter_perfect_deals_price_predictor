@@ -3,7 +3,7 @@ import 'app.dart';
 import 'injectables.dart';
 
 void main() async {
-  configureDependencies();
+  await configureDependencies();
   return runApp(
     MyApp(),
   );

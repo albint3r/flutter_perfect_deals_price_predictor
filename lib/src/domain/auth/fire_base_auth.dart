@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'i_auth_data_service.dart';
+import 'package:injectable/injectable.dart';
+import '../../infrastructure/auth/i_auth_data_service.dart';
 
+@Injectable(as: IAuthDataService)
 class Auth implements IAuthDataService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 

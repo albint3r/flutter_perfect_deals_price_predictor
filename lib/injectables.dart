@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
@@ -12,7 +13,8 @@ final getIt = GetIt.instance;
   preferRelativeImports: true, // default
   asExtension: false, // default
 )
-void configureDependencies() {
+Future<void> configureDependencies() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   $initGetIt(getIt);
 }
