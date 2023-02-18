@@ -14,6 +14,7 @@ class ConfirmationPasswordField extends StatelessWidget {
           controlName: 'confirmationPassword',
           labelText: 'Confirmation Password',
           icon: Icons.password,
+          obscureText: true,
         );
       },
     );

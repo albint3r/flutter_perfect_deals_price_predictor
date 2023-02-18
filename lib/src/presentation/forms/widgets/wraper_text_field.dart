@@ -8,11 +8,13 @@ class WrapperTextField extends StatelessWidget {
     required this.controlName,
     required this.labelText,
     required this.icon,
+    this.obscureText,
     Key? key,
   }) : super(key: key);
   final String controlName;
   final String labelText;
   final IconData icon;
+  final bool? obscureText;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +23,7 @@ class WrapperTextField extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.all(8.0),
           child: ReactiveTextField(
+            obscureText: obscureText ?? false,
             formControlName: controlName,
             onChanged: ((_) {
               context.read<SigningBloc>().add(

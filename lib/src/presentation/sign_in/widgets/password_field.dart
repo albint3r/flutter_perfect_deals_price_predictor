@@ -14,6 +14,7 @@ class PasswordField extends StatelessWidget {
           controlName: 'password',
           labelText: 'Password',
           icon: Icons.password,
+          obscureText: true,
         );
       },
     );
