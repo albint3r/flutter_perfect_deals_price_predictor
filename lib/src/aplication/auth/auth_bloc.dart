@@ -13,7 +13,7 @@ part 'auth_state.dart';
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(IAuthDataService auth)
-      : super(AuthState.started(
+      : super(AuthState.waiting(
           auth: auth,
         )) {
     on<AuthEvent>(
@@ -21,6 +21,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         event.when(
           initial: () {},
           validateUserCredentials: () {},
+          userIsNotLogIn: () {
+            emit(
+              AuthState.userNotAuthenticated(
+                auth: state.auth,
+              ),
+            );
+          },
         );
       },
     );

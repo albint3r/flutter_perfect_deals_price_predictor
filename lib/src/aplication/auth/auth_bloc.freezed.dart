@@ -19,18 +19,21 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() userIsNotLogIn,
     required TResult Function() validateUserCredentials,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? userIsNotLogIn,
     TResult? Function()? validateUserCredentials,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? userIsNotLogIn,
     TResult Function()? validateUserCredentials,
     required TResult orElse(),
   }) =>
@@ -38,6 +41,7 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AuthEventInitial value) initial,
+    required TResult Function(AuthEventuserIsNotLogIn value) userIsNotLogIn,
     required TResult Function(AuthEventValidateUserCredentials value)
         validateUserCredentials,
   }) =>
@@ -45,6 +49,7 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AuthEventInitial value)? initial,
+    TResult? Function(AuthEventuserIsNotLogIn value)? userIsNotLogIn,
     TResult? Function(AuthEventValidateUserCredentials value)?
         validateUserCredentials,
   }) =>
@@ -52,6 +57,7 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthEventInitial value)? initial,
+    TResult Function(AuthEventuserIsNotLogIn value)? userIsNotLogIn,
     TResult Function(AuthEventValidateUserCredentials value)?
         validateUserCredentials,
     required TResult orElse(),
@@ -115,6 +121,7 @@ class _$AuthEventInitial implements AuthEventInitial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() userIsNotLogIn,
     required TResult Function() validateUserCredentials,
   }) {
     return initial();
@@ -124,6 +131,7 @@ class _$AuthEventInitial implements AuthEventInitial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? userIsNotLogIn,
     TResult? Function()? validateUserCredentials,
   }) {
     return initial?.call();
@@ -133,6 +141,7 @@ class _$AuthEventInitial implements AuthEventInitial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? userIsNotLogIn,
     TResult Function()? validateUserCredentials,
     required TResult orElse(),
   }) {
@@ -146,6 +155,7 @@ class _$AuthEventInitial implements AuthEventInitial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AuthEventInitial value) initial,
+    required TResult Function(AuthEventuserIsNotLogIn value) userIsNotLogIn,
     required TResult Function(AuthEventValidateUserCredentials value)
         validateUserCredentials,
   }) {
@@ -156,6 +166,7 @@ class _$AuthEventInitial implements AuthEventInitial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AuthEventInitial value)? initial,
+    TResult? Function(AuthEventuserIsNotLogIn value)? userIsNotLogIn,
     TResult? Function(AuthEventValidateUserCredentials value)?
         validateUserCredentials,
   }) {
@@ -166,6 +177,7 @@ class _$AuthEventInitial implements AuthEventInitial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthEventInitial value)? initial,
+    TResult Function(AuthEventuserIsNotLogIn value)? userIsNotLogIn,
     TResult Function(AuthEventValidateUserCredentials value)?
         validateUserCredentials,
     required TResult orElse(),
@@ -179,6 +191,118 @@ class _$AuthEventInitial implements AuthEventInitial {
 
 abstract class AuthEventInitial implements AuthEvent {
   const factory AuthEventInitial() = _$AuthEventInitial;
+}
+
+/// @nodoc
+abstract class _$$AuthEventuserIsNotLogInCopyWith<$Res> {
+  factory _$$AuthEventuserIsNotLogInCopyWith(_$AuthEventuserIsNotLogIn value,
+          $Res Function(_$AuthEventuserIsNotLogIn) then) =
+      __$$AuthEventuserIsNotLogInCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AuthEventuserIsNotLogInCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$AuthEventuserIsNotLogIn>
+    implements _$$AuthEventuserIsNotLogInCopyWith<$Res> {
+  __$$AuthEventuserIsNotLogInCopyWithImpl(_$AuthEventuserIsNotLogIn _value,
+      $Res Function(_$AuthEventuserIsNotLogIn) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AuthEventuserIsNotLogIn implements AuthEventuserIsNotLogIn {
+  const _$AuthEventuserIsNotLogIn();
+
+  @override
+  String toString() {
+    return 'AuthEvent.userIsNotLogIn()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AuthEventuserIsNotLogIn);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() userIsNotLogIn,
+    required TResult Function() validateUserCredentials,
+  }) {
+    return userIsNotLogIn();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? userIsNotLogIn,
+    TResult? Function()? validateUserCredentials,
+  }) {
+    return userIsNotLogIn?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? userIsNotLogIn,
+    TResult Function()? validateUserCredentials,
+    required TResult orElse(),
+  }) {
+    if (userIsNotLogIn != null) {
+      return userIsNotLogIn();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AuthEventInitial value) initial,
+    required TResult Function(AuthEventuserIsNotLogIn value) userIsNotLogIn,
+    required TResult Function(AuthEventValidateUserCredentials value)
+        validateUserCredentials,
+  }) {
+    return userIsNotLogIn(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AuthEventInitial value)? initial,
+    TResult? Function(AuthEventuserIsNotLogIn value)? userIsNotLogIn,
+    TResult? Function(AuthEventValidateUserCredentials value)?
+        validateUserCredentials,
+  }) {
+    return userIsNotLogIn?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AuthEventInitial value)? initial,
+    TResult Function(AuthEventuserIsNotLogIn value)? userIsNotLogIn,
+    TResult Function(AuthEventValidateUserCredentials value)?
+        validateUserCredentials,
+    required TResult orElse(),
+  }) {
+    if (userIsNotLogIn != null) {
+      return userIsNotLogIn(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AuthEventuserIsNotLogIn implements AuthEvent {
+  const factory AuthEventuserIsNotLogIn() = _$AuthEventuserIsNotLogIn;
 }
 
 /// @nodoc
@@ -224,6 +348,7 @@ class _$AuthEventValidateUserCredentials
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() userIsNotLogIn,
     required TResult Function() validateUserCredentials,
   }) {
     return validateUserCredentials();
@@ -233,6 +358,7 @@ class _$AuthEventValidateUserCredentials
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? userIsNotLogIn,
     TResult? Function()? validateUserCredentials,
   }) {
     return validateUserCredentials?.call();
@@ -242,6 +368,7 @@ class _$AuthEventValidateUserCredentials
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? userIsNotLogIn,
     TResult Function()? validateUserCredentials,
     required TResult orElse(),
   }) {
@@ -255,6 +382,7 @@ class _$AuthEventValidateUserCredentials
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AuthEventInitial value) initial,
+    required TResult Function(AuthEventuserIsNotLogIn value) userIsNotLogIn,
     required TResult Function(AuthEventValidateUserCredentials value)
         validateUserCredentials,
   }) {
@@ -265,6 +393,7 @@ class _$AuthEventValidateUserCredentials
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AuthEventInitial value)? initial,
+    TResult? Function(AuthEventuserIsNotLogIn value)? userIsNotLogIn,
     TResult? Function(AuthEventValidateUserCredentials value)?
         validateUserCredentials,
   }) {
@@ -275,6 +404,7 @@ class _$AuthEventValidateUserCredentials
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthEventInitial value)? initial,
+    TResult Function(AuthEventuserIsNotLogIn value)? userIsNotLogIn,
     TResult Function(AuthEventValidateUserCredentials value)?
         validateUserCredentials,
     required TResult orElse(),
@@ -296,40 +426,48 @@ mixin _$AuthState {
   IAuthDataService get auth => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(IAuthDataService auth) started,
+    required TResult Function(IAuthDataService auth) waiting,
     required TResult Function(IAuthDataService auth) userAuthenticated,
+    required TResult Function(IAuthDataService auth) userNotAuthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(IAuthDataService auth)? started,
+    TResult? Function(IAuthDataService auth)? waiting,
     TResult? Function(IAuthDataService auth)? userAuthenticated,
+    TResult? Function(IAuthDataService auth)? userNotAuthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(IAuthDataService auth)? started,
+    TResult Function(IAuthDataService auth)? waiting,
     TResult Function(IAuthDataService auth)? userAuthenticated,
+    TResult Function(IAuthDataService auth)? userNotAuthenticated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthStateStarted value) started,
+    required TResult Function(AuthStateWaiting value) waiting,
     required TResult Function(AuthStateUserAuthenticated value)
         userAuthenticated,
+    required TResult Function(AuthStateUserNotAuthenticated value)
+        userNotAuthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthStateStarted value)? started,
+    TResult? Function(AuthStateWaiting value)? waiting,
     TResult? Function(AuthStateUserAuthenticated value)? userAuthenticated,
+    TResult? Function(AuthStateUserNotAuthenticated value)?
+        userNotAuthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthStateStarted value)? started,
+    TResult Function(AuthStateWaiting value)? waiting,
     TResult Function(AuthStateUserAuthenticated value)? userAuthenticated,
+    TResult Function(AuthStateUserNotAuthenticated value)? userNotAuthenticated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -372,22 +510,22 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
 }
 
 /// @nodoc
-abstract class _$$AuthStateStartedCopyWith<$Res>
+abstract class _$$AuthStateWaitingCopyWith<$Res>
     implements $AuthStateCopyWith<$Res> {
-  factory _$$AuthStateStartedCopyWith(
-          _$AuthStateStarted value, $Res Function(_$AuthStateStarted) then) =
-      __$$AuthStateStartedCopyWithImpl<$Res>;
+  factory _$$AuthStateWaitingCopyWith(
+          _$AuthStateWaiting value, $Res Function(_$AuthStateWaiting) then) =
+      __$$AuthStateWaitingCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({IAuthDataService auth});
 }
 
 /// @nodoc
-class __$$AuthStateStartedCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$AuthStateStarted>
-    implements _$$AuthStateStartedCopyWith<$Res> {
-  __$$AuthStateStartedCopyWithImpl(
-      _$AuthStateStarted _value, $Res Function(_$AuthStateStarted) _then)
+class __$$AuthStateWaitingCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$AuthStateWaiting>
+    implements _$$AuthStateWaitingCopyWith<$Res> {
+  __$$AuthStateWaitingCopyWithImpl(
+      _$AuthStateWaiting _value, $Res Function(_$AuthStateWaiting) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -395,7 +533,7 @@ class __$$AuthStateStartedCopyWithImpl<$Res>
   $Res call({
     Object? auth = null,
   }) {
-    return _then(_$AuthStateStarted(
+    return _then(_$AuthStateWaiting(
       auth: null == auth
           ? _value.auth
           : auth // ignore: cast_nullable_to_non_nullable
@@ -406,22 +544,22 @@ class __$$AuthStateStartedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AuthStateStarted implements AuthStateStarted {
-  const _$AuthStateStarted({required this.auth});
+class _$AuthStateWaiting implements AuthStateWaiting {
+  const _$AuthStateWaiting({required this.auth});
 
   @override
   final IAuthDataService auth;
 
   @override
   String toString() {
-    return 'AuthState.started(auth: $auth)';
+    return 'AuthState.waiting(auth: $auth)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AuthStateStarted &&
+            other is _$AuthStateWaiting &&
             (identical(other.auth, auth) || other.auth == auth));
   }
 
@@ -431,36 +569,39 @@ class _$AuthStateStarted implements AuthStateStarted {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AuthStateStartedCopyWith<_$AuthStateStarted> get copyWith =>
-      __$$AuthStateStartedCopyWithImpl<_$AuthStateStarted>(this, _$identity);
+  _$$AuthStateWaitingCopyWith<_$AuthStateWaiting> get copyWith =>
+      __$$AuthStateWaitingCopyWithImpl<_$AuthStateWaiting>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(IAuthDataService auth) started,
+    required TResult Function(IAuthDataService auth) waiting,
     required TResult Function(IAuthDataService auth) userAuthenticated,
+    required TResult Function(IAuthDataService auth) userNotAuthenticated,
   }) {
-    return started(auth);
+    return waiting(auth);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(IAuthDataService auth)? started,
+    TResult? Function(IAuthDataService auth)? waiting,
     TResult? Function(IAuthDataService auth)? userAuthenticated,
+    TResult? Function(IAuthDataService auth)? userNotAuthenticated,
   }) {
-    return started?.call(auth);
+    return waiting?.call(auth);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(IAuthDataService auth)? started,
+    TResult Function(IAuthDataService auth)? waiting,
     TResult Function(IAuthDataService auth)? userAuthenticated,
+    TResult Function(IAuthDataService auth)? userNotAuthenticated,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(auth);
+    if (waiting != null) {
+      return waiting(auth);
     }
     return orElse();
   }
@@ -468,45 +609,50 @@ class _$AuthStateStarted implements AuthStateStarted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthStateStarted value) started,
+    required TResult Function(AuthStateWaiting value) waiting,
     required TResult Function(AuthStateUserAuthenticated value)
         userAuthenticated,
+    required TResult Function(AuthStateUserNotAuthenticated value)
+        userNotAuthenticated,
   }) {
-    return started(this);
+    return waiting(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthStateStarted value)? started,
+    TResult? Function(AuthStateWaiting value)? waiting,
     TResult? Function(AuthStateUserAuthenticated value)? userAuthenticated,
+    TResult? Function(AuthStateUserNotAuthenticated value)?
+        userNotAuthenticated,
   }) {
-    return started?.call(this);
+    return waiting?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthStateStarted value)? started,
+    TResult Function(AuthStateWaiting value)? waiting,
     TResult Function(AuthStateUserAuthenticated value)? userAuthenticated,
+    TResult Function(AuthStateUserNotAuthenticated value)? userNotAuthenticated,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (waiting != null) {
+      return waiting(this);
     }
     return orElse();
   }
 }
 
-abstract class AuthStateStarted implements AuthState {
-  const factory AuthStateStarted({required final IAuthDataService auth}) =
-      _$AuthStateStarted;
+abstract class AuthStateWaiting implements AuthState {
+  const factory AuthStateWaiting({required final IAuthDataService auth}) =
+      _$AuthStateWaiting;
 
   @override
   IAuthDataService get auth;
   @override
   @JsonKey(ignore: true)
-  _$$AuthStateStartedCopyWith<_$AuthStateStarted> get copyWith =>
+  _$$AuthStateWaitingCopyWith<_$AuthStateWaiting> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -579,8 +725,9 @@ class _$AuthStateUserAuthenticated implements AuthStateUserAuthenticated {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(IAuthDataService auth) started,
+    required TResult Function(IAuthDataService auth) waiting,
     required TResult Function(IAuthDataService auth) userAuthenticated,
+    required TResult Function(IAuthDataService auth) userNotAuthenticated,
   }) {
     return userAuthenticated(auth);
   }
@@ -588,8 +735,9 @@ class _$AuthStateUserAuthenticated implements AuthStateUserAuthenticated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(IAuthDataService auth)? started,
+    TResult? Function(IAuthDataService auth)? waiting,
     TResult? Function(IAuthDataService auth)? userAuthenticated,
+    TResult? Function(IAuthDataService auth)? userNotAuthenticated,
   }) {
     return userAuthenticated?.call(auth);
   }
@@ -597,8 +745,9 @@ class _$AuthStateUserAuthenticated implements AuthStateUserAuthenticated {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(IAuthDataService auth)? started,
+    TResult Function(IAuthDataService auth)? waiting,
     TResult Function(IAuthDataService auth)? userAuthenticated,
+    TResult Function(IAuthDataService auth)? userNotAuthenticated,
     required TResult orElse(),
   }) {
     if (userAuthenticated != null) {
@@ -610,9 +759,11 @@ class _$AuthStateUserAuthenticated implements AuthStateUserAuthenticated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthStateStarted value) started,
+    required TResult Function(AuthStateWaiting value) waiting,
     required TResult Function(AuthStateUserAuthenticated value)
         userAuthenticated,
+    required TResult Function(AuthStateUserNotAuthenticated value)
+        userNotAuthenticated,
   }) {
     return userAuthenticated(this);
   }
@@ -620,8 +771,10 @@ class _$AuthStateUserAuthenticated implements AuthStateUserAuthenticated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthStateStarted value)? started,
+    TResult? Function(AuthStateWaiting value)? waiting,
     TResult? Function(AuthStateUserAuthenticated value)? userAuthenticated,
+    TResult? Function(AuthStateUserNotAuthenticated value)?
+        userNotAuthenticated,
   }) {
     return userAuthenticated?.call(this);
   }
@@ -629,8 +782,9 @@ class _$AuthStateUserAuthenticated implements AuthStateUserAuthenticated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthStateStarted value)? started,
+    TResult Function(AuthStateWaiting value)? waiting,
     TResult Function(AuthStateUserAuthenticated value)? userAuthenticated,
+    TResult Function(AuthStateUserNotAuthenticated value)? userNotAuthenticated,
     required TResult orElse(),
   }) {
     if (userAuthenticated != null) {
@@ -649,5 +803,155 @@ abstract class AuthStateUserAuthenticated implements AuthState {
   @override
   @JsonKey(ignore: true)
   _$$AuthStateUserAuthenticatedCopyWith<_$AuthStateUserAuthenticated>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AuthStateUserNotAuthenticatedCopyWith<$Res>
+    implements $AuthStateCopyWith<$Res> {
+  factory _$$AuthStateUserNotAuthenticatedCopyWith(
+          _$AuthStateUserNotAuthenticated value,
+          $Res Function(_$AuthStateUserNotAuthenticated) then) =
+      __$$AuthStateUserNotAuthenticatedCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({IAuthDataService auth});
+}
+
+/// @nodoc
+class __$$AuthStateUserNotAuthenticatedCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$AuthStateUserNotAuthenticated>
+    implements _$$AuthStateUserNotAuthenticatedCopyWith<$Res> {
+  __$$AuthStateUserNotAuthenticatedCopyWithImpl(
+      _$AuthStateUserNotAuthenticated _value,
+      $Res Function(_$AuthStateUserNotAuthenticated) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? auth = null,
+  }) {
+    return _then(_$AuthStateUserNotAuthenticated(
+      auth: null == auth
+          ? _value.auth
+          : auth // ignore: cast_nullable_to_non_nullable
+              as IAuthDataService,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AuthStateUserNotAuthenticated implements AuthStateUserNotAuthenticated {
+  const _$AuthStateUserNotAuthenticated({required this.auth});
+
+  @override
+  final IAuthDataService auth;
+
+  @override
+  String toString() {
+    return 'AuthState.userNotAuthenticated(auth: $auth)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AuthStateUserNotAuthenticated &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, auth);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AuthStateUserNotAuthenticatedCopyWith<_$AuthStateUserNotAuthenticated>
+      get copyWith => __$$AuthStateUserNotAuthenticatedCopyWithImpl<
+          _$AuthStateUserNotAuthenticated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(IAuthDataService auth) waiting,
+    required TResult Function(IAuthDataService auth) userAuthenticated,
+    required TResult Function(IAuthDataService auth) userNotAuthenticated,
+  }) {
+    return userNotAuthenticated(auth);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(IAuthDataService auth)? waiting,
+    TResult? Function(IAuthDataService auth)? userAuthenticated,
+    TResult? Function(IAuthDataService auth)? userNotAuthenticated,
+  }) {
+    return userNotAuthenticated?.call(auth);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(IAuthDataService auth)? waiting,
+    TResult Function(IAuthDataService auth)? userAuthenticated,
+    TResult Function(IAuthDataService auth)? userNotAuthenticated,
+    required TResult orElse(),
+  }) {
+    if (userNotAuthenticated != null) {
+      return userNotAuthenticated(auth);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AuthStateWaiting value) waiting,
+    required TResult Function(AuthStateUserAuthenticated value)
+        userAuthenticated,
+    required TResult Function(AuthStateUserNotAuthenticated value)
+        userNotAuthenticated,
+  }) {
+    return userNotAuthenticated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AuthStateWaiting value)? waiting,
+    TResult? Function(AuthStateUserAuthenticated value)? userAuthenticated,
+    TResult? Function(AuthStateUserNotAuthenticated value)?
+        userNotAuthenticated,
+  }) {
+    return userNotAuthenticated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AuthStateWaiting value)? waiting,
+    TResult Function(AuthStateUserAuthenticated value)? userAuthenticated,
+    TResult Function(AuthStateUserNotAuthenticated value)? userNotAuthenticated,
+    required TResult orElse(),
+  }) {
+    if (userNotAuthenticated != null) {
+      return userNotAuthenticated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AuthStateUserNotAuthenticated implements AuthState {
+  const factory AuthStateUserNotAuthenticated(
+      {required final IAuthDataService auth}) = _$AuthStateUserNotAuthenticated;
+
+  @override
+  IAuthDataService get auth;
+  @override
+  @JsonKey(ignore: true)
+  _$$AuthStateUserNotAuthenticatedCopyWith<_$AuthStateUserNotAuthenticated>
       get copyWith => throw _privateConstructorUsedError;
 }

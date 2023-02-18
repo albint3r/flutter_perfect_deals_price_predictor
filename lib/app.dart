@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:perfect_deals_price_predictor/src/aplication/auth/auth_bloc.dart';
 import 'package:perfect_deals_price_predictor/src/presentation/core/app_router/app_router.dart';
 import 'package:perfect_deals_price_predictor/src/presentation/core/theme/theme_config_style.dart';
+
+import 'injectables.dart';
 
 
 class MyApp extends StatelessWidget {
@@ -8,13 +12,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      theme: ThemeConfigStyle.light,
-      darkTheme: ThemeConfigStyle.dark,
-      themeMode: ThemeMode.dark,
-      title: 'Perfect Deals Pricing App',
-      routerDelegate: _appRouter.delegate(),
-      routeInformationParser: _appRouter.defaultRouteParser(),
+    return BlocProvider(
+      create: (context) =>  getIt<AuthBloc>(),
+      child: MaterialApp.router(
+        theme: ThemeConfigStyle.light,
+        darkTheme: ThemeConfigStyle.dark,
+        themeMode: ThemeMode.dark,
+        title: 'Perfect Deals Pricing App',
+        routerDelegate: _appRouter.delegate(),
+        routeInformationParser: _appRouter.defaultRouteParser(),
+      ),
     );
   }
 }
