@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:perfect_deals_price_predictor/injectables.dart';
-import 'package:perfect_deals_price_predictor/src/presentation/sign_in/widgets/body_sign_in_form.dart';
+import 'package:perfect_deals_price_predictor/src/presentation/auth/widgets/body_sign_in_form.dart';
 import '../../aplication/signin/signing_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

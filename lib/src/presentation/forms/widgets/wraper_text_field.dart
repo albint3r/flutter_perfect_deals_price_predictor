@@ -8,43 +8,34 @@ class WrapperTextField extends StatelessWidget {
     required this.controlName,
     required this.labelText,
     required this.icon,
+    required this.validationMessages,
     this.obscureText,
     Key? key,
   }) : super(key: key);
   final String controlName;
   final String labelText;
   final IconData icon;
+  final Map<String, String Function(Object)>? validationMessages;
   final bool? obscureText;
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SigningBloc, SigningState>(
-      builder: (context, state) {
-        return Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: ReactiveTextField(
-            obscureText: obscureText ?? false,
-            formControlName: controlName,
-            onChanged: ((_) {
-              context.read<SigningBloc>().add(
-                    SigningEvent.onChangeField(
-                      isValidForm: state.signInFormController.form.valid,
-                    ),
-                  );
-            }),
-            decoration: InputDecoration(
-              labelText: labelText,
-              prefixIcon: Icon(icon),
-              border: const OutlineInputBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(40),
-                ),
-              ),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ReactiveTextField(
+        obscureText: obscureText ?? false,
+        formControlName: controlName,
+        decoration: InputDecoration(
+          labelText: labelText,
+          prefixIcon: Icon(icon),
+          border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(40),
             ),
-            validationMessages: state.signInFormController.validationErrorMsg,
           ),
-        );
-      },
+        ),
+        validationMessages: validationMessages,
+      ),
     );
   }
 }

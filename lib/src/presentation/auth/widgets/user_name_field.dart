@@ -10,9 +10,10 @@ class UserNameField extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<SigningBloc, SigningState>(
       builder: (context, state) {
-        return const WrapperTextField(
+        return WrapperTextField(
           controlName: 'userName',
           labelText: 'User Name',
+          validationMessages: state.signInFormModel.validationErrorMsg,
           icon: Icons.person,
         );
       },

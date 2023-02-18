@@ -1,9 +1,11 @@
 import 'package:injectable/injectable.dart';
 import 'package:reactive_forms/reactive_forms.dart';
-import 'package:perfect_deals_price_predictor/src/infrastructure/signin/i_sign_in_form_controller.dart';
 
-@Injectable(as: ISignInFormController)
-class SignInFormController implements ISignInFormController {
+import '../../infrastructure/signin/i_sign_in_form_controller.dart';
+
+
+@Injectable(as: ISignInFormModel)
+class SignInFormImpl implements ISignInFormModel {
   final FormGroup _form = FormGroup({
     'userName': FormControl<String>(
         validators: [Validators.required, Validators.minLength(4)]),

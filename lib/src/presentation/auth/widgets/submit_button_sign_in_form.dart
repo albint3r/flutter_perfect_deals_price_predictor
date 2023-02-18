@@ -10,19 +10,21 @@ class SubmitButtonSignInForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return BlocBuilder<SigningBloc, SigningState>(
       builder: (context, state) {
-        return Center(
-          child: ReactiveFormConsumer(
-            builder: (context, formGroup, child) {
-              return ElevatedButton(
-                onPressed: formGroup.valid ? () => _onSubmit(context) : null,
-                child: const Text(
-                  'Create Account Now',
-                ),
-              );
-            },
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          child: Center(
+            child: ReactiveFormConsumer(
+              builder: (context, formGroup, child) {
+                return ElevatedButton(
+                  onPressed: formGroup.valid ? () => _onSubmit(context) : null,
+                  child: const Text(
+                    'Create Account Now',
+                  ),
+                );
+              },
+            ),
           ),
         );
       },
