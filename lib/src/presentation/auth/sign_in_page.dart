@@ -29,8 +29,7 @@ class SignInPageState extends State<SignInPage> {
           ),
           BlocProvider(
             create: (context) {
-              return getIt.get<SigningBloc>()
-                ..add(const SigningEvent.started());
+              return getIt.get<SigningBloc>();
             },
           )
         ],

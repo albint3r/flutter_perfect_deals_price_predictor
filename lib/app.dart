@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>  getIt<AuthBloc>(),
+      create: (context) =>  getIt<AuthBloc>()..add(const AuthEvent.initial()),
       child: MaterialApp.router(
         theme: ThemeConfigStyle.light,
         darkTheme: ThemeConfigStyle.dark,

@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:perfect_deals_price_predictor/src/presentation/core/app_router/app_router.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class WrapperSubmitLoginOrSignInElevatedButton extends StatelessWidget {

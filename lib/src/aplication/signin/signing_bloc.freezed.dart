@@ -167,7 +167,6 @@ abstract class _SigningEventStarted implements SigningEvent {
 /// @nodoc
 mixin _$SigningState {
   ISignInFormModel get signInFormModel => throw _privateConstructorUsedError;
-  bool get isFormValid => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SigningStateCopyWith<SigningState> get copyWith =>
@@ -180,7 +179,7 @@ abstract class $SigningStateCopyWith<$Res> {
           SigningState value, $Res Function(SigningState) then) =
       _$SigningStateCopyWithImpl<$Res, SigningState>;
   @useResult
-  $Res call({ISignInFormModel signInFormModel, bool isFormValid});
+  $Res call({ISignInFormModel signInFormModel});
 }
 
 /// @nodoc
@@ -197,17 +196,12 @@ class _$SigningStateCopyWithImpl<$Res, $Val extends SigningState>
   @override
   $Res call({
     Object? signInFormModel = null,
-    Object? isFormValid = null,
   }) {
     return _then(_value.copyWith(
       signInFormModel: null == signInFormModel
           ? _value.signInFormModel
           : signInFormModel // ignore: cast_nullable_to_non_nullable
               as ISignInFormModel,
-      isFormValid: null == isFormValid
-          ? _value.isFormValid
-          : isFormValid // ignore: cast_nullable_to_non_nullable
-              as bool,
     ) as $Val);
   }
 }
@@ -220,7 +214,7 @@ abstract class _$$_SigningStateCopyWith<$Res>
       __$$_SigningStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ISignInFormModel signInFormModel, bool isFormValid});
+  $Res call({ISignInFormModel signInFormModel});
 }
 
 /// @nodoc
@@ -235,17 +229,12 @@ class __$$_SigningStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? signInFormModel = null,
-    Object? isFormValid = null,
   }) {
     return _then(_$_SigningState(
       signInFormModel: null == signInFormModel
           ? _value.signInFormModel
           : signInFormModel // ignore: cast_nullable_to_non_nullable
               as ISignInFormModel,
-      isFormValid: null == isFormValid
-          ? _value.isFormValid
-          : isFormValid // ignore: cast_nullable_to_non_nullable
-              as bool,
     ));
   }
 }
@@ -253,18 +242,14 @@ class __$$_SigningStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SigningState implements _SigningState {
-  const _$_SigningState(
-      {required this.signInFormModel, this.isFormValid = false});
+  const _$_SigningState({required this.signInFormModel});
 
   @override
   final ISignInFormModel signInFormModel;
-  @override
-  @JsonKey()
-  final bool isFormValid;
 
   @override
   String toString() {
-    return 'SigningState(signInFormModel: $signInFormModel, isFormValid: $isFormValid)';
+    return 'SigningState(signInFormModel: $signInFormModel)';
   }
 
   @override
@@ -273,13 +258,11 @@ class _$_SigningState implements _SigningState {
         (other.runtimeType == runtimeType &&
             other is _$_SigningState &&
             (identical(other.signInFormModel, signInFormModel) ||
-                other.signInFormModel == signInFormModel) &&
-            (identical(other.isFormValid, isFormValid) ||
-                other.isFormValid == isFormValid));
+                other.signInFormModel == signInFormModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, signInFormModel, isFormValid);
+  int get hashCode => Object.hash(runtimeType, signInFormModel);
 
   @JsonKey(ignore: true)
   @override
@@ -290,13 +273,10 @@ class _$_SigningState implements _SigningState {
 
 abstract class _SigningState implements SigningState {
   const factory _SigningState(
-      {required final ISignInFormModel signInFormModel,
-      final bool isFormValid}) = _$_SigningState;
+      {required final ISignInFormModel signInFormModel}) = _$_SigningState;
 
   @override
   ISignInFormModel get signInFormModel;
-  @override
-  bool get isFormValid;
   @override
   @JsonKey(ignore: true)
   _$$_SigningStateCopyWith<_$_SigningState> get copyWith =>

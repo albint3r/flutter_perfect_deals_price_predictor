@@ -11,9 +11,9 @@ part 'signing_state.dart';
 
 @singleton
 class SigningBloc extends Bloc<SigningEvent, SigningState> {
-  SigningBloc(ISignInFormModel formController)
+  SigningBloc(ISignInFormModel sigInformModel)
       : super(SigningState.initial(
-          signInFormModel: formController,
+          signInFormModel: sigInformModel,
         )) {
     on<SigningEvent>((event, emit) {
       event.when(

@@ -18,7 +18,6 @@ class LoginPage extends StatefulWidget {
 class LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    // Build a Form widget using the _formKey created above.
     return Scaffold(
       body: MultiBlocProvider(
         providers: [
