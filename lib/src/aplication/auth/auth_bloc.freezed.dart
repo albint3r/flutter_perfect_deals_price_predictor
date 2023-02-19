@@ -340,19 +340,20 @@ abstract class AuthEventCreateUserWithEmailAndPassword implements AuthEvent {
 /// @nodoc
 mixin _$AuthState {
   IAuthDataService get auth => throw _privateConstructorUsedError;
+  int get hashTime => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(IAuthDataService auth) initial,
+    required TResult Function(IAuthDataService auth, int hashTime) initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(IAuthDataService auth)? initial,
+    TResult? Function(IAuthDataService auth, int hashTime)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(IAuthDataService auth)? initial,
+    TResult Function(IAuthDataService auth, int hashTime)? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -383,7 +384,7 @@ abstract class $AuthStateCopyWith<$Res> {
   factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) =
       _$AuthStateCopyWithImpl<$Res, AuthState>;
   @useResult
-  $Res call({IAuthDataService auth});
+  $Res call({IAuthDataService auth, int hashTime});
 }
 
 /// @nodoc
@@ -400,12 +401,17 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
   @override
   $Res call({
     Object? auth = null,
+    Object? hashTime = null,
   }) {
     return _then(_value.copyWith(
       auth: null == auth
           ? _value.auth
           : auth // ignore: cast_nullable_to_non_nullable
               as IAuthDataService,
+      hashTime: null == hashTime
+          ? _value.hashTime
+          : hashTime // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -418,7 +424,7 @@ abstract class _$$AuthStateWaitingCopyWith<$Res>
       __$$AuthStateWaitingCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({IAuthDataService auth});
+  $Res call({IAuthDataService auth, int hashTime});
 }
 
 /// @nodoc
@@ -433,12 +439,17 @@ class __$$AuthStateWaitingCopyWithImpl<$Res>
   @override
   $Res call({
     Object? auth = null,
+    Object? hashTime = null,
   }) {
     return _then(_$AuthStateWaiting(
       auth: null == auth
           ? _value.auth
           : auth // ignore: cast_nullable_to_non_nullable
               as IAuthDataService,
+      hashTime: null == hashTime
+          ? _value.hashTime
+          : hashTime // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -446,14 +457,16 @@ class __$$AuthStateWaitingCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AuthStateWaiting implements AuthStateWaiting {
-  const _$AuthStateWaiting({required this.auth});
+  const _$AuthStateWaiting({required this.auth, required this.hashTime});
 
   @override
   final IAuthDataService auth;
+  @override
+  final int hashTime;
 
   @override
   String toString() {
-    return 'AuthState.initial(auth: $auth)';
+    return 'AuthState.initial(auth: $auth, hashTime: $hashTime)';
   }
 
   @override
@@ -461,11 +474,13 @@ class _$AuthStateWaiting implements AuthStateWaiting {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AuthStateWaiting &&
-            (identical(other.auth, auth) || other.auth == auth));
+            (identical(other.auth, auth) || other.auth == auth) &&
+            (identical(other.hashTime, hashTime) ||
+                other.hashTime == hashTime));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, auth);
+  int get hashCode => Object.hash(runtimeType, auth, hashTime);
 
   @JsonKey(ignore: true)
   @override
@@ -476,27 +491,27 @@ class _$AuthStateWaiting implements AuthStateWaiting {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(IAuthDataService auth) initial,
+    required TResult Function(IAuthDataService auth, int hashTime) initial,
   }) {
-    return initial(auth);
+    return initial(auth, hashTime);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(IAuthDataService auth)? initial,
+    TResult? Function(IAuthDataService auth, int hashTime)? initial,
   }) {
-    return initial?.call(auth);
+    return initial?.call(auth, hashTime);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(IAuthDataService auth)? initial,
+    TResult Function(IAuthDataService auth, int hashTime)? initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(auth);
+      return initial(auth, hashTime);
     }
     return orElse();
   }
@@ -531,11 +546,14 @@ class _$AuthStateWaiting implements AuthStateWaiting {
 }
 
 abstract class AuthStateWaiting implements AuthState {
-  const factory AuthStateWaiting({required final IAuthDataService auth}) =
-      _$AuthStateWaiting;
+  const factory AuthStateWaiting(
+      {required final IAuthDataService auth,
+      required final int hashTime}) = _$AuthStateWaiting;
 
   @override
   IAuthDataService get auth;
+  @override
+  int get hashTime;
   @override
   @JsonKey(ignore: true)
   _$$AuthStateWaitingCopyWith<_$AuthStateWaiting> get copyWith =>

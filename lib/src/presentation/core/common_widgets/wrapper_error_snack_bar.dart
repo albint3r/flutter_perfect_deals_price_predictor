@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
-ScaffoldFeatureController<SnackBar, SnackBarClosedReason> errorSnackBarMsg(
-  BuildContext context,
-  String errorMsg,
-) {
+ScaffoldFeatureController<SnackBar, SnackBarClosedReason> errorSnackBarMsg({
+  required BuildContext context,
+  required String errorMsg,
+}) {
   final snackBar = SnackBar(
+    duration: const Duration(seconds: 2),
+    elevation: 5,
     content: Text(errorMsg),
     action: SnackBarAction(
-      label: 'Undo',
+      label: 'Close',
       onPressed: () {
-        // Some code to undo the change.
+        ScaffoldMessenger.of(context).hideCurrentSnackBar();
       },
     ),
   );
