@@ -18,12 +18,24 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           auth: auth,
         )) {
     on<AuthEvent>(
-      (event, emit) {
-        event.when(
+      (event, emit) async {
+        await event.when(
           initial: () {
             emit(AuthState.initial(auth: state.auth));
           },
-          createUserWithEmailAndPassword: (signInFormModel) {},
+          createUserWithEmailAndPassword: (signInFormModel) async {
+            try {
+              await state.auth.createUserWithEmailAndPassword(
+                email: signInFormModel.email,
+                password: signInFormModel.password,
+              );
+              emit(AuthState.initial(
+                auth: state.auth,
+              ));
+            } catch (e) {
+              print(e);
+            }
+          },
         );
       },
     );
