@@ -2,5 +2,5 @@ part of 'login_bloc.dart';
 
 @freezed
 class LoginEvent with _$LoginEvent {
-  const factory LoginEvent.submitForm() = LoginEventSubmitForm;
+  const factory LoginEvent.started() = LoginEventStarted;
 }

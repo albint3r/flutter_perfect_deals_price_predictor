@@ -21,6 +21,7 @@ mixin _$AuthEvent {
     required TResult Function() initial,
     required TResult Function(ISignInFormModel signInFormModel)
         createUserWithEmailAndPassword,
+    required TResult Function(ILoginFormModel loginFormModel) logInAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$AuthEvent {
     TResult? Function()? initial,
     TResult? Function(ISignInFormModel signInFormModel)?
         createUserWithEmailAndPassword,
+    TResult? Function(ILoginFormModel loginFormModel)? logInAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$AuthEvent {
     TResult Function()? initial,
     TResult Function(ISignInFormModel signInFormModel)?
         createUserWithEmailAndPassword,
+    TResult Function(ILoginFormModel loginFormModel)? logInAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$AuthEvent {
     required TResult Function(AuthEventInitial value) initial,
     required TResult Function(AuthEventCreateUserWithEmailAndPassword value)
         createUserWithEmailAndPassword,
+    required TResult Function(AuthEventLogInAccount value) logInAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$AuthEvent {
     TResult? Function(AuthEventInitial value)? initial,
     TResult? Function(AuthEventCreateUserWithEmailAndPassword value)?
         createUserWithEmailAndPassword,
+    TResult? Function(AuthEventLogInAccount value)? logInAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$AuthEvent {
     TResult Function(AuthEventInitial value)? initial,
     TResult Function(AuthEventCreateUserWithEmailAndPassword value)?
         createUserWithEmailAndPassword,
+    TResult Function(AuthEventLogInAccount value)? logInAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,6 +126,7 @@ class _$AuthEventInitial implements AuthEventInitial {
     required TResult Function() initial,
     required TResult Function(ISignInFormModel signInFormModel)
         createUserWithEmailAndPassword,
+    required TResult Function(ILoginFormModel loginFormModel) logInAccount,
   }) {
     return initial();
   }
@@ -130,6 +137,7 @@ class _$AuthEventInitial implements AuthEventInitial {
     TResult? Function()? initial,
     TResult? Function(ISignInFormModel signInFormModel)?
         createUserWithEmailAndPassword,
+    TResult? Function(ILoginFormModel loginFormModel)? logInAccount,
   }) {
     return initial?.call();
   }
@@ -140,6 +148,7 @@ class _$AuthEventInitial implements AuthEventInitial {
     TResult Function()? initial,
     TResult Function(ISignInFormModel signInFormModel)?
         createUserWithEmailAndPassword,
+    TResult Function(ILoginFormModel loginFormModel)? logInAccount,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -154,6 +163,7 @@ class _$AuthEventInitial implements AuthEventInitial {
     required TResult Function(AuthEventInitial value) initial,
     required TResult Function(AuthEventCreateUserWithEmailAndPassword value)
         createUserWithEmailAndPassword,
+    required TResult Function(AuthEventLogInAccount value) logInAccount,
   }) {
     return initial(this);
   }
@@ -164,6 +174,7 @@ class _$AuthEventInitial implements AuthEventInitial {
     TResult? Function(AuthEventInitial value)? initial,
     TResult? Function(AuthEventCreateUserWithEmailAndPassword value)?
         createUserWithEmailAndPassword,
+    TResult? Function(AuthEventLogInAccount value)? logInAccount,
   }) {
     return initial?.call(this);
   }
@@ -174,6 +185,7 @@ class _$AuthEventInitial implements AuthEventInitial {
     TResult Function(AuthEventInitial value)? initial,
     TResult Function(AuthEventCreateUserWithEmailAndPassword value)?
         createUserWithEmailAndPassword,
+    TResult Function(AuthEventLogInAccount value)? logInAccount,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -262,6 +274,7 @@ class _$AuthEventCreateUserWithEmailAndPassword
     required TResult Function() initial,
     required TResult Function(ISignInFormModel signInFormModel)
         createUserWithEmailAndPassword,
+    required TResult Function(ILoginFormModel loginFormModel) logInAccount,
   }) {
     return createUserWithEmailAndPassword(signInFormModel);
   }
@@ -272,6 +285,7 @@ class _$AuthEventCreateUserWithEmailAndPassword
     TResult? Function()? initial,
     TResult? Function(ISignInFormModel signInFormModel)?
         createUserWithEmailAndPassword,
+    TResult? Function(ILoginFormModel loginFormModel)? logInAccount,
   }) {
     return createUserWithEmailAndPassword?.call(signInFormModel);
   }
@@ -282,6 +296,7 @@ class _$AuthEventCreateUserWithEmailAndPassword
     TResult Function()? initial,
     TResult Function(ISignInFormModel signInFormModel)?
         createUserWithEmailAndPassword,
+    TResult Function(ILoginFormModel loginFormModel)? logInAccount,
     required TResult orElse(),
   }) {
     if (createUserWithEmailAndPassword != null) {
@@ -296,6 +311,7 @@ class _$AuthEventCreateUserWithEmailAndPassword
     required TResult Function(AuthEventInitial value) initial,
     required TResult Function(AuthEventCreateUserWithEmailAndPassword value)
         createUserWithEmailAndPassword,
+    required TResult Function(AuthEventLogInAccount value) logInAccount,
   }) {
     return createUserWithEmailAndPassword(this);
   }
@@ -306,6 +322,7 @@ class _$AuthEventCreateUserWithEmailAndPassword
     TResult? Function(AuthEventInitial value)? initial,
     TResult? Function(AuthEventCreateUserWithEmailAndPassword value)?
         createUserWithEmailAndPassword,
+    TResult? Function(AuthEventLogInAccount value)? logInAccount,
   }) {
     return createUserWithEmailAndPassword?.call(this);
   }
@@ -316,6 +333,7 @@ class _$AuthEventCreateUserWithEmailAndPassword
     TResult Function(AuthEventInitial value)? initial,
     TResult Function(AuthEventCreateUserWithEmailAndPassword value)?
         createUserWithEmailAndPassword,
+    TResult Function(AuthEventLogInAccount value)? logInAccount,
     required TResult orElse(),
   }) {
     if (createUserWithEmailAndPassword != null) {
@@ -335,6 +353,155 @@ abstract class AuthEventCreateUserWithEmailAndPassword implements AuthEvent {
   _$$AuthEventCreateUserWithEmailAndPasswordCopyWith<
           _$AuthEventCreateUserWithEmailAndPassword>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AuthEventLogInAccountCopyWith<$Res> {
+  factory _$$AuthEventLogInAccountCopyWith(_$AuthEventLogInAccount value,
+          $Res Function(_$AuthEventLogInAccount) then) =
+      __$$AuthEventLogInAccountCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ILoginFormModel loginFormModel});
+}
+
+/// @nodoc
+class __$$AuthEventLogInAccountCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$AuthEventLogInAccount>
+    implements _$$AuthEventLogInAccountCopyWith<$Res> {
+  __$$AuthEventLogInAccountCopyWithImpl(_$AuthEventLogInAccount _value,
+      $Res Function(_$AuthEventLogInAccount) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? loginFormModel = null,
+  }) {
+    return _then(_$AuthEventLogInAccount(
+      loginFormModel: null == loginFormModel
+          ? _value.loginFormModel
+          : loginFormModel // ignore: cast_nullable_to_non_nullable
+              as ILoginFormModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AuthEventLogInAccount implements AuthEventLogInAccount {
+  const _$AuthEventLogInAccount({required this.loginFormModel});
+
+  @override
+  final ILoginFormModel loginFormModel;
+
+  @override
+  String toString() {
+    return 'AuthEvent.logInAccount(loginFormModel: $loginFormModel)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AuthEventLogInAccount &&
+            (identical(other.loginFormModel, loginFormModel) ||
+                other.loginFormModel == loginFormModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, loginFormModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AuthEventLogInAccountCopyWith<_$AuthEventLogInAccount> get copyWith =>
+      __$$AuthEventLogInAccountCopyWithImpl<_$AuthEventLogInAccount>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(ISignInFormModel signInFormModel)
+        createUserWithEmailAndPassword,
+    required TResult Function(ILoginFormModel loginFormModel) logInAccount,
+  }) {
+    return logInAccount(loginFormModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(ISignInFormModel signInFormModel)?
+        createUserWithEmailAndPassword,
+    TResult? Function(ILoginFormModel loginFormModel)? logInAccount,
+  }) {
+    return logInAccount?.call(loginFormModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(ISignInFormModel signInFormModel)?
+        createUserWithEmailAndPassword,
+    TResult Function(ILoginFormModel loginFormModel)? logInAccount,
+    required TResult orElse(),
+  }) {
+    if (logInAccount != null) {
+      return logInAccount(loginFormModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AuthEventInitial value) initial,
+    required TResult Function(AuthEventCreateUserWithEmailAndPassword value)
+        createUserWithEmailAndPassword,
+    required TResult Function(AuthEventLogInAccount value) logInAccount,
+  }) {
+    return logInAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AuthEventInitial value)? initial,
+    TResult? Function(AuthEventCreateUserWithEmailAndPassword value)?
+        createUserWithEmailAndPassword,
+    TResult? Function(AuthEventLogInAccount value)? logInAccount,
+  }) {
+    return logInAccount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AuthEventInitial value)? initial,
+    TResult Function(AuthEventCreateUserWithEmailAndPassword value)?
+        createUserWithEmailAndPassword,
+    TResult Function(AuthEventLogInAccount value)? logInAccount,
+    required TResult orElse(),
+  }) {
+    if (logInAccount != null) {
+      return logInAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AuthEventLogInAccount implements AuthEvent {
+  const factory AuthEventLogInAccount(
+          {required final ILoginFormModel loginFormModel}) =
+      _$AuthEventLogInAccount;
+
+  ILoginFormModel get loginFormModel;
+  @JsonKey(ignore: true)
+  _$$AuthEventLogInAccountCopyWith<_$AuthEventLogInAccount> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

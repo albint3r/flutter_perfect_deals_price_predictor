@@ -18,33 +18,33 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$LoginEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() submitForm,
+    required TResult Function() started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? submitForm,
+    TResult? Function()? started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? submitForm,
+    TResult Function()? started,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoginEventSubmitForm value) submitForm,
+    required TResult Function(LoginEventStarted value) started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginEventSubmitForm value)? submitForm,
+    TResult? Function(LoginEventStarted value)? started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginEventSubmitForm value)? submitForm,
+    TResult Function(LoginEventStarted value)? started,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,35 +69,35 @@ class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent>
 }
 
 /// @nodoc
-abstract class _$$LoginEventSubmitFormCopyWith<$Res> {
-  factory _$$LoginEventSubmitFormCopyWith(_$LoginEventSubmitForm value,
-          $Res Function(_$LoginEventSubmitForm) then) =
-      __$$LoginEventSubmitFormCopyWithImpl<$Res>;
+abstract class _$$LoginEventStartedCopyWith<$Res> {
+  factory _$$LoginEventStartedCopyWith(
+          _$LoginEventStarted value, $Res Function(_$LoginEventStarted) then) =
+      __$$LoginEventStartedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoginEventSubmitFormCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$LoginEventSubmitForm>
-    implements _$$LoginEventSubmitFormCopyWith<$Res> {
-  __$$LoginEventSubmitFormCopyWithImpl(_$LoginEventSubmitForm _value,
-      $Res Function(_$LoginEventSubmitForm) _then)
+class __$$LoginEventStartedCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$LoginEventStarted>
+    implements _$$LoginEventStartedCopyWith<$Res> {
+  __$$LoginEventStartedCopyWithImpl(
+      _$LoginEventStarted _value, $Res Function(_$LoginEventStarted) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoginEventSubmitForm implements LoginEventSubmitForm {
-  const _$LoginEventSubmitForm();
+class _$LoginEventStarted implements LoginEventStarted {
+  const _$LoginEventStarted();
 
   @override
   String toString() {
-    return 'LoginEvent.submitForm()';
+    return 'LoginEvent.started()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoginEventSubmitForm);
+        (other.runtimeType == runtimeType && other is _$LoginEventStarted);
   }
 
   @override
@@ -106,27 +106,27 @@ class _$LoginEventSubmitForm implements LoginEventSubmitForm {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() submitForm,
+    required TResult Function() started,
   }) {
-    return submitForm();
+    return started();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? submitForm,
+    TResult? Function()? started,
   }) {
-    return submitForm?.call();
+    return started?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? submitForm,
+    TResult Function()? started,
     required TResult orElse(),
   }) {
-    if (submitForm != null) {
-      return submitForm();
+    if (started != null) {
+      return started();
     }
     return orElse();
   }
@@ -134,34 +134,34 @@ class _$LoginEventSubmitForm implements LoginEventSubmitForm {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoginEventSubmitForm value) submitForm,
+    required TResult Function(LoginEventStarted value) started,
   }) {
-    return submitForm(this);
+    return started(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginEventSubmitForm value)? submitForm,
+    TResult? Function(LoginEventStarted value)? started,
   }) {
-    return submitForm?.call(this);
+    return started?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginEventSubmitForm value)? submitForm,
+    TResult Function(LoginEventStarted value)? started,
     required TResult orElse(),
   }) {
-    if (submitForm != null) {
-      return submitForm(this);
+    if (started != null) {
+      return started(this);
     }
     return orElse();
   }
 }
 
-abstract class LoginEventSubmitForm implements LoginEvent {
-  const factory LoginEventSubmitForm() = _$LoginEventSubmitForm;
+abstract class LoginEventStarted implements LoginEvent {
+  const factory LoginEventStarted() = _$LoginEventStarted;
 }
 
 /// @nodoc

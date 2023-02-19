@@ -17,13 +17,5 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           LoginState.initial(
             loginFormModel: loginFormModel,
           ),
-        ) {
-    on<LoginEvent>(
-      (event, emit) {
-        event.when(
-          submitForm: () {},
         );
-      },
-    );
-  }
 }
