@@ -16,7 +16,7 @@ class SubmitButtonLoginForm extends StatelessWidget {
     return BlocConsumer<AuthBloc, AuthState>(
       listener: (context, state) {
         if (state.auth.currentUser != null) {
-          context.pushRoute(
+          context.router.popAndPush(
             const HomeRoute(),
           );
           // Show Error Msg
@@ -44,9 +44,5 @@ class SubmitButtonLoginForm extends StatelessWidget {
         );
       },
     );
-  }
-
-  void _onSubmit(BuildContext context) {
-    context.pushRoute(const HomeRoute());
   }
 }

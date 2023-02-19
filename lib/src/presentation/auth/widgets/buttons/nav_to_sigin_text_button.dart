@@ -12,7 +12,7 @@ class NavToSigInTextButton extends StatelessWidget {
       leftText: 'You have an account?',
       textButton: 'No, create now!',
       onPressed: () {
-        context.pushRoute(
+        context.router.popAndPush(
           const SignInRoute(),
         );
       },

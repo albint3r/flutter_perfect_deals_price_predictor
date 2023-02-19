@@ -15,7 +15,10 @@ class HomePage extends StatelessWidget {
         listener: (context, state) {
           // Check If the User is Null
           if (state.auth.currentUser == null) {
-            context.pushRoute(
+            // Kill all routes with the Home Page, this helps to
+            // avoid bugs when the user navigate back and isn't login
+            context.router.popUntilRouteWithName('/');
+            context.router.popAndPush(
               const LoginRoute(),
             );
           }
