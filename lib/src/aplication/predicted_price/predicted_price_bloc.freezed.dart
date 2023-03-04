@@ -168,6 +168,7 @@ abstract class _PredictedPriceEventStart implements PredictedPriceEvent {
 
 /// @nodoc
 mixin _$PredictedPriceState {
+  bool get isLoading => throw _privateConstructorUsedError;
   FormGroup? get formGroup => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -181,7 +182,7 @@ abstract class $PredictedPriceStateCopyWith<$Res> {
           PredictedPriceState value, $Res Function(PredictedPriceState) then) =
       _$PredictedPriceStateCopyWithImpl<$Res, PredictedPriceState>;
   @useResult
-  $Res call({FormGroup? formGroup});
+  $Res call({bool isLoading, FormGroup? formGroup});
 }
 
 /// @nodoc
@@ -197,9 +198,14 @@ class _$PredictedPriceStateCopyWithImpl<$Res, $Val extends PredictedPriceState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? isLoading = null,
     Object? formGroup = freezed,
   }) {
     return _then(_value.copyWith(
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       formGroup: freezed == formGroup
           ? _value.formGroup
           : formGroup // ignore: cast_nullable_to_non_nullable
@@ -216,7 +222,7 @@ abstract class _$$_PredictedPriceStateCopyWith<$Res>
       __$$_PredictedPriceStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({FormGroup? formGroup});
+  $Res call({bool isLoading, FormGroup? formGroup});
 }
 
 /// @nodoc
@@ -230,9 +236,14 @@ class __$$_PredictedPriceStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? isLoading = null,
     Object? formGroup = freezed,
   }) {
     return _then(_$_PredictedPriceState(
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       formGroup: freezed == formGroup
           ? _value.formGroup
           : formGroup // ignore: cast_nullable_to_non_nullable
@@ -244,14 +255,16 @@ class __$$_PredictedPriceStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_PredictedPriceState implements _PredictedPriceState {
-  _$_PredictedPriceState({this.formGroup});
+  _$_PredictedPriceState({required this.isLoading, this.formGroup});
 
+  @override
+  final bool isLoading;
   @override
   final FormGroup? formGroup;
 
   @override
   String toString() {
-    return 'PredictedPriceState(formGroup: $formGroup)';
+    return 'PredictedPriceState(isLoading: $isLoading, formGroup: $formGroup)';
   }
 
   @override
@@ -259,12 +272,14 @@ class _$_PredictedPriceState implements _PredictedPriceState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PredictedPriceState &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
             (identical(other.formGroup, formGroup) ||
                 other.formGroup == formGroup));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, formGroup);
+  int get hashCode => Object.hash(runtimeType, isLoading, formGroup);
 
   @JsonKey(ignore: true)
   @override
@@ -275,9 +290,12 @@ class _$_PredictedPriceState implements _PredictedPriceState {
 }
 
 abstract class _PredictedPriceState implements PredictedPriceState {
-  factory _PredictedPriceState({final FormGroup? formGroup}) =
-      _$_PredictedPriceState;
+  factory _PredictedPriceState(
+      {required final bool isLoading,
+      final FormGroup? formGroup}) = _$_PredictedPriceState;
 
+  @override
+  bool get isLoading;
   @override
   FormGroup? get formGroup;
   @override

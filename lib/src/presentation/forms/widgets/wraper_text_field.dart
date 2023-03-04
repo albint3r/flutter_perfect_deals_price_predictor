@@ -21,13 +21,16 @@ class WrapperTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(4.0),
       child: ReactiveTextField(
+        style: const TextStyle(
+          fontSize: 11,
+        ),
         obscureText: obscureText ?? false,
         formControlName: controlName,
         decoration: InputDecoration(
           labelText: labelText,
-          prefixIcon: Icon(icon),
+          prefixIcon: Icon(icon, size: 12),
           border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(40),
