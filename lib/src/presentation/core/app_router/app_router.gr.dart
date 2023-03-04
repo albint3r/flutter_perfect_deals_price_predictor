@@ -35,6 +35,12 @@ class _$AppRouter extends RootStackRouter {
         child: const LoginPage(),
       );
     },
+    PredictedPriceListingRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const PredictedPriceListingPage(),
+      );
+    },
   };
 
   @override
@@ -50,6 +56,10 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(
           LoginRoute.name,
           path: '/login',
+        ),
+        RouteConfig(
+          PredictedPriceListingRoute.name,
+          path: '/predicted_price_listing',
         ),
       ];
 }
@@ -88,4 +98,16 @@ class LoginRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'LoginRoute';
+}
+
+/// generated route for
+/// [PredictedPriceListingPage]
+class PredictedPriceListingRoute extends PageRouteInfo<void> {
+  const PredictedPriceListingRoute()
+      : super(
+          PredictedPriceListingRoute.name,
+          path: '/predicted_price_listing',
+        );
+
+  static const String name = 'PredictedPriceListingRoute';
 }

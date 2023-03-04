@@ -5,6 +5,8 @@ import 'package:perfect_deals_price_predictor/src/aplication/auth/auth_bloc.dart
 import 'package:perfect_deals_price_predictor/src/presentation/core/app_router/app_router.dart';
 import 'package:perfect_deals_price_predictor/src/presentation/home/widgets/body_home.dart';
 
+
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -17,9 +19,8 @@ class HomePage extends StatelessWidget {
           if (state.auth.currentUser == null) {
             // Kill all routes with the Home Page, this helps to
             // avoid bugs when the user navigate back and isn't login
-            context.router.popUntilRouteWithName('/');
-            context.router.popAndPush(
-              const LoginRoute(),
+            context.router.replaceAll(
+              [const LoginRoute()],
             );
           }
         },

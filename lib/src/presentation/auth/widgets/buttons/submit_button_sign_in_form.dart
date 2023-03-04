@@ -17,8 +17,8 @@ class SubmitButtonSignInForm extends StatelessWidget {
         // If the user successfully create there account it will be
         // send it to the Home Page
         if (state.auth.currentUser != null) {
-          context.router.popAndPush(
-            const HomeRoute(),
+          context.router.replaceAll(
+            [const HomeRoute()],
           );
           // Show Error Msg
         } else {
