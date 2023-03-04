@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:perfect_deals_price_predictor/src/aplication/signin/signing_bloc.dart';
-import 'package:perfect_deals_price_predictor/src/presentation/auth/widgets/fields/password_field.dart';
 import 'package:reactive_forms/reactive_forms.dart';
+
+import '../../../aplication/signin/signing_bloc.dart';
 import '../../core/common_widgets/wrapper_scaffold_body.dart';
-import 'buttons/submit_button_sign_in_form.dart';
+
+import 'fields/password_field.dart';
 import 'fields/confirmation_password_field.dart';
 import 'fields/emai_field.dart';
 import 'fields/user_name_field.dart';
+import 'buttons/submit_button_sign_in_form.dart';
 import 'buttons/nav_to_login_text_button.dart';
+import 'lottie_house_sign_in.dart';
 
 class BodySignInForm extends StatelessWidget {
   const BodySignInForm({
@@ -27,6 +30,7 @@ class BodySignInForm extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const LottieHouseSignIn(),
                   const UserNameField(),
                   EmailField(validationErrorMsg: validationErrorMsg),
                   PasswordField(validationErrorMsg: validationErrorMsg),
