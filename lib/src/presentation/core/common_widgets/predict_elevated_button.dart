@@ -15,7 +15,7 @@ class PredictElevatedButton extends StatelessWidget {
           // Kill all routes with the Home Page, this helps to
           // avoid bugs when the user navigate back and isn't login
           context.pushRoute(
-            const PredictedPriceListingRoute(),
+            const PredictedPriceRoute(),
           );
         },
         child: const Padding(
