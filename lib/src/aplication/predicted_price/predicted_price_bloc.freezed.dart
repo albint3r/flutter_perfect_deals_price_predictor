@@ -19,32 +19,38 @@ mixin _$PredictedPriceEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() start,
+    required TResult Function(double lat, double long) latLong,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? start,
+    TResult? Function(double lat, double long)? latLong,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? start,
+    TResult Function(double lat, double long)? latLong,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_PredictedPriceEventStart value) start,
+    required TResult Function(_PredictedPriceLatLong value) latLong,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PredictedPriceEventStart value)? start,
+    TResult? Function(_PredictedPriceLatLong value)? latLong,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PredictedPriceEventStart value)? start,
+    TResult Function(_PredictedPriceLatLong value)? latLong,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -109,6 +115,7 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() start,
+    required TResult Function(double lat, double long) latLong,
   }) {
     return start();
   }
@@ -117,6 +124,7 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? start,
+    TResult? Function(double lat, double long)? latLong,
   }) {
     return start?.call();
   }
@@ -125,6 +133,7 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? start,
+    TResult Function(double lat, double long)? latLong,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -137,6 +146,7 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_PredictedPriceEventStart value) start,
+    required TResult Function(_PredictedPriceLatLong value) latLong,
   }) {
     return start(this);
   }
@@ -145,6 +155,7 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PredictedPriceEventStart value)? start,
+    TResult? Function(_PredictedPriceLatLong value)? latLong,
   }) {
     return start?.call(this);
   }
@@ -153,6 +164,7 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PredictedPriceEventStart value)? start,
+    TResult Function(_PredictedPriceLatLong value)? latLong,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -164,6 +176,151 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
 
 abstract class _PredictedPriceEventStart implements PredictedPriceEvent {
   factory _PredictedPriceEventStart() = _$_PredictedPriceEventStart;
+}
+
+/// @nodoc
+abstract class _$$_PredictedPriceLatLongCopyWith<$Res> {
+  factory _$$_PredictedPriceLatLongCopyWith(_$_PredictedPriceLatLong value,
+          $Res Function(_$_PredictedPriceLatLong) then) =
+      __$$_PredictedPriceLatLongCopyWithImpl<$Res>;
+  @useResult
+  $Res call({double lat, double long});
+}
+
+/// @nodoc
+class __$$_PredictedPriceLatLongCopyWithImpl<$Res>
+    extends _$PredictedPriceEventCopyWithImpl<$Res, _$_PredictedPriceLatLong>
+    implements _$$_PredictedPriceLatLongCopyWith<$Res> {
+  __$$_PredictedPriceLatLongCopyWithImpl(_$_PredictedPriceLatLong _value,
+      $Res Function(_$_PredictedPriceLatLong) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? lat = null,
+    Object? long = null,
+  }) {
+    return _then(_$_PredictedPriceLatLong(
+      lat: null == lat
+          ? _value.lat
+          : lat // ignore: cast_nullable_to_non_nullable
+              as double,
+      long: null == long
+          ? _value.long
+          : long // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PredictedPriceLatLong implements _PredictedPriceLatLong {
+  _$_PredictedPriceLatLong({required this.lat, required this.long});
+
+  @override
+  final double lat;
+  @override
+  final double long;
+
+  @override
+  String toString() {
+    return 'PredictedPriceEvent.latLong(lat: $lat, long: $long)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PredictedPriceLatLong &&
+            (identical(other.lat, lat) || other.lat == lat) &&
+            (identical(other.long, long) || other.long == long));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, lat, long);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PredictedPriceLatLongCopyWith<_$_PredictedPriceLatLong> get copyWith =>
+      __$$_PredictedPriceLatLongCopyWithImpl<_$_PredictedPriceLatLong>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function(double lat, double long) latLong,
+  }) {
+    return latLong(lat, long);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function(double lat, double long)? latLong,
+  }) {
+    return latLong?.call(lat, long);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function(double lat, double long)? latLong,
+    required TResult orElse(),
+  }) {
+    if (latLong != null) {
+      return latLong(lat, long);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PredictedPriceEventStart value) start,
+    required TResult Function(_PredictedPriceLatLong value) latLong,
+  }) {
+    return latLong(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PredictedPriceEventStart value)? start,
+    TResult? Function(_PredictedPriceLatLong value)? latLong,
+  }) {
+    return latLong?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PredictedPriceEventStart value)? start,
+    TResult Function(_PredictedPriceLatLong value)? latLong,
+    required TResult orElse(),
+  }) {
+    if (latLong != null) {
+      return latLong(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PredictedPriceLatLong implements PredictedPriceEvent {
+  factory _PredictedPriceLatLong(
+      {required final double lat,
+      required final double long}) = _$_PredictedPriceLatLong;
+
+  double get lat;
+  double get long;
+  @JsonKey(ignore: true)
+  _$$_PredictedPriceLatLongCopyWith<_$_PredictedPriceLatLong> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

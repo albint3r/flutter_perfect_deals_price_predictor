@@ -31,5 +31,8 @@ class PredictedPriceBloc
         );
       },
     );
+    on<_PredictedPriceLatLong>((event, emit) {
+      facade.predict();
+    },);
   }
 }

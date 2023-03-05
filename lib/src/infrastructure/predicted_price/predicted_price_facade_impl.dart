@@ -23,8 +23,15 @@ class PredictedPriceFacadeImpl implements IPredictedPriceFacade {
   }
 
   @override
-  Future<void> predict() {
+  Future<void> predict() async {
     // TODO: implement predict
-    throw UnimplementedError();
+    print('Valores de lat y long');
+    print(form.control('lat').value);
+    print(form.control('long').value);
+    form.control('lat').value = 20.5455;
+    form.control('long').value = -103.554;
+    print('Valores previos');
+    print(form.control('lat').value);
+    print(form.control('long').value);
   }
 }

@@ -48,6 +48,23 @@ class PredictedPriceBody extends StatelessWidget {
                   const RoomsField(),
                   const BathsField(),
                   const CarsField(),
+                  ElevatedButton(onPressed: (){
+                    _onSubmit(context);
+                  }, child: Text('Add lat long')),
+                  ReactiveFormConsumer(
+                    builder: (context, formGroup, child) {
+                      return Center(
+                        child: ElevatedButton(
+                          onPressed: state.formGroup!.valid ? () {
+                            _onSubmit(context);
+                          } : null,
+                          child: const Text(
+                            'Obtener valor del inmueble',
+                          ),
+                        ),
+                      );
+                    },
+                  )
                 ],
               ),
             ),
@@ -55,5 +72,12 @@ class PredictedPriceBody extends StatelessWidget {
         );
       },
     );
+  }
+  void _onSubmit(BuildContext context) {
+    print('Algo');
+    context.read<PredictedPriceBloc>().add(PredictedPriceEvent.latLong(
+      lat: 20.455478,
+      long: -103.488211
+    ));
   }
 }
