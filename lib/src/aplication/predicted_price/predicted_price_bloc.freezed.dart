@@ -19,18 +19,25 @@ mixin _$PredictedPriceEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() start,
+    required TResult Function(GoogleMapController googleController)
+        onMapCreated,
+    required TResult Function(double lat, double long) getCurrentLocation,
     required TResult Function(double lat, double long) latLong,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? start,
+    TResult? Function(GoogleMapController googleController)? onMapCreated,
+    TResult? Function(double lat, double long)? getCurrentLocation,
     TResult? Function(double lat, double long)? latLong,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? start,
+    TResult Function(GoogleMapController googleController)? onMapCreated,
+    TResult Function(double lat, double long)? getCurrentLocation,
     TResult Function(double lat, double long)? latLong,
     required TResult orElse(),
   }) =>
@@ -38,18 +45,28 @@ mixin _$PredictedPriceEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_PredictedPriceEventStart value) start,
+    required TResult Function(_PredictedPriceEventOnMapCreated value)
+        onMapCreated,
+    required TResult Function(_PredictedPriceEventGetCurrentLocation value)
+        getCurrentLocation,
     required TResult Function(_PredictedPriceLatLong value) latLong,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PredictedPriceEventStart value)? start,
+    TResult? Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
+    TResult? Function(_PredictedPriceEventGetCurrentLocation value)?
+        getCurrentLocation,
     TResult? Function(_PredictedPriceLatLong value)? latLong,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PredictedPriceEventStart value)? start,
+    TResult Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
+    TResult Function(_PredictedPriceEventGetCurrentLocation value)?
+        getCurrentLocation,
     TResult Function(_PredictedPriceLatLong value)? latLong,
     required TResult orElse(),
   }) =>
@@ -115,6 +132,9 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() start,
+    required TResult Function(GoogleMapController googleController)
+        onMapCreated,
+    required TResult Function(double lat, double long) getCurrentLocation,
     required TResult Function(double lat, double long) latLong,
   }) {
     return start();
@@ -124,6 +144,8 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? start,
+    TResult? Function(GoogleMapController googleController)? onMapCreated,
+    TResult? Function(double lat, double long)? getCurrentLocation,
     TResult? Function(double lat, double long)? latLong,
   }) {
     return start?.call();
@@ -133,6 +155,8 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? start,
+    TResult Function(GoogleMapController googleController)? onMapCreated,
+    TResult Function(double lat, double long)? getCurrentLocation,
     TResult Function(double lat, double long)? latLong,
     required TResult orElse(),
   }) {
@@ -146,6 +170,10 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_PredictedPriceEventStart value) start,
+    required TResult Function(_PredictedPriceEventOnMapCreated value)
+        onMapCreated,
+    required TResult Function(_PredictedPriceEventGetCurrentLocation value)
+        getCurrentLocation,
     required TResult Function(_PredictedPriceLatLong value) latLong,
   }) {
     return start(this);
@@ -155,6 +183,9 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PredictedPriceEventStart value)? start,
+    TResult? Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
+    TResult? Function(_PredictedPriceEventGetCurrentLocation value)?
+        getCurrentLocation,
     TResult? Function(_PredictedPriceLatLong value)? latLong,
   }) {
     return start?.call(this);
@@ -164,6 +195,9 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PredictedPriceEventStart value)? start,
+    TResult Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
+    TResult Function(_PredictedPriceEventGetCurrentLocation value)?
+        getCurrentLocation,
     TResult Function(_PredictedPriceLatLong value)? latLong,
     required TResult orElse(),
   }) {
@@ -176,6 +210,336 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
 
 abstract class _PredictedPriceEventStart implements PredictedPriceEvent {
   factory _PredictedPriceEventStart() = _$_PredictedPriceEventStart;
+}
+
+/// @nodoc
+abstract class _$$_PredictedPriceEventOnMapCreatedCopyWith<$Res> {
+  factory _$$_PredictedPriceEventOnMapCreatedCopyWith(
+          _$_PredictedPriceEventOnMapCreated value,
+          $Res Function(_$_PredictedPriceEventOnMapCreated) then) =
+      __$$_PredictedPriceEventOnMapCreatedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({GoogleMapController googleController});
+}
+
+/// @nodoc
+class __$$_PredictedPriceEventOnMapCreatedCopyWithImpl<$Res>
+    extends _$PredictedPriceEventCopyWithImpl<$Res,
+        _$_PredictedPriceEventOnMapCreated>
+    implements _$$_PredictedPriceEventOnMapCreatedCopyWith<$Res> {
+  __$$_PredictedPriceEventOnMapCreatedCopyWithImpl(
+      _$_PredictedPriceEventOnMapCreated _value,
+      $Res Function(_$_PredictedPriceEventOnMapCreated) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? googleController = null,
+  }) {
+    return _then(_$_PredictedPriceEventOnMapCreated(
+      googleController: null == googleController
+          ? _value.googleController
+          : googleController // ignore: cast_nullable_to_non_nullable
+              as GoogleMapController,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PredictedPriceEventOnMapCreated
+    implements _PredictedPriceEventOnMapCreated {
+  _$_PredictedPriceEventOnMapCreated({required this.googleController});
+
+  @override
+  final GoogleMapController googleController;
+
+  @override
+  String toString() {
+    return 'PredictedPriceEvent.onMapCreated(googleController: $googleController)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PredictedPriceEventOnMapCreated &&
+            (identical(other.googleController, googleController) ||
+                other.googleController == googleController));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, googleController);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PredictedPriceEventOnMapCreatedCopyWith<
+          _$_PredictedPriceEventOnMapCreated>
+      get copyWith => __$$_PredictedPriceEventOnMapCreatedCopyWithImpl<
+          _$_PredictedPriceEventOnMapCreated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function(GoogleMapController googleController)
+        onMapCreated,
+    required TResult Function(double lat, double long) getCurrentLocation,
+    required TResult Function(double lat, double long) latLong,
+  }) {
+    return onMapCreated(googleController);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function(GoogleMapController googleController)? onMapCreated,
+    TResult? Function(double lat, double long)? getCurrentLocation,
+    TResult? Function(double lat, double long)? latLong,
+  }) {
+    return onMapCreated?.call(googleController);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function(GoogleMapController googleController)? onMapCreated,
+    TResult Function(double lat, double long)? getCurrentLocation,
+    TResult Function(double lat, double long)? latLong,
+    required TResult orElse(),
+  }) {
+    if (onMapCreated != null) {
+      return onMapCreated(googleController);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PredictedPriceEventStart value) start,
+    required TResult Function(_PredictedPriceEventOnMapCreated value)
+        onMapCreated,
+    required TResult Function(_PredictedPriceEventGetCurrentLocation value)
+        getCurrentLocation,
+    required TResult Function(_PredictedPriceLatLong value) latLong,
+  }) {
+    return onMapCreated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PredictedPriceEventStart value)? start,
+    TResult? Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
+    TResult? Function(_PredictedPriceEventGetCurrentLocation value)?
+        getCurrentLocation,
+    TResult? Function(_PredictedPriceLatLong value)? latLong,
+  }) {
+    return onMapCreated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PredictedPriceEventStart value)? start,
+    TResult Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
+    TResult Function(_PredictedPriceEventGetCurrentLocation value)?
+        getCurrentLocation,
+    TResult Function(_PredictedPriceLatLong value)? latLong,
+    required TResult orElse(),
+  }) {
+    if (onMapCreated != null) {
+      return onMapCreated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PredictedPriceEventOnMapCreated implements PredictedPriceEvent {
+  factory _PredictedPriceEventOnMapCreated(
+          {required final GoogleMapController googleController}) =
+      _$_PredictedPriceEventOnMapCreated;
+
+  GoogleMapController get googleController;
+  @JsonKey(ignore: true)
+  _$$_PredictedPriceEventOnMapCreatedCopyWith<
+          _$_PredictedPriceEventOnMapCreated>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_PredictedPriceEventGetCurrentLocationCopyWith<$Res> {
+  factory _$$_PredictedPriceEventGetCurrentLocationCopyWith(
+          _$_PredictedPriceEventGetCurrentLocation value,
+          $Res Function(_$_PredictedPriceEventGetCurrentLocation) then) =
+      __$$_PredictedPriceEventGetCurrentLocationCopyWithImpl<$Res>;
+  @useResult
+  $Res call({double lat, double long});
+}
+
+/// @nodoc
+class __$$_PredictedPriceEventGetCurrentLocationCopyWithImpl<$Res>
+    extends _$PredictedPriceEventCopyWithImpl<$Res,
+        _$_PredictedPriceEventGetCurrentLocation>
+    implements _$$_PredictedPriceEventGetCurrentLocationCopyWith<$Res> {
+  __$$_PredictedPriceEventGetCurrentLocationCopyWithImpl(
+      _$_PredictedPriceEventGetCurrentLocation _value,
+      $Res Function(_$_PredictedPriceEventGetCurrentLocation) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? lat = null,
+    Object? long = null,
+  }) {
+    return _then(_$_PredictedPriceEventGetCurrentLocation(
+      lat: null == lat
+          ? _value.lat
+          : lat // ignore: cast_nullable_to_non_nullable
+              as double,
+      long: null == long
+          ? _value.long
+          : long // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PredictedPriceEventGetCurrentLocation
+    implements _PredictedPriceEventGetCurrentLocation {
+  _$_PredictedPriceEventGetCurrentLocation(
+      {required this.lat, required this.long});
+
+  @override
+  final double lat;
+  @override
+  final double long;
+
+  @override
+  String toString() {
+    return 'PredictedPriceEvent.getCurrentLocation(lat: $lat, long: $long)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PredictedPriceEventGetCurrentLocation &&
+            (identical(other.lat, lat) || other.lat == lat) &&
+            (identical(other.long, long) || other.long == long));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, lat, long);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PredictedPriceEventGetCurrentLocationCopyWith<
+          _$_PredictedPriceEventGetCurrentLocation>
+      get copyWith => __$$_PredictedPriceEventGetCurrentLocationCopyWithImpl<
+          _$_PredictedPriceEventGetCurrentLocation>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function(GoogleMapController googleController)
+        onMapCreated,
+    required TResult Function(double lat, double long) getCurrentLocation,
+    required TResult Function(double lat, double long) latLong,
+  }) {
+    return getCurrentLocation(lat, long);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function(GoogleMapController googleController)? onMapCreated,
+    TResult? Function(double lat, double long)? getCurrentLocation,
+    TResult? Function(double lat, double long)? latLong,
+  }) {
+    return getCurrentLocation?.call(lat, long);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function(GoogleMapController googleController)? onMapCreated,
+    TResult Function(double lat, double long)? getCurrentLocation,
+    TResult Function(double lat, double long)? latLong,
+    required TResult orElse(),
+  }) {
+    if (getCurrentLocation != null) {
+      return getCurrentLocation(lat, long);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PredictedPriceEventStart value) start,
+    required TResult Function(_PredictedPriceEventOnMapCreated value)
+        onMapCreated,
+    required TResult Function(_PredictedPriceEventGetCurrentLocation value)
+        getCurrentLocation,
+    required TResult Function(_PredictedPriceLatLong value) latLong,
+  }) {
+    return getCurrentLocation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PredictedPriceEventStart value)? start,
+    TResult? Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
+    TResult? Function(_PredictedPriceEventGetCurrentLocation value)?
+        getCurrentLocation,
+    TResult? Function(_PredictedPriceLatLong value)? latLong,
+  }) {
+    return getCurrentLocation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PredictedPriceEventStart value)? start,
+    TResult Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
+    TResult Function(_PredictedPriceEventGetCurrentLocation value)?
+        getCurrentLocation,
+    TResult Function(_PredictedPriceLatLong value)? latLong,
+    required TResult orElse(),
+  }) {
+    if (getCurrentLocation != null) {
+      return getCurrentLocation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PredictedPriceEventGetCurrentLocation
+    implements PredictedPriceEvent {
+  factory _PredictedPriceEventGetCurrentLocation(
+      {required final double lat,
+      required final double long}) = _$_PredictedPriceEventGetCurrentLocation;
+
+  double get lat;
+  double get long;
+  @JsonKey(ignore: true)
+  _$$_PredictedPriceEventGetCurrentLocationCopyWith<
+          _$_PredictedPriceEventGetCurrentLocation>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -252,6 +616,9 @@ class _$_PredictedPriceLatLong implements _PredictedPriceLatLong {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() start,
+    required TResult Function(GoogleMapController googleController)
+        onMapCreated,
+    required TResult Function(double lat, double long) getCurrentLocation,
     required TResult Function(double lat, double long) latLong,
   }) {
     return latLong(lat, long);
@@ -261,6 +628,8 @@ class _$_PredictedPriceLatLong implements _PredictedPriceLatLong {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? start,
+    TResult? Function(GoogleMapController googleController)? onMapCreated,
+    TResult? Function(double lat, double long)? getCurrentLocation,
     TResult? Function(double lat, double long)? latLong,
   }) {
     return latLong?.call(lat, long);
@@ -270,6 +639,8 @@ class _$_PredictedPriceLatLong implements _PredictedPriceLatLong {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? start,
+    TResult Function(GoogleMapController googleController)? onMapCreated,
+    TResult Function(double lat, double long)? getCurrentLocation,
     TResult Function(double lat, double long)? latLong,
     required TResult orElse(),
   }) {
@@ -283,6 +654,10 @@ class _$_PredictedPriceLatLong implements _PredictedPriceLatLong {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_PredictedPriceEventStart value) start,
+    required TResult Function(_PredictedPriceEventOnMapCreated value)
+        onMapCreated,
+    required TResult Function(_PredictedPriceEventGetCurrentLocation value)
+        getCurrentLocation,
     required TResult Function(_PredictedPriceLatLong value) latLong,
   }) {
     return latLong(this);
@@ -292,6 +667,9 @@ class _$_PredictedPriceLatLong implements _PredictedPriceLatLong {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_PredictedPriceEventStart value)? start,
+    TResult? Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
+    TResult? Function(_PredictedPriceEventGetCurrentLocation value)?
+        getCurrentLocation,
     TResult? Function(_PredictedPriceLatLong value)? latLong,
   }) {
     return latLong?.call(this);
@@ -301,6 +679,9 @@ class _$_PredictedPriceLatLong implements _PredictedPriceLatLong {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_PredictedPriceEventStart value)? start,
+    TResult Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
+    TResult Function(_PredictedPriceEventGetCurrentLocation value)?
+        getCurrentLocation,
     TResult Function(_PredictedPriceLatLong value)? latLong,
     required TResult orElse(),
   }) {
@@ -326,7 +707,10 @@ abstract class _PredictedPriceLatLong implements PredictedPriceEvent {
 /// @nodoc
 mixin _$PredictedPriceState {
   bool get isLoading => throw _privateConstructorUsedError;
+  LatLng get latLng => throw _privateConstructorUsedError;
   FormGroup? get formGroup => throw _privateConstructorUsedError;
+  Completer<GoogleMapController>? get googleController =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PredictedPriceStateCopyWith<PredictedPriceState> get copyWith =>
@@ -339,7 +723,11 @@ abstract class $PredictedPriceStateCopyWith<$Res> {
           PredictedPriceState value, $Res Function(PredictedPriceState) then) =
       _$PredictedPriceStateCopyWithImpl<$Res, PredictedPriceState>;
   @useResult
-  $Res call({bool isLoading, FormGroup? formGroup});
+  $Res call(
+      {bool isLoading,
+      LatLng latLng,
+      FormGroup? formGroup,
+      Completer<GoogleMapController>? googleController});
 }
 
 /// @nodoc
@@ -356,17 +744,27 @@ class _$PredictedPriceStateCopyWithImpl<$Res, $Val extends PredictedPriceState>
   @override
   $Res call({
     Object? isLoading = null,
+    Object? latLng = null,
     Object? formGroup = freezed,
+    Object? googleController = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      latLng: null == latLng
+          ? _value.latLng
+          : latLng // ignore: cast_nullable_to_non_nullable
+              as LatLng,
       formGroup: freezed == formGroup
           ? _value.formGroup
           : formGroup // ignore: cast_nullable_to_non_nullable
               as FormGroup?,
+      googleController: freezed == googleController
+          ? _value.googleController
+          : googleController // ignore: cast_nullable_to_non_nullable
+              as Completer<GoogleMapController>?,
     ) as $Val);
   }
 }
@@ -379,7 +777,11 @@ abstract class _$$_PredictedPriceStateCopyWith<$Res>
       __$$_PredictedPriceStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, FormGroup? formGroup});
+  $Res call(
+      {bool isLoading,
+      LatLng latLng,
+      FormGroup? formGroup,
+      Completer<GoogleMapController>? googleController});
 }
 
 /// @nodoc
@@ -394,17 +796,27 @@ class __$$_PredictedPriceStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = null,
+    Object? latLng = null,
     Object? formGroup = freezed,
+    Object? googleController = freezed,
   }) {
     return _then(_$_PredictedPriceState(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      latLng: null == latLng
+          ? _value.latLng
+          : latLng // ignore: cast_nullable_to_non_nullable
+              as LatLng,
       formGroup: freezed == formGroup
           ? _value.formGroup
           : formGroup // ignore: cast_nullable_to_non_nullable
               as FormGroup?,
+      googleController: freezed == googleController
+          ? _value.googleController
+          : googleController // ignore: cast_nullable_to_non_nullable
+              as Completer<GoogleMapController>?,
     ));
   }
 }
@@ -412,16 +824,24 @@ class __$$_PredictedPriceStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_PredictedPriceState implements _PredictedPriceState {
-  _$_PredictedPriceState({required this.isLoading, this.formGroup});
+  _$_PredictedPriceState(
+      {required this.isLoading,
+      required this.latLng,
+      this.formGroup,
+      this.googleController});
 
   @override
   final bool isLoading;
   @override
+  final LatLng latLng;
+  @override
   final FormGroup? formGroup;
+  @override
+  final Completer<GoogleMapController>? googleController;
 
   @override
   String toString() {
-    return 'PredictedPriceState(isLoading: $isLoading, formGroup: $formGroup)';
+    return 'PredictedPriceState(isLoading: $isLoading, latLng: $latLng, formGroup: $formGroup, googleController: $googleController)';
   }
 
   @override
@@ -431,12 +851,16 @@ class _$_PredictedPriceState implements _PredictedPriceState {
             other is _$_PredictedPriceState &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
+            (identical(other.latLng, latLng) || other.latLng == latLng) &&
             (identical(other.formGroup, formGroup) ||
-                other.formGroup == formGroup));
+                other.formGroup == formGroup) &&
+            (identical(other.googleController, googleController) ||
+                other.googleController == googleController));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, formGroup);
+  int get hashCode =>
+      Object.hash(runtimeType, isLoading, latLng, formGroup, googleController);
 
   @JsonKey(ignore: true)
   @override
@@ -448,13 +872,20 @@ class _$_PredictedPriceState implements _PredictedPriceState {
 
 abstract class _PredictedPriceState implements PredictedPriceState {
   factory _PredictedPriceState(
-      {required final bool isLoading,
-      final FormGroup? formGroup}) = _$_PredictedPriceState;
+          {required final bool isLoading,
+          required final LatLng latLng,
+          final FormGroup? formGroup,
+          final Completer<GoogleMapController>? googleController}) =
+      _$_PredictedPriceState;
 
   @override
   bool get isLoading;
   @override
+  LatLng get latLng;
+  @override
   FormGroup? get formGroup;
+  @override
+  Completer<GoogleMapController>? get googleController;
   @override
   @JsonKey(ignore: true)
   _$$_PredictedPriceStateCopyWith<_$_PredictedPriceState> get copyWith =>

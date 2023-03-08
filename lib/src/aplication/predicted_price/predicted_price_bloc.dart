@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:injectable/injectable.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
@@ -31,8 +34,37 @@ class PredictedPriceBloc
         );
       },
     );
-    on<_PredictedPriceLatLong>((event, emit) {
-      facade.predict();
-    },);
+    on<_PredictedPriceEventOnMapCreated>(
+      (event, emit) {
+        final Completer<GoogleMapController> controller =
+            Completer<GoogleMapController>();
+        // Set up the controller to change the state controller
+        controller.complete(
+          event.googleController,
+        );
+        emit(
+          state.copyWith(
+            googleController: controller,
+          ),
+        );
+      },
+    );
+    on<_PredictedPriceEventGetCurrentLocation>(
+      (event, emit) {
+        emit(
+          state.copyWith(
+            latLng: LatLng(
+              event.lat,
+              event.long,
+            ),
+          ),
+        );
+      },
+    );
+    on<_PredictedPriceLatLong>(
+      (event, emit) {
+        facade.predict();
+      },
+    );
   }
 }
