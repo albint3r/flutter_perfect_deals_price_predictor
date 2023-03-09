@@ -22,24 +22,66 @@ class _GoogleMapsLatLongFieldState extends State<GoogleMapsLatLongField> {
         // TODO ADD SOME LOGIC HERE
       },
       child: SizedBox(
-        height: 200,
+        height: 250,
         width: 500,
-        child: GoogleMap(
-          myLocationButtonEnabled: true,
-          myLocationEnabled: true,
-          onMapCreated: (controller) {
-            _addGoogleControllerToBloc(
-              controller: controller,
-              context: context,
-            );
-          },
-          initialCameraPosition: const CameraPosition(
-            zoom: 12,
-            target: LatLng(
-              20.500,
-              -103.44994,
+        child: Stack(
+          children: [
+            GoogleMap(
+              myLocationButtonEnabled: true,
+              myLocationEnabled: true,
+              onMapCreated: (controller) {
+                _addGoogleControllerToBloc(
+                  controller: controller,
+                  context: context,
+                );
+              },
+              initialCameraPosition: const CameraPosition(
+                zoom: 12,
+                target: LatLng(
+                  20.500,
+                  -103.44994,
+                ),
+              ),
             ),
-          ),
+            Positioned(
+              top: 11,
+              left: 10,
+              right: 60,
+              child: GestureDetector(
+                onTap: () {
+                  // TODO Add an Event that update the text values.
+                },
+                child: Container(
+                  height: 40,
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).cardColor,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Row(
+                    children: [
+                      Icon(Icons.location_on,
+                          size: 20, color: Theme.of(context).primaryColor),
+                      const SizedBox(width: 5),
+                      //here we show the address on the top
+                      const Expanded(
+                        // TODO 'AGREGAR [pickPlaceMark] PROPIEDADES',
+                        child: Text(
+                          'AGREGAR [pickPlaceMark] PROPIEDADES',
+                          style: TextStyle(fontSize: 12),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                      const SizedBox(width: 5),
+                      Icon(Icons.search,
+                          size: 25,
+                          color: Theme.of(context).textTheme.bodyText1!.color),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
