@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class LottiePredictMainDisplay extends StatelessWidget {
-  const LottiePredictMainDisplay({
-    Key? key,
-  }) : super(key: key);
+import '../../core/common_widgets/wrapper_lottie.dart';
+
+class LottiePredict extends StatelessWidget {
+  const LottiePredict({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Transform.scale(
-
-      scale: 1,
-      child: Lottie.asset('assets/lottie/predict.json'),
+    return WrapperLottie(
+      scale: 2,
+      child: Lottie.asset(
+        'assets/lottie/analytics_predict.json',
+        fit: BoxFit.contain,
+      ),
     );
   }
 }

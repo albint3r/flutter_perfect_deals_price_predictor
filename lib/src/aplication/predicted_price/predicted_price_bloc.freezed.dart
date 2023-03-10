@@ -22,7 +22,8 @@ mixin _$PredictedPriceEvent {
     required TResult Function(GoogleMapController googleController)
         onMapCreated,
     required TResult Function(double lat, double long) getCurrentLocation,
-    required TResult Function(double lat, double long) latLong,
+    required TResult Function(BuildContext context, String text)
+        typeSearchLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,7 +31,7 @@ mixin _$PredictedPriceEvent {
     TResult? Function()? start,
     TResult? Function(GoogleMapController googleController)? onMapCreated,
     TResult? Function(double lat, double long)? getCurrentLocation,
-    TResult? Function(double lat, double long)? latLong,
+    TResult? Function(BuildContext context, String text)? typeSearchLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,7 +39,7 @@ mixin _$PredictedPriceEvent {
     TResult Function()? start,
     TResult Function(GoogleMapController googleController)? onMapCreated,
     TResult Function(double lat, double long)? getCurrentLocation,
-    TResult Function(double lat, double long)? latLong,
+    TResult Function(BuildContext context, String text)? typeSearchLocation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,7 +50,8 @@ mixin _$PredictedPriceEvent {
         onMapCreated,
     required TResult Function(_PredictedPriceEventGetCurrentLocation value)
         getCurrentLocation,
-    required TResult Function(_PredictedPriceLatLong value) latLong,
+    required TResult Function(_PredictedPriceEventTypeSearchLocation value)
+        typeSearchLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,7 +60,8 @@ mixin _$PredictedPriceEvent {
     TResult? Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
     TResult? Function(_PredictedPriceEventGetCurrentLocation value)?
         getCurrentLocation,
-    TResult? Function(_PredictedPriceLatLong value)? latLong,
+    TResult? Function(_PredictedPriceEventTypeSearchLocation value)?
+        typeSearchLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,7 +70,8 @@ mixin _$PredictedPriceEvent {
     TResult Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
     TResult Function(_PredictedPriceEventGetCurrentLocation value)?
         getCurrentLocation,
-    TResult Function(_PredictedPriceLatLong value)? latLong,
+    TResult Function(_PredictedPriceEventTypeSearchLocation value)?
+        typeSearchLocation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -135,7 +139,8 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
     required TResult Function(GoogleMapController googleController)
         onMapCreated,
     required TResult Function(double lat, double long) getCurrentLocation,
-    required TResult Function(double lat, double long) latLong,
+    required TResult Function(BuildContext context, String text)
+        typeSearchLocation,
   }) {
     return start();
   }
@@ -146,7 +151,7 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
     TResult? Function()? start,
     TResult? Function(GoogleMapController googleController)? onMapCreated,
     TResult? Function(double lat, double long)? getCurrentLocation,
-    TResult? Function(double lat, double long)? latLong,
+    TResult? Function(BuildContext context, String text)? typeSearchLocation,
   }) {
     return start?.call();
   }
@@ -157,7 +162,7 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
     TResult Function()? start,
     TResult Function(GoogleMapController googleController)? onMapCreated,
     TResult Function(double lat, double long)? getCurrentLocation,
-    TResult Function(double lat, double long)? latLong,
+    TResult Function(BuildContext context, String text)? typeSearchLocation,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -174,7 +179,8 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
         onMapCreated,
     required TResult Function(_PredictedPriceEventGetCurrentLocation value)
         getCurrentLocation,
-    required TResult Function(_PredictedPriceLatLong value) latLong,
+    required TResult Function(_PredictedPriceEventTypeSearchLocation value)
+        typeSearchLocation,
   }) {
     return start(this);
   }
@@ -186,7 +192,8 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
     TResult? Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
     TResult? Function(_PredictedPriceEventGetCurrentLocation value)?
         getCurrentLocation,
-    TResult? Function(_PredictedPriceLatLong value)? latLong,
+    TResult? Function(_PredictedPriceEventTypeSearchLocation value)?
+        typeSearchLocation,
   }) {
     return start?.call(this);
   }
@@ -198,7 +205,8 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
     TResult Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
     TResult Function(_PredictedPriceEventGetCurrentLocation value)?
         getCurrentLocation,
-    TResult Function(_PredictedPriceLatLong value)? latLong,
+    TResult Function(_PredictedPriceEventTypeSearchLocation value)?
+        typeSearchLocation,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -287,7 +295,8 @@ class _$_PredictedPriceEventOnMapCreated
     required TResult Function(GoogleMapController googleController)
         onMapCreated,
     required TResult Function(double lat, double long) getCurrentLocation,
-    required TResult Function(double lat, double long) latLong,
+    required TResult Function(BuildContext context, String text)
+        typeSearchLocation,
   }) {
     return onMapCreated(googleController);
   }
@@ -298,7 +307,7 @@ class _$_PredictedPriceEventOnMapCreated
     TResult? Function()? start,
     TResult? Function(GoogleMapController googleController)? onMapCreated,
     TResult? Function(double lat, double long)? getCurrentLocation,
-    TResult? Function(double lat, double long)? latLong,
+    TResult? Function(BuildContext context, String text)? typeSearchLocation,
   }) {
     return onMapCreated?.call(googleController);
   }
@@ -309,7 +318,7 @@ class _$_PredictedPriceEventOnMapCreated
     TResult Function()? start,
     TResult Function(GoogleMapController googleController)? onMapCreated,
     TResult Function(double lat, double long)? getCurrentLocation,
-    TResult Function(double lat, double long)? latLong,
+    TResult Function(BuildContext context, String text)? typeSearchLocation,
     required TResult orElse(),
   }) {
     if (onMapCreated != null) {
@@ -326,7 +335,8 @@ class _$_PredictedPriceEventOnMapCreated
         onMapCreated,
     required TResult Function(_PredictedPriceEventGetCurrentLocation value)
         getCurrentLocation,
-    required TResult Function(_PredictedPriceLatLong value) latLong,
+    required TResult Function(_PredictedPriceEventTypeSearchLocation value)
+        typeSearchLocation,
   }) {
     return onMapCreated(this);
   }
@@ -338,7 +348,8 @@ class _$_PredictedPriceEventOnMapCreated
     TResult? Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
     TResult? Function(_PredictedPriceEventGetCurrentLocation value)?
         getCurrentLocation,
-    TResult? Function(_PredictedPriceLatLong value)? latLong,
+    TResult? Function(_PredictedPriceEventTypeSearchLocation value)?
+        typeSearchLocation,
   }) {
     return onMapCreated?.call(this);
   }
@@ -350,7 +361,8 @@ class _$_PredictedPriceEventOnMapCreated
     TResult Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
     TResult Function(_PredictedPriceEventGetCurrentLocation value)?
         getCurrentLocation,
-    TResult Function(_PredictedPriceLatLong value)? latLong,
+    TResult Function(_PredictedPriceEventTypeSearchLocation value)?
+        typeSearchLocation,
     required TResult orElse(),
   }) {
     if (onMapCreated != null) {
@@ -455,7 +467,8 @@ class _$_PredictedPriceEventGetCurrentLocation
     required TResult Function(GoogleMapController googleController)
         onMapCreated,
     required TResult Function(double lat, double long) getCurrentLocation,
-    required TResult Function(double lat, double long) latLong,
+    required TResult Function(BuildContext context, String text)
+        typeSearchLocation,
   }) {
     return getCurrentLocation(lat, long);
   }
@@ -466,7 +479,7 @@ class _$_PredictedPriceEventGetCurrentLocation
     TResult? Function()? start,
     TResult? Function(GoogleMapController googleController)? onMapCreated,
     TResult? Function(double lat, double long)? getCurrentLocation,
-    TResult? Function(double lat, double long)? latLong,
+    TResult? Function(BuildContext context, String text)? typeSearchLocation,
   }) {
     return getCurrentLocation?.call(lat, long);
   }
@@ -477,7 +490,7 @@ class _$_PredictedPriceEventGetCurrentLocation
     TResult Function()? start,
     TResult Function(GoogleMapController googleController)? onMapCreated,
     TResult Function(double lat, double long)? getCurrentLocation,
-    TResult Function(double lat, double long)? latLong,
+    TResult Function(BuildContext context, String text)? typeSearchLocation,
     required TResult orElse(),
   }) {
     if (getCurrentLocation != null) {
@@ -494,7 +507,8 @@ class _$_PredictedPriceEventGetCurrentLocation
         onMapCreated,
     required TResult Function(_PredictedPriceEventGetCurrentLocation value)
         getCurrentLocation,
-    required TResult Function(_PredictedPriceLatLong value) latLong,
+    required TResult Function(_PredictedPriceEventTypeSearchLocation value)
+        typeSearchLocation,
   }) {
     return getCurrentLocation(this);
   }
@@ -506,7 +520,8 @@ class _$_PredictedPriceEventGetCurrentLocation
     TResult? Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
     TResult? Function(_PredictedPriceEventGetCurrentLocation value)?
         getCurrentLocation,
-    TResult? Function(_PredictedPriceLatLong value)? latLong,
+    TResult? Function(_PredictedPriceEventTypeSearchLocation value)?
+        typeSearchLocation,
   }) {
     return getCurrentLocation?.call(this);
   }
@@ -518,7 +533,8 @@ class _$_PredictedPriceEventGetCurrentLocation
     TResult Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
     TResult Function(_PredictedPriceEventGetCurrentLocation value)?
         getCurrentLocation,
-    TResult Function(_PredictedPriceLatLong value)? latLong,
+    TResult Function(_PredictedPriceEventTypeSearchLocation value)?
+        typeSearchLocation,
     required TResult orElse(),
   }) {
     if (getCurrentLocation != null) {
@@ -543,74 +559,80 @@ abstract class _PredictedPriceEventGetCurrentLocation
 }
 
 /// @nodoc
-abstract class _$$_PredictedPriceLatLongCopyWith<$Res> {
-  factory _$$_PredictedPriceLatLongCopyWith(_$_PredictedPriceLatLong value,
-          $Res Function(_$_PredictedPriceLatLong) then) =
-      __$$_PredictedPriceLatLongCopyWithImpl<$Res>;
+abstract class _$$_PredictedPriceEventTypeSearchLocationCopyWith<$Res> {
+  factory _$$_PredictedPriceEventTypeSearchLocationCopyWith(
+          _$_PredictedPriceEventTypeSearchLocation value,
+          $Res Function(_$_PredictedPriceEventTypeSearchLocation) then) =
+      __$$_PredictedPriceEventTypeSearchLocationCopyWithImpl<$Res>;
   @useResult
-  $Res call({double lat, double long});
+  $Res call({BuildContext context, String text});
 }
 
 /// @nodoc
-class __$$_PredictedPriceLatLongCopyWithImpl<$Res>
-    extends _$PredictedPriceEventCopyWithImpl<$Res, _$_PredictedPriceLatLong>
-    implements _$$_PredictedPriceLatLongCopyWith<$Res> {
-  __$$_PredictedPriceLatLongCopyWithImpl(_$_PredictedPriceLatLong _value,
-      $Res Function(_$_PredictedPriceLatLong) _then)
+class __$$_PredictedPriceEventTypeSearchLocationCopyWithImpl<$Res>
+    extends _$PredictedPriceEventCopyWithImpl<$Res,
+        _$_PredictedPriceEventTypeSearchLocation>
+    implements _$$_PredictedPriceEventTypeSearchLocationCopyWith<$Res> {
+  __$$_PredictedPriceEventTypeSearchLocationCopyWithImpl(
+      _$_PredictedPriceEventTypeSearchLocation _value,
+      $Res Function(_$_PredictedPriceEventTypeSearchLocation) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? lat = null,
-    Object? long = null,
+    Object? context = null,
+    Object? text = null,
   }) {
-    return _then(_$_PredictedPriceLatLong(
-      lat: null == lat
-          ? _value.lat
-          : lat // ignore: cast_nullable_to_non_nullable
-              as double,
-      long: null == long
-          ? _value.long
-          : long // ignore: cast_nullable_to_non_nullable
-              as double,
+    return _then(_$_PredictedPriceEventTypeSearchLocation(
+      context: null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+      text: null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_PredictedPriceLatLong implements _PredictedPriceLatLong {
-  _$_PredictedPriceLatLong({required this.lat, required this.long});
+class _$_PredictedPriceEventTypeSearchLocation
+    implements _PredictedPriceEventTypeSearchLocation {
+  _$_PredictedPriceEventTypeSearchLocation(
+      {required this.context, required this.text});
 
   @override
-  final double lat;
+  final BuildContext context;
   @override
-  final double long;
+  final String text;
 
   @override
   String toString() {
-    return 'PredictedPriceEvent.latLong(lat: $lat, long: $long)';
+    return 'PredictedPriceEvent.typeSearchLocation(context: $context, text: $text)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PredictedPriceLatLong &&
-            (identical(other.lat, lat) || other.lat == lat) &&
-            (identical(other.long, long) || other.long == long));
+            other is _$_PredictedPriceEventTypeSearchLocation &&
+            (identical(other.context, context) || other.context == context) &&
+            (identical(other.text, text) || other.text == text));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, lat, long);
+  int get hashCode => Object.hash(runtimeType, context, text);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PredictedPriceLatLongCopyWith<_$_PredictedPriceLatLong> get copyWith =>
-      __$$_PredictedPriceLatLongCopyWithImpl<_$_PredictedPriceLatLong>(
-          this, _$identity);
+  _$$_PredictedPriceEventTypeSearchLocationCopyWith<
+          _$_PredictedPriceEventTypeSearchLocation>
+      get copyWith => __$$_PredictedPriceEventTypeSearchLocationCopyWithImpl<
+          _$_PredictedPriceEventTypeSearchLocation>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -619,9 +641,10 @@ class _$_PredictedPriceLatLong implements _PredictedPriceLatLong {
     required TResult Function(GoogleMapController googleController)
         onMapCreated,
     required TResult Function(double lat, double long) getCurrentLocation,
-    required TResult Function(double lat, double long) latLong,
+    required TResult Function(BuildContext context, String text)
+        typeSearchLocation,
   }) {
-    return latLong(lat, long);
+    return typeSearchLocation(context, text);
   }
 
   @override
@@ -630,9 +653,9 @@ class _$_PredictedPriceLatLong implements _PredictedPriceLatLong {
     TResult? Function()? start,
     TResult? Function(GoogleMapController googleController)? onMapCreated,
     TResult? Function(double lat, double long)? getCurrentLocation,
-    TResult? Function(double lat, double long)? latLong,
+    TResult? Function(BuildContext context, String text)? typeSearchLocation,
   }) {
-    return latLong?.call(lat, long);
+    return typeSearchLocation?.call(context, text);
   }
 
   @override
@@ -641,11 +664,11 @@ class _$_PredictedPriceLatLong implements _PredictedPriceLatLong {
     TResult Function()? start,
     TResult Function(GoogleMapController googleController)? onMapCreated,
     TResult Function(double lat, double long)? getCurrentLocation,
-    TResult Function(double lat, double long)? latLong,
+    TResult Function(BuildContext context, String text)? typeSearchLocation,
     required TResult orElse(),
   }) {
-    if (latLong != null) {
-      return latLong(lat, long);
+    if (typeSearchLocation != null) {
+      return typeSearchLocation(context, text);
     }
     return orElse();
   }
@@ -658,9 +681,10 @@ class _$_PredictedPriceLatLong implements _PredictedPriceLatLong {
         onMapCreated,
     required TResult Function(_PredictedPriceEventGetCurrentLocation value)
         getCurrentLocation,
-    required TResult Function(_PredictedPriceLatLong value) latLong,
+    required TResult Function(_PredictedPriceEventTypeSearchLocation value)
+        typeSearchLocation,
   }) {
-    return latLong(this);
+    return typeSearchLocation(this);
   }
 
   @override
@@ -670,9 +694,10 @@ class _$_PredictedPriceLatLong implements _PredictedPriceLatLong {
     TResult? Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
     TResult? Function(_PredictedPriceEventGetCurrentLocation value)?
         getCurrentLocation,
-    TResult? Function(_PredictedPriceLatLong value)? latLong,
+    TResult? Function(_PredictedPriceEventTypeSearchLocation value)?
+        typeSearchLocation,
   }) {
-    return latLong?.call(this);
+    return typeSearchLocation?.call(this);
   }
 
   @override
@@ -682,26 +707,29 @@ class _$_PredictedPriceLatLong implements _PredictedPriceLatLong {
     TResult Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
     TResult Function(_PredictedPriceEventGetCurrentLocation value)?
         getCurrentLocation,
-    TResult Function(_PredictedPriceLatLong value)? latLong,
+    TResult Function(_PredictedPriceEventTypeSearchLocation value)?
+        typeSearchLocation,
     required TResult orElse(),
   }) {
-    if (latLong != null) {
-      return latLong(this);
+    if (typeSearchLocation != null) {
+      return typeSearchLocation(this);
     }
     return orElse();
   }
 }
 
-abstract class _PredictedPriceLatLong implements PredictedPriceEvent {
-  factory _PredictedPriceLatLong(
-      {required final double lat,
-      required final double long}) = _$_PredictedPriceLatLong;
+abstract class _PredictedPriceEventTypeSearchLocation
+    implements PredictedPriceEvent {
+  factory _PredictedPriceEventTypeSearchLocation(
+      {required final BuildContext context,
+      required final String text}) = _$_PredictedPriceEventTypeSearchLocation;
 
-  double get lat;
-  double get long;
+  BuildContext get context;
+  String get text;
   @JsonKey(ignore: true)
-  _$$_PredictedPriceLatLongCopyWith<_$_PredictedPriceLatLong> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_PredictedPriceEventTypeSearchLocationCopyWith<
+          _$_PredictedPriceEventTypeSearchLocation>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

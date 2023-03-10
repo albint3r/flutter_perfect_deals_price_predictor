@@ -6,7 +6,7 @@ import '../../core/common_widgets/wrapper_scaffold_body.dart';
 import '../../../aplication/login/login_bloc.dart';
 import 'buttons/submit_button_login_form.dart';
 import 'buttons/nav_to_sigin_text_button.dart';
-import 'fields/emai_field.dart';
+import 'fields/email_field.dart';
 import 'fields/password_field.dart';
 import 'lottie_house_sign_in.dart';
 

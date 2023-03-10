@@ -7,14 +7,18 @@ import '../../infrastructure/login/i_login_form_model.dart';
 class LoginFormImpl implements ILoginFormModel {
   final FormGroup _form = FormGroup(
     {
-      'email': FormControl<String>(validators: [
-        Validators.required,
-        Validators.email,
-      ]),
-      'password': FormControl<String>(validators: [
-        Validators.required,
-        Validators.minLength(8),
-      ]),
+      'email': FormControl<String>(
+        validators: [
+          Validators.required,
+          Validators.email,
+        ],
+      ),
+      'password': FormControl<String>(
+        validators: [
+          Validators.required,
+          Validators.minLength(8),
+        ],
+      ),
     },
   );
 

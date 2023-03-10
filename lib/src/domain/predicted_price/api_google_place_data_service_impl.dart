@@ -1,0 +1,21 @@
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
+
+import '../../infrastructure/predicted_price/i_api_google_place_data_service.dart';
+
+@Injectable(as: IAPIGooglePlaceDataService)
+class APIGooglePlaceDataServiceImpl implements IAPIGooglePlaceDataService {
+  @override
+  Future<http.Response> getLocationData(String text) async {
+    http.Response response;
+
+    response = await http.get(
+      Uri.parse('http://mvs.bslmeiyu.com/api/v1/config/place-api-autocomplete?search_text=$text'),
+      headers: {'Content-Type': 'application/json'},);
+
+    print(jsonDecode(response.body));
+    return response;
+  }
+}

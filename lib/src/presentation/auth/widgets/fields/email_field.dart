@@ -4,8 +4,8 @@ import '../../../forms/widgets/wraper_text_field.dart';
 class EmailField extends StatelessWidget {
   const EmailField({
     required this.validationErrorMsg,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final Map<String, String Function(Object)>? validationErrorMsg;
 
   @override

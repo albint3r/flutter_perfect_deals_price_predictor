@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class WrapperScaffoldBody extends StatelessWidget {
-  const WrapperScaffoldBody({required this.child, Key? key}) : super(key: key);
+  const WrapperScaffoldBody({
+    required this.child,
+    super.key,
+  });
+
   final Widget child;
 
   @override

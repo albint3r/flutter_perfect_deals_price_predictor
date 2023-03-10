@@ -26,7 +26,7 @@ part 'app_router.gr.dart';
     ),
     AutoRoute(
       path: '/predicted_price_listing',
-      page: PredictedPricePage,
+      page: PredictedPriceListingPage,
     )
   ],
 )

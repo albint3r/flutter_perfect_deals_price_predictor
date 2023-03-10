@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:perfect_deals_price_predictor/src/aplication/predicted_price/predicted_price_bloc.dart';
 
+import 'location_field.dart';
+
 class GoogleMapsLatLongField extends StatefulWidget {
   const GoogleMapsLatLongField({
     Key? key,
@@ -47,37 +49,27 @@ class _GoogleMapsLatLongFieldState extends State<GoogleMapsLatLongField> {
               top: 11,
               left: 10,
               right: 60,
-              child: GestureDetector(
-                onTap: () {
-                  // TODO Add an Event that update the text values.
-                },
-                child: Container(
-                  height: 40,
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).cardColor,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Row(
-                    children: [
-                      Icon(Icons.location_on,
-                          size: 20, color: Theme.of(context).primaryColor),
-                      const SizedBox(width: 5),
-                      //here we show the address on the top
-                      const Expanded(
-                        // TODO 'AGREGAR [pickPlaceMark] PROPIEDADES',
-                        child: Text(
-                          'AGREGAR [pickPlaceMark] PROPIEDADES',
-                          style: TextStyle(fontSize: 12),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                      const SizedBox(width: 5),
-                      Icon(Icons.search,
-                          size: 25,
-                          color: Theme.of(context).textTheme.bodyText1!.color),
-                    ],
-                  ),
+              child: Container(
+                height: 40,
+                padding: const EdgeInsets.symmetric(horizontal: 5),
+                decoration: BoxDecoration(
+                    color: Theme.of(context).cardColor,
+                    borderRadius: BorderRadius.circular(10)),
+                child: Row(
+                  children: [
+                    Icon(Icons.location_on,
+                        size: 20, color: Theme.of(context).primaryColor),
+                    const SizedBox(width: 5),
+                    //here we show the address on the top
+                    Expanded(
+                      // TODO 'AGREGAR [pickPlaceMark] PROPIEDADES',
+                      child: LocationField(),
+                    ),
+                    const SizedBox(width: 5),
+                    Icon(Icons.search,
+                        size: 25,
+                        color: Theme.of(context).textTheme.bodyText1!.color),
+                  ],
                 ),
               ),
             ),

@@ -6,7 +6,10 @@ class SigningState with _$SigningState {
     required ISignInFormModel signInFormModel,
   }) = _SigningState;
 
-  factory SigningState.initial({required signInFormModel}) => _SigningState(
+  factory SigningState.initial({
+    required ISignInFormModel signInFormModel,
+  }) =>
+      _SigningState(
         signInFormModel: signInFormModel,
       );
 }

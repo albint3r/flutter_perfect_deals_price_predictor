@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:reactive_forms/reactive_forms.dart';
-import 'package:geolocator/geolocator.dart';
 
 import '../../../aplication/predicted_price/predicted_price_bloc.dart';
 import '../../core/common_widgets/wrapper_scaffold_body.dart';
@@ -62,7 +62,7 @@ class PredictedPriceBody extends StatelessWidget {
                             long: currentLocation.longitude,
                           );
                         },
-                        child: Text('Add lat long')),
+                        child: const Text('Add lat long')),
                   ),
                   ReactiveFormConsumer(
                     builder: (context, formGroup, child) {
@@ -90,10 +90,7 @@ class PredictedPriceBody extends StatelessWidget {
   }
 
   void _onSubmit(BuildContext context) {
-    print('Algo');
-    context
-        .read<PredictedPriceBloc>()
-        .add(PredictedPriceEvent.latLong(lat: 20.455478, long: -103.488211));
+    // TODO HAD SOME LOGIC HERE
   }
 
   Future<void> _setCameraToCurrentLocation({

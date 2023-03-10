@@ -38,7 +38,7 @@ class _$AppRouter extends RootStackRouter {
     PredictedPriceRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const PredictedPricePage(),
+        child: const PredictedPriceListingPage(),
       );
     },
   };
@@ -101,7 +101,7 @@ class LoginRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [PredictedPricePage]
+/// [PredictedPriceListingPage]
 class PredictedPriceRoute extends PageRouteInfo<void> {
   const PredictedPriceRoute()
       : super(

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:perfect_deals_price_predictor/src/aplication/auth/auth_bloc.dart';
-import 'package:perfect_deals_price_predictor/src/presentation/core/app_router/app_router.dart';
-import 'package:perfect_deals_price_predictor/src/presentation/core/theme/theme_config_style.dart';
 
 import 'injectables.dart';
+import 'src/aplication/auth/auth_bloc.dart';
+import 'src/presentation/core/app_router/app_router.dart';
+import 'src/presentation/core/theme/theme_config_style.dart';
 
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
   final _appRouter = AppRouter();
 
   @override
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp.router(
         theme: ThemeConfigStyle.light,
         darkTheme: ThemeConfigStyle.dark,
-        themeMode: ThemeMode.dark,
+        themeMode: ThemeMode.light,
         title: 'Perfect Deals Pricing App',
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),

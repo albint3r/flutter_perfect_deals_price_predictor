@@ -6,7 +6,10 @@ class LoginState with _$LoginState {
     required ILoginFormModel loginFormModel,
   }) = _LoginState;
 
-  factory LoginState.initial({required loginFormModel}) => _LoginState(
+  factory LoginState.initial({
+    required ILoginFormModel loginFormModel,
+  }) =>
+      _LoginState(
         loginFormModel: loginFormModel,
       );
 }

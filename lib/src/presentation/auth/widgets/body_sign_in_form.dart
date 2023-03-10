@@ -7,7 +7,7 @@ import '../../core/common_widgets/wrapper_scaffold_body.dart';
 
 import 'fields/password_field.dart';
 import 'fields/confirmation_password_field.dart';
-import 'fields/emai_field.dart';
+import 'fields/email_field.dart';
 import 'fields/user_name_field.dart';
 import 'buttons/submit_button_sign_in_form.dart';
 import 'buttons/nav_to_login_text_button.dart';
