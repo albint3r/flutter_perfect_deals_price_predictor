@@ -12,6 +12,8 @@ class LottiePredict extends StatelessWidget {
   Widget build(BuildContext context) {
     return WrapperLottie(
       scale: 2,
+      height: 200,
+      width: 200,
       child: Lottie.asset(
         'assets/lottie/analytics_predict.json',
         fit: BoxFit.contain,

@@ -24,6 +24,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: BlocListener<AuthBloc, AuthState>(
         listener: _logOutUserRedirectToLogIn,
         child: PageView(

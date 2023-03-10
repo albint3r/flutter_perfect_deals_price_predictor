@@ -11,6 +11,9 @@ class LottieHouseSignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WrapperLottie(
+      scale: 1,
+      width: 250,
+      height: 250,
       child: Lottie.asset(
         'assets/lottie/house_sign.json',
         fit: BoxFit.contain,

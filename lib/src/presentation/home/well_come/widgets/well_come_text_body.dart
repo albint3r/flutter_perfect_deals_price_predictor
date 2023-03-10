@@ -5,10 +5,12 @@ class WellComeTextBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 15,
-      child: Container(
-        child: const Padding(
+    return const SizedBox(
+      width: 300,
+      height: 200,
+      child: Card(
+        elevation: 15,
+        child: Padding(
           padding: EdgeInsets.all(8),
           child: Center(
             child: Text(
