@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../injectables.dart';
-import '../../aplication/predicted_price/predicted_price_bloc.dart';
+import '../../../../injectables.dart';
+import '../../../aplication/predicted_price/predicted_price_bloc.dart';
 import 'widgets/predicted_price_listing_body.dart';
 
 class PredictedPriceListingPage extends StatelessWidget {
@@ -14,7 +14,7 @@ class PredictedPriceListingPage extends StatelessWidget {
         ..add(
           PredictedPriceEvent.start(),
         ),
-      child: const PredictedPriceBody(),
+      child: const PredictedPriceListingBody(),
     );
   }
 }

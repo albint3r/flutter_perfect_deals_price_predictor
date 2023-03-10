@@ -4,7 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import '../../auth/login_page.dart';
 import '../../auth/sign_in_page.dart';
 import '../../home/home_page.dart';
-import '../../predicted_price/predicted_price_listing_page.dart';
+import '../../home/predicted_price/predicted_price_listing_page.dart';
 
 part 'app_router.gr.dart';
 

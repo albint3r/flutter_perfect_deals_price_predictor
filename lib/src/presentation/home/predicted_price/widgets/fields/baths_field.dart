@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../../forms/widgets/wraper_slider_field.dart';
-
+import '../../../../forms/widgets/wraper_slider_field.dart';
 
 class BathsField extends StatelessWidget {
   const BathsField({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

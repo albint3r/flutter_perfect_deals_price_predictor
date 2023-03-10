@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../core/common_widgets/wrapper_lottie.dart';
+import '../../../core/common_widgets/wrapper_lottie.dart';
 
 class LottiePredict extends StatelessWidget {
   const LottiePredict({

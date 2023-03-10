@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../aplication/auth/auth_bloc.dart';
 import '../core/app_router/app_router.dart';
-import '../predicted_price/predicted_price_listing_page.dart';
-import 'widgets/well_come_page.dart';
+import 'predicted_price/predicted_price_listing_page.dart';
+import 'well_come/well_come_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
