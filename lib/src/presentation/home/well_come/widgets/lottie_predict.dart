@@ -11,7 +11,7 @@ class LottiePredict extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WrapperLottie(
-      scale: 2,
+      scale: 1.8,
       height: 200,
       width: 200,
       child: Lottie.asset(

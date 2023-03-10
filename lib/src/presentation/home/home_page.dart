@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../aplication/auth/auth_bloc.dart';
 import '../core/app_router/app_router.dart';
+import '../core/common_widgets/app_bar_page.dart';
 import 'predicted_price/predicted_price_listing_page.dart';
 import 'well_come/well_come_page.dart';
 
@@ -24,13 +25,15 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      appBar: AppBarPage.getBar(
+        title: 'Perfect Deals',
+      ),
       body: BlocListener<AuthBloc, AuthState>(
         listener: _logOutUserRedirectToLogIn,
         child: PageView(
           children: const [
             WellComePage(),
-            PredictedPriceListingPage()
+            PredictedPriceListingPage(),
           ],
         ),
       ),
