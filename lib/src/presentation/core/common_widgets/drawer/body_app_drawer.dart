@@ -2,12 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../aplication/auth/auth_bloc.dart';
-import '../app_router/app_router.dart';
-import 'app_alert_dialog.dart';
+import '../../../../aplication/auth/auth_bloc.dart';
+import '../../app_router/app_router.dart';
+import '../alert_dialog/app_alert_dialog.dart';
+import 'user_profile_app_drawer.dart';
 
-class AppDrawer extends StatelessWidget {
-  const AppDrawer({super.key});
+class BodyAppDrawer extends StatelessWidget {
+  const BodyAppDrawer({super.key});
 
   Future _showLogOutAlertDialog({
     required BuildContext context,
@@ -56,12 +57,10 @@ class AppDrawer extends StatelessWidget {
     return Drawer(
       child: Column(
         children: [
-          Container(
-            height: size.height * .25,
-            width: size.width,
-            decoration: BoxDecoration(
-              color: theme.primaryColor,
-            ),
+          UserProfileAppDrawer(
+            size: size,
+            theme: theme,
+            state: state,
           ),
           InkWell(
             onTap: () {

@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../aplication/auth/auth_bloc.dart';
 import '../core/app_router/app_router.dart';
-import '../core/common_widgets/app_bar_page.dart';
-import '../core/common_widgets/app_drawer.dart';
+import '../core/common_widgets/app_bar/app_bar_page.dart';
+import '../core/common_widgets/drawer/body_app_drawer.dart';
 import 'predicted_price/predicted_price_listing_page.dart';
 import 'well_come/well_come_page.dart';
 
@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBarPage.getBar(
         title: 'Perfect Deals',
       ),
-      drawer: const AppDrawer(),
+      drawer: const BodyAppDrawer(),
       body: BlocListener<AuthBloc, AuthState>(
         listener: _logOutUserRedirectToLogIn,
         child: PageView(

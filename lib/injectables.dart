@@ -5,11 +5,11 @@ import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
 import 'injectables.config.dart';
-import 'src/presentation/core/bloc_observer/simple_bloc_observer.dart';
 
 /// Create a Global getIt Object.
 /// This don't affect in the functionality
 final getIt = GetIt.instance;
+
 /// Initialize the Configuration Injection Dependencies from the project.
 @InjectableInit(
   initializerName: r'$initGetIt', // default
@@ -20,8 +20,6 @@ Future<void> configureDependencies() async {
   WidgetsFlutterBinding.ensureInitialized();
   await FlutterConfig.loadEnvVariables();
   await Firebase.initializeApp();
-  final observer = SimpleBlocObserver();
-
 
   $initGetIt(getIt);
 }
