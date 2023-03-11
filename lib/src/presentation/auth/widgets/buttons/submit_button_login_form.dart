@@ -30,7 +30,7 @@ class SubmitButtonLoginForm extends StatelessWidget {
       builder: (context, authState) {
         return BlocBuilder<LoginBloc, LoginState>(
           builder: (context, logInState) {
-            return WrapperSubmitLoginOrSignInElevatedButton(
+            return WrapperSubmitLoginOrSigInElevatedButton(
               buttonText: 'Log in your account',
               onSubmit: ((context) {
                 context.read<AuthBloc>().add(

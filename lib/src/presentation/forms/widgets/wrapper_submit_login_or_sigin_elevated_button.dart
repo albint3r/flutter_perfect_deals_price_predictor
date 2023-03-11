@@ -1,13 +1,12 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
-class WrapperSubmitLoginOrSignInElevatedButton extends StatelessWidget {
-  const WrapperSubmitLoginOrSignInElevatedButton({
+class WrapperSubmitLoginOrSigInElevatedButton extends StatelessWidget {
+  const WrapperSubmitLoginOrSigInElevatedButton({
     required this.buttonText,
     required this.onSubmit,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final String buttonText;
   final void Function(BuildContext context) onSubmit;
 
@@ -21,6 +20,7 @@ class WrapperSubmitLoginOrSignInElevatedButton extends StatelessWidget {
             return ElevatedButton(
               onPressed: formGroup.valid ? () => onSubmit(context) : null,
               child: Text(
+                textAlign: TextAlign.center,
                 buttonText,
               ),
             );

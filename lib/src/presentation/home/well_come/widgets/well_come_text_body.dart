@@ -5,21 +5,21 @@ class WellComeTextBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-      width: 300,
-      height: 200,
-      child: Card(
-        elevation: 15,
-        child: Padding(
-          padding: EdgeInsets.all(8),
-          child: Center(
-            child: Text(
-              '¿Quieres saber el valor real de tu inmueble? Desliza a la derecha '
-                  'para acceder a nuestra sección de predicción de precios. '
-                  'Ingresa información y ubicación. ¡Descubre el '
-                  'precio justo ahora!',
-              textAlign: TextAlign.center,
-            ),
+    final double width = MediaQuery.of(context).size.width * .65;
+    final TextStyle? textStyle = Theme.of(context).textTheme.bodyText1;
+
+    return SizedBox(
+      width: width,
+      child: Padding(
+        padding: const EdgeInsets.all(8),
+        child: Center(
+          child: Text(
+            'Descubre el valor real de tus inmuebles con nuestro método secreto'
+            ' de AI. Obtén un análisis preciso y toma decisiones informadas'
+            ' de inversión. Desliza a la izquierda para conocer más y'
+            ' maximiza tus ganancias en inmuebles.',
+            textAlign: TextAlign.center,
+            style: textStyle,
           ),
         ),
       ),

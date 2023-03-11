@@ -5,12 +5,13 @@ class WellComeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(8),
+    return Padding(
+      padding: const EdgeInsets.all(8),
       child: Center(
         child: Text(
-          'Desliza a la derecha para obtener la predicción del precio de un inmueble',
+          'Invierte en inmuebles con confianza usando nuestras predicciones de AI',
           textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.headline6,
         ),
       ),
     );

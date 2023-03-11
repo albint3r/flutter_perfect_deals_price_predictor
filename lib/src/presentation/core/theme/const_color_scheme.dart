@@ -6,7 +6,7 @@ const ColorScheme flexSchemeLight = ColorScheme(
   onPrimary: Color(0xffffffff),
   primaryContainer: Color(0xffd1c4e9),
   onPrimaryContainer: Color(0xff111013),
-  secondary: Color(0xff00b0ff),
+  secondary: Color(0xffe5b20e),
   onSecondary: Color(0xff000000),
   secondaryContainer: Color(0xff9fcbf1),
   onSecondaryContainer: Color(0xff0e1114),
