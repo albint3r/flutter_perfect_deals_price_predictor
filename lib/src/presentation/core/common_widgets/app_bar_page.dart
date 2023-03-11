@@ -7,12 +7,6 @@ abstract class AppBarPage {
   }) =>
       AppBar(
         title: Text(title),
-        leading: const Icon(Icons.menu),
-        actions: actions ?? [],
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(20),
-          ),
-        ),
+        actions: actions,
       );
 }

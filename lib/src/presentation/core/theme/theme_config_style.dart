@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'const_app_bar_theme.dart';
 import 'const_button_style.dart';
 import 'const_color_scheme.dart';
+import 'const_drawer_theme.dart';
 import 'const_text_theme.dart';
 
 class ThemeConfigStyle {
@@ -32,6 +34,8 @@ class ThemeConfigStyle {
       textTheme: ConstTextTheme.textTheme(
         colorScheme: colorScheme,
       ),
+      drawerTheme: ConstDrawerTheme.drawerTheme(),
+      appBarTheme: ConstAppBarTheme.appBarTheme(),
     );
   }
 }

@@ -17,7 +17,7 @@ class App extends StatelessWidget {
       child: MaterialApp.router(
         theme: ThemeConfigStyle.light,
         darkTheme: ThemeConfigStyle.dark,
-        themeMode: ThemeMode.dark,
+        themeMode: ThemeMode.light,
         title: 'Perfect Deals Pricing App',
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),

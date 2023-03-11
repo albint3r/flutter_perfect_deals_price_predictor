@@ -56,7 +56,7 @@ abstract class ConstTextTheme {
         ),
         caption: TextStyle(
           fontSize: 12,
-          color: colorScheme.secondary,
+          color: colorScheme.outline,
         ),
       ),
     );
