@@ -5,6 +5,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 import '../../../../aplication/predicted_price/predicted_price_bloc.dart';
+import '../../../core/common_widgets/gap.dart';
 import '../../../core/common_widgets/wrapper_scaffold_body.dart';
 
 import 'fields/baths_field.dart';
@@ -76,6 +77,7 @@ class PredictedPriceListingBody extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const GoogleMapLatLongField(),
+                  const Gap(15),
                   SizedBox(
                     width: 500,
                     child: Row(
