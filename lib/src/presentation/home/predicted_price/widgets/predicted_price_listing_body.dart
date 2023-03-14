@@ -75,7 +75,7 @@ class PredictedPriceListingBody extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const GoogleMapsLatLongField(),
+                  const GoogleMapLatLongField(),
                   SizedBox(
                     width: 500,
                     child: Row(
@@ -92,18 +92,18 @@ class PredictedPriceListingBody extends StatelessWidget {
                   const RoomsField(),
                   const BathsField(),
                   const CarsField(),
-                  Center(
-                    child: ElevatedButton(
-                        onPressed: () async {
-                          final currentLocation = await _getCurrentLocation();
-                          _setCameraToCurrentLocation(
-                            state: state,
-                            lat: currentLocation.latitude,
-                            long: currentLocation.longitude,
-                          );
-                        },
-                        child: const Text('Add lat long')),
-                  ),
+                  // Center(
+                  //   child: ElevatedButton(
+                  //       onPressed: () async {
+                  //         final currentLocation = await _getCurrentLocation();
+                  //         _setCameraToCurrentLocation(
+                  //           state: state,
+                  //           lat: currentLocation.latitude,
+                  //           long: currentLocation.longitude,
+                  //         );
+                  //       },
+                  //       child: const Text('Add lat long')),
+                  // ),
                   ReactiveFormConsumer(
                     builder: (context, formGroup, child) {
                       return Center(
@@ -113,8 +113,10 @@ class PredictedPriceListingBody extends StatelessWidget {
                                   _onSubmit(context);
                                 }
                               : null,
-                          child: const Text(
-                            'Obtener valor del inmueble',
+                          child: Text(
+                            'Generar Opinion de Valor',
+                            style: Theme.of(context).textTheme.button,
+                            textAlign: TextAlign.center,
                           ),
                         ),
                       );

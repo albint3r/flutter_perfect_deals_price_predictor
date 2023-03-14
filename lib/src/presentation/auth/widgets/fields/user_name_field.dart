@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../aplication/signin/signing_bloc.dart';
-import '../../../forms/widgets/wraper_text_field.dart';
+import '../../../forms/widgets/wrapper_text_field.dart';
 
 class UserNameField extends StatelessWidget {
   const UserNameField({Key? key}) : super(key: key);

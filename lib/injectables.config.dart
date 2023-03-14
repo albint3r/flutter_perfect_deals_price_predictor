@@ -57,7 +57,7 @@ _i1.GetIt $initGetIt(
       () => _i4.APIGooglePlaceDataServiceImpl());
   gh.factory<_i5.IAuthDataService>(() => _i6.Auth());
   gh.factory<_i7.ILoginFormModel>(() => _i8.LoginFormImpl());
-  gh.factory<_i9.IPredictedPriceForm>(() => _i10.PredictedPriceForm());
+  gh.factory<_i9.IPredictedPriceForm>(() => _i10.PredictedPriceFormImpl());
   gh.factory<_i11.ISignInFormModel>(() => _i12.SignInFormImpl());
   gh.factory<_i13.LoginBloc>(() => _i13.LoginBloc(gh<_i7.ILoginFormModel>()));
   gh.singleton<_i14.SigningBloc>(_i14.SigningBloc(gh<_i11.ISignInFormModel>()));

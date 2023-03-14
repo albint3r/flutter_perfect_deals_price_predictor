@@ -8,19 +8,22 @@ class WrapperTextField extends StatelessWidget {
     required this.icon,
     required this.validationMessages,
     this.obscureText,
-    Key? key,
-  }) : super(key: key);
+    this.onTap,
+    super.key,
+  });
   final String controlName;
   final String labelText;
   final IconData icon;
   final Map<String, String Function(Object)>? validationMessages;
   final bool? obscureText;
+  final void Function(FormControl<dynamic>)? onTap;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: ReactiveTextField(
+        onTap: onTap,
         style: const TextStyle(
           fontSize: 11,
         ),

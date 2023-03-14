@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../forms/widgets/wraper_slider_field.dart';
+import '../../../../forms/widgets/wrapper_slider_field.dart';
 
 class BathsField extends StatelessWidget {
   const BathsField({
