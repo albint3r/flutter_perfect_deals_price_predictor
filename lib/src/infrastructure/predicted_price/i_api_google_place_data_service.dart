@@ -1,3 +1,7 @@
+import 'package:http/http.dart';
 abstract class IAPIGooglePlaceDataService {
-  Future getLocationData(String text);
+  Future<Response?> getLocationData(
+    String text, {
+    Map<String, String>? headers,
+  });
 }

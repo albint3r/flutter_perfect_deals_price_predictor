@@ -14,6 +14,7 @@ class M2LandField extends StatelessWidget {
       labelText: 'M2 de Terreno',
       icon: Icons.photo_size_select_large,
       validationMessages: null,
+      enableSend: false,
     );
   }
 }

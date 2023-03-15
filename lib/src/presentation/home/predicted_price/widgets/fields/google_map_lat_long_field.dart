@@ -34,47 +34,53 @@ class _GoogleMapLatLongFieldState extends State<GoogleMapLatLongField> {
       listener: (BuildContext context, state) {
         // TODO ADD SOME LOGIC HERE
       },
-      child: Card(
-        elevation: 10,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(50)),
-        ),
-        child: SizedBox(
-          height: 200,
-          width: 500,
-          child: Stack(
-            children: [
-              GoogleMap(
-                myLocationEnabled: true,
-                onMapCreated: (controller) {
-                  _addGoogleControllerToBloc(
-                      controller: controller, context: context);
-                },
-                initialCameraPosition: const CameraPosition(
-                  zoom: 11,
-                  target: LatLng(
-                    20.500,
-                    -103.44994,
+      child: ListView(
+        shrinkWrap: true,
+        children: [
+          Card(
+            elevation: 10,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(50)),
+            ),
+            child: SizedBox(
+              height: 200,
+              width: 500,
+              child: Stack(
+                children: [
+                  GoogleMap(
+                    myLocationEnabled: true,
+                    onMapCreated: (controller) {
+                      _addGoogleControllerToBloc(
+                          controller: controller, context: context);
+                    },
+                    initialCameraPosition: const CameraPosition(
+                      zoom: 11,
+                      target: LatLng(
+                        20.500,
+                        -103.44994,
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              Positioned(
-                top: 11,
-                left: 10,
-                right: 60,
-                child: Container(
-                  height: 40,
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).cardColor,
-                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                  Positioned(
+                    top: 11,
+                    left: 10,
+                    right: 60,
+                    child: Container(
+                      height: 40,
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).cardColor,
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(10)),
+                      ),
+                      child: LocationField(),
+                    ),
                   ),
-                  child: LocationField(),
-                ),
+                ],
               ),
-            ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

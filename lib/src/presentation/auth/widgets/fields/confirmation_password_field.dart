@@ -16,6 +16,7 @@ class ConfirmationPasswordField extends StatelessWidget {
           icon: Icons.password,
           validationMessages: state.signInFormModel.validationErrorMsg,
           obscureText: true,
+          enableSend: false,
         );
       },
     );

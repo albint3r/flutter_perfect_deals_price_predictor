@@ -7,7 +7,7 @@ import '../../infrastructure/predicted_price/i_predicted_price_form.dart';
 class PredictedPriceFormImpl implements IPredictedPriceForm {
   final FormGroup _form = FormGroup(
     {
-      'address': FormControl<double>(),
+      'address': FormControl<String>(),
       'm2_land': FormControl<double>(
         validators: [
           Validators.required,

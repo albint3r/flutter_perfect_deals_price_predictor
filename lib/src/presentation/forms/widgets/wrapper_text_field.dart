@@ -7,16 +7,22 @@ class WrapperTextField extends StatelessWidget {
     required this.labelText,
     required this.icon,
     required this.validationMessages,
+    required this.enableSend,
     this.obscureText,
     this.onTap,
+    this.onTapSendIcon,
     super.key,
   });
+
   final String controlName;
   final String labelText;
   final IconData icon;
+  final bool enableSend;
   final Map<String, String Function(Object)>? validationMessages;
   final bool? obscureText;
   final void Function(FormControl<dynamic>)? onTap;
+  final void Function()? onTapSendIcon;
+
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +36,13 @@ class WrapperTextField extends StatelessWidget {
         obscureText: obscureText ?? false,
         formControlName: controlName,
         decoration: InputDecoration(
+          // icon: Icon(Icons.send),
+          suffixIcon: enableSend
+              ? InkWell(
+                  onTap: onTapSendIcon,
+                  child: const Icon(Icons.send),
+                )
+              : null,
           labelText: labelText,
           prefixIcon: Icon(icon, size: 12),
           border: const OutlineInputBorder(

@@ -4,7 +4,7 @@ import '../../../../aplication/signin/signing_bloc.dart';
 import '../../../forms/widgets/wrapper_text_field.dart';
 
 class UserNameField extends StatelessWidget {
-  const UserNameField({Key? key}) : super(key: key);
+  const UserNameField({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +15,7 @@ class UserNameField extends StatelessWidget {
           labelText: 'User Name',
           validationMessages: state.signInFormModel.validationErrorMsg,
           icon: Icons.person,
+          enableSend: false,
         );
       },
     );

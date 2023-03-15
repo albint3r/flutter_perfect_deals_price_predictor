@@ -18,6 +18,7 @@ class PasswordField extends StatelessWidget {
       icon: Icons.password,
       validationMessages: validationErrorMsg,
       obscureText: true,
+      enableSend: false,
     );
   }
 }

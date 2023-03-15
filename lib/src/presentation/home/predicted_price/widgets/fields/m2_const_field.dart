@@ -14,6 +14,7 @@ class M2ConstField extends StatelessWidget {
       labelText: 'M2 de Const',
       icon: Icons.location_city,
       validationMessages: null,
+      enableSend: false,
     );
   }
 }

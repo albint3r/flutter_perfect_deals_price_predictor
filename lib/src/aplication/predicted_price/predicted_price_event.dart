@@ -13,8 +13,6 @@ class PredictedPriceEvent with _$PredictedPriceEvent {
     required double long,
   }) = _PredictedPriceEventGetCurrentLocation;
 
-  factory PredictedPriceEvent.typeSearchLocation({
-    required BuildContext context,
-    required String text,
-  }) = _PredictedPriceEventTypeSearchLocation;
+  factory PredictedPriceEvent.typeSearchLocation() =
+      _PredictedPriceEventTypeSearchLocation;
 }

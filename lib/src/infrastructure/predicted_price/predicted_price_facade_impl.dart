@@ -1,4 +1,3 @@
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:injectable/injectable.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
@@ -39,13 +38,11 @@ class PredictedPriceFacadeImpl implements IPredictedPriceFacade {
   }
 
   @override
-  Future<void> searchLocation({
-    required BuildContext context,
-    required String text,
-  }) async {
-    final response = await googleDataService.getLocationData(text);
-    print('*' * 80);
-    print(response);
-    print('*' * 80);
+  Future<void> searchLocation() async {
+    final String query = form.control('address').value;
+    print('query-> ${query}');
+
+    final response = await googleDataService.getLocationData(query);
+    print('response-> $response');
   }
 }

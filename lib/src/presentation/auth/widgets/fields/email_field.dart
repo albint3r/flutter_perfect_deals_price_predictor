@@ -15,6 +15,7 @@ class EmailField extends StatelessWidget {
       labelText: 'Email',
       validationMessages: validationErrorMsg,
       icon: Icons.email,
+      enableSend: false,
     );
   }
 }

@@ -7,10 +7,7 @@ abstract class IPredictedPriceFacade {
 
   Future<void> init();
 
-  Future<void> searchLocation({
-    required BuildContext context,
-    required String text,
-  });
+  Future<void> searchLocation();
 
   Future<void> predict();
 }
