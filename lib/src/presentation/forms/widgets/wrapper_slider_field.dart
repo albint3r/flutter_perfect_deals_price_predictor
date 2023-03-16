@@ -9,8 +9,8 @@ class WrapperSliderField extends StatelessWidget {
     required this.labelText,
     required this.icon,
     required this.validationMessages,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final String controlName;
   final String labelText;
   final IconData icon;
@@ -30,9 +30,8 @@ class WrapperSliderField extends StatelessWidget {
           ReactiveValueListenableBuilder<int>(
             builder: (context, control, child) {
               return Padding(
-                padding: const EdgeInsets.only(left: 25, right: 25),
+                padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Icon(icon),
                     Text('$labelText: '),

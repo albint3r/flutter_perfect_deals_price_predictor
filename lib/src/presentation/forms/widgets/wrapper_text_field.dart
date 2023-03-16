@@ -29,6 +29,9 @@ class WrapperTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: ReactiveTextField(
+        onChanged: (control) {
+          onTapSendIcon!();
+        },
         onTap: onTap,
         style: const TextStyle(
           fontSize: 11,
