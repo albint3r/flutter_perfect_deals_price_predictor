@@ -94,8 +94,7 @@ class PredictedPriceBloc
     );
     on<_PredictedPriceEventOnSubmitPrediction>(
       (event, emit) {
-        // TODO SEND PREDICTION TO FAST API
-        print(state.formGroup?.rawValue);
+        facade.predict();
       },
     );
   }

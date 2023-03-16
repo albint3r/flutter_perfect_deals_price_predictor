@@ -5,8 +5,10 @@ import 'package:injectable/injectable.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 import '../../domain/predicted_price/i_predicte_price_facade.dart';
+import '../../domain/predicted_price/listing.dart';
 import '../../domain/predicted_price/predictions.dart';
 import 'i_api_google_place_data_service.dart';
+import 'i_api_price_predictor_data_service.dart';
 import 'i_predicted_price_form.dart';
 
 @Injectable(as: IPredictedPriceFacade)
@@ -14,10 +16,12 @@ class PredictedPriceFacadeImpl implements IPredictedPriceFacade {
   PredictedPriceFacadeImpl({
     required this.predictedPriceForm,
     required this.googleDataService,
+    required this.pricePredictorDataService,
   });
 
   IPredictedPriceForm predictedPriceForm;
   IAPIGooglePlaceDataService googleDataService;
+  IAPIPricePredictorDataService pricePredictorDataService;
   late FormGroup _form;
 
   @override
@@ -30,7 +34,11 @@ class PredictedPriceFacadeImpl implements IPredictedPriceFacade {
 
   @override
   Future<void> predict() async {
-    // TODO: implement predict
+    final listing = Listing.fromJson(Map<String, dynamic>.from(_form.rawValue));
+    print('Listing->$listing');
+    final response = await pricePredictorDataService.getPriceListing(
+      listing: listing,
+    );
   }
 
   @override
