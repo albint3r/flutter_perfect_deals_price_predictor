@@ -15,4 +15,8 @@ class PredictedPriceEvent with _$PredictedPriceEvent {
 
   factory PredictedPriceEvent.typeSearchLocation() =
       _PredictedPriceEventTypeSearchLocation;
+
+  factory PredictedPriceEvent.setAddressOnMap({
+    required String address,
+  }) = _PredictedPriceEventSetAddressOnMap;
 }

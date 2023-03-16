@@ -18,7 +18,7 @@ class APIGooglePlaceDataServiceImpl implements IAPIGooglePlaceDataService {
     final Uri uri =
         Uri.https('maps.googleapis.com', 'maps/api/place/autocomplete/json', {
       'input': text,
-      'types': 'geocode',
+      'types': 'address',
       'key': kGoogleApiKey,
     });
 
@@ -28,7 +28,6 @@ class APIGooglePlaceDataServiceImpl implements IAPIGooglePlaceDataService {
         headers: headers,
       );
       if (response.statusCode == 200) {
-        print(jsonDecode(response.body));
         return response;
       }
       return null;

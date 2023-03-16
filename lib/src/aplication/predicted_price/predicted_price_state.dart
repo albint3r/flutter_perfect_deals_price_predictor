@@ -7,6 +7,7 @@ class PredictedPriceState with _$PredictedPriceState {
     required LatLng latLng,
     FormGroup? formGroup,
     Completer<GoogleMapController>? googleController,
+    Predictions? addressPredictions,
   }) = _PredictedPriceState;
 
   factory PredictedPriceState.initialize() => PredictedPriceState(

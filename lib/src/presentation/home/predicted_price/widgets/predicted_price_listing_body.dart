@@ -10,7 +10,7 @@ import '../../../core/common_widgets/wrapper_scaffold_body.dart';
 
 import 'fields/baths_field.dart';
 import 'fields/cars_field.dart';
-import 'fields/google_map_lat_long_field.dart';
+import 'fields/google_maps_stack_container.dart';
 
 import 'fields/m2_const_field.dart';
 import 'fields/m2_land_field.dart';
@@ -76,7 +76,7 @@ class PredictedPriceListingBody extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const GoogleMapLatLongField(),
+                  const GoogleMapsStackContainer(),
                   const Gap(15),
                   SizedBox(
                     width: 500,

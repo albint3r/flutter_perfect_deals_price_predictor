@@ -5,8 +5,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:injectable/injectable.dart';
 import 'package:reactive_forms/reactive_forms.dart';
+import 'package:geocoding/geocoding.dart';
 
 import '../../domain/predicted_price/i_predicte_price_facade.dart';
+import '../../domain/predicted_price/predictions.dart';
 
 part 'predicted_price_bloc.freezed.dart';
 
@@ -63,10 +65,26 @@ class PredictedPriceBloc
     );
     on<_PredictedPriceEventTypeSearchLocation>(
       (event, emit) async {
-        print('_PredictedPriceEventTypeSearchLocation-----------------------');
-        print('_PredictedPriceEventTypeSearchLocation-----------------------');
-        print('_PredictedPriceEventTypeSearchLocation-----------------------');
-        await facade.searchLocation();
+        final addressPredictions = await facade.searchLocation();
+        emit(
+          state.copyWith(
+            addressPredictions: addressPredictions,
+          ),
+        );
+      },
+    );
+    on<_PredictedPriceEventSetAddressOnMap>(
+      (event, emit) async {
+        print('_PredictedPriceEventSetAddressOnMap----------------------');
+        print('event-> $event');
+        final locations = await facade.setLatLong(
+          address: event.address,
+        );
+        emit(
+          state.copyWith(
+            addressPredictions: null,
+          ),
+        );
       },
     );
   }

@@ -1,7 +1,11 @@
+import 'dart:convert';
+
+import 'package:geocoding/geocoding.dart';
 import 'package:injectable/injectable.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 import '../../domain/predicted_price/i_predicte_price_facade.dart';
+import '../../domain/predicted_price/predictions.dart';
 import 'i_api_google_place_data_service.dart';
 import 'i_predicted_price_form.dart';
 
@@ -38,11 +42,19 @@ class PredictedPriceFacadeImpl implements IPredictedPriceFacade {
   }
 
   @override
-  Future<void> searchLocation() async {
+  Future<Predictions> searchLocation() async {
     final String query = form.control('address').value;
-    print('query-> ${query}');
-
     final response = await googleDataService.getLocationData(query);
-    print('response-> $response');
+    final body = jsonDecode(response!.body);
+    return Predictions.fromJson(Map<String, dynamic>.from(body));
+  }
+
+  @override
+  Future<List<Location>> setLatLong({required String address,}) async {
+    final locations = await locationFromAddress(
+      address,
+    );
+    print('locations->$locations');
+    return locations;
   }
 }

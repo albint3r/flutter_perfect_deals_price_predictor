@@ -23,6 +23,7 @@ mixin _$PredictedPriceEvent {
         onMapCreated,
     required TResult Function(double lat, double long) getCurrentLocation,
     required TResult Function() typeSearchLocation,
+    required TResult Function(String address) setAddressOnMap,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,6 +32,7 @@ mixin _$PredictedPriceEvent {
     TResult? Function(GoogleMapController googleController)? onMapCreated,
     TResult? Function(double lat, double long)? getCurrentLocation,
     TResult? Function()? typeSearchLocation,
+    TResult? Function(String address)? setAddressOnMap,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,6 +41,7 @@ mixin _$PredictedPriceEvent {
     TResult Function(GoogleMapController googleController)? onMapCreated,
     TResult Function(double lat, double long)? getCurrentLocation,
     TResult Function()? typeSearchLocation,
+    TResult Function(String address)? setAddressOnMap,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +54,8 @@ mixin _$PredictedPriceEvent {
         getCurrentLocation,
     required TResult Function(_PredictedPriceEventTypeSearchLocation value)
         typeSearchLocation,
+    required TResult Function(_PredictedPriceEventSetAddressOnMap value)
+        setAddressOnMap,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +66,8 @@ mixin _$PredictedPriceEvent {
         getCurrentLocation,
     TResult? Function(_PredictedPriceEventTypeSearchLocation value)?
         typeSearchLocation,
+    TResult? Function(_PredictedPriceEventSetAddressOnMap value)?
+        setAddressOnMap,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,6 +78,8 @@ mixin _$PredictedPriceEvent {
         getCurrentLocation,
     TResult Function(_PredictedPriceEventTypeSearchLocation value)?
         typeSearchLocation,
+    TResult Function(_PredictedPriceEventSetAddressOnMap value)?
+        setAddressOnMap,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -139,6 +148,7 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
         onMapCreated,
     required TResult Function(double lat, double long) getCurrentLocation,
     required TResult Function() typeSearchLocation,
+    required TResult Function(String address) setAddressOnMap,
   }) {
     return start();
   }
@@ -150,6 +160,7 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
     TResult? Function(GoogleMapController googleController)? onMapCreated,
     TResult? Function(double lat, double long)? getCurrentLocation,
     TResult? Function()? typeSearchLocation,
+    TResult? Function(String address)? setAddressOnMap,
   }) {
     return start?.call();
   }
@@ -161,6 +172,7 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
     TResult Function(GoogleMapController googleController)? onMapCreated,
     TResult Function(double lat, double long)? getCurrentLocation,
     TResult Function()? typeSearchLocation,
+    TResult Function(String address)? setAddressOnMap,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -179,6 +191,8 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
         getCurrentLocation,
     required TResult Function(_PredictedPriceEventTypeSearchLocation value)
         typeSearchLocation,
+    required TResult Function(_PredictedPriceEventSetAddressOnMap value)
+        setAddressOnMap,
   }) {
     return start(this);
   }
@@ -192,6 +206,8 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
         getCurrentLocation,
     TResult? Function(_PredictedPriceEventTypeSearchLocation value)?
         typeSearchLocation,
+    TResult? Function(_PredictedPriceEventSetAddressOnMap value)?
+        setAddressOnMap,
   }) {
     return start?.call(this);
   }
@@ -205,6 +221,8 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
         getCurrentLocation,
     TResult Function(_PredictedPriceEventTypeSearchLocation value)?
         typeSearchLocation,
+    TResult Function(_PredictedPriceEventSetAddressOnMap value)?
+        setAddressOnMap,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -294,6 +312,7 @@ class _$_PredictedPriceEventOnMapCreated
         onMapCreated,
     required TResult Function(double lat, double long) getCurrentLocation,
     required TResult Function() typeSearchLocation,
+    required TResult Function(String address) setAddressOnMap,
   }) {
     return onMapCreated(googleController);
   }
@@ -305,6 +324,7 @@ class _$_PredictedPriceEventOnMapCreated
     TResult? Function(GoogleMapController googleController)? onMapCreated,
     TResult? Function(double lat, double long)? getCurrentLocation,
     TResult? Function()? typeSearchLocation,
+    TResult? Function(String address)? setAddressOnMap,
   }) {
     return onMapCreated?.call(googleController);
   }
@@ -316,6 +336,7 @@ class _$_PredictedPriceEventOnMapCreated
     TResult Function(GoogleMapController googleController)? onMapCreated,
     TResult Function(double lat, double long)? getCurrentLocation,
     TResult Function()? typeSearchLocation,
+    TResult Function(String address)? setAddressOnMap,
     required TResult orElse(),
   }) {
     if (onMapCreated != null) {
@@ -334,6 +355,8 @@ class _$_PredictedPriceEventOnMapCreated
         getCurrentLocation,
     required TResult Function(_PredictedPriceEventTypeSearchLocation value)
         typeSearchLocation,
+    required TResult Function(_PredictedPriceEventSetAddressOnMap value)
+        setAddressOnMap,
   }) {
     return onMapCreated(this);
   }
@@ -347,6 +370,8 @@ class _$_PredictedPriceEventOnMapCreated
         getCurrentLocation,
     TResult? Function(_PredictedPriceEventTypeSearchLocation value)?
         typeSearchLocation,
+    TResult? Function(_PredictedPriceEventSetAddressOnMap value)?
+        setAddressOnMap,
   }) {
     return onMapCreated?.call(this);
   }
@@ -360,6 +385,8 @@ class _$_PredictedPriceEventOnMapCreated
         getCurrentLocation,
     TResult Function(_PredictedPriceEventTypeSearchLocation value)?
         typeSearchLocation,
+    TResult Function(_PredictedPriceEventSetAddressOnMap value)?
+        setAddressOnMap,
     required TResult orElse(),
   }) {
     if (onMapCreated != null) {
@@ -465,6 +492,7 @@ class _$_PredictedPriceEventGetCurrentLocation
         onMapCreated,
     required TResult Function(double lat, double long) getCurrentLocation,
     required TResult Function() typeSearchLocation,
+    required TResult Function(String address) setAddressOnMap,
   }) {
     return getCurrentLocation(lat, long);
   }
@@ -476,6 +504,7 @@ class _$_PredictedPriceEventGetCurrentLocation
     TResult? Function(GoogleMapController googleController)? onMapCreated,
     TResult? Function(double lat, double long)? getCurrentLocation,
     TResult? Function()? typeSearchLocation,
+    TResult? Function(String address)? setAddressOnMap,
   }) {
     return getCurrentLocation?.call(lat, long);
   }
@@ -487,6 +516,7 @@ class _$_PredictedPriceEventGetCurrentLocation
     TResult Function(GoogleMapController googleController)? onMapCreated,
     TResult Function(double lat, double long)? getCurrentLocation,
     TResult Function()? typeSearchLocation,
+    TResult Function(String address)? setAddressOnMap,
     required TResult orElse(),
   }) {
     if (getCurrentLocation != null) {
@@ -505,6 +535,8 @@ class _$_PredictedPriceEventGetCurrentLocation
         getCurrentLocation,
     required TResult Function(_PredictedPriceEventTypeSearchLocation value)
         typeSearchLocation,
+    required TResult Function(_PredictedPriceEventSetAddressOnMap value)
+        setAddressOnMap,
   }) {
     return getCurrentLocation(this);
   }
@@ -518,6 +550,8 @@ class _$_PredictedPriceEventGetCurrentLocation
         getCurrentLocation,
     TResult? Function(_PredictedPriceEventTypeSearchLocation value)?
         typeSearchLocation,
+    TResult? Function(_PredictedPriceEventSetAddressOnMap value)?
+        setAddressOnMap,
   }) {
     return getCurrentLocation?.call(this);
   }
@@ -531,6 +565,8 @@ class _$_PredictedPriceEventGetCurrentLocation
         getCurrentLocation,
     TResult Function(_PredictedPriceEventTypeSearchLocation value)?
         typeSearchLocation,
+    TResult Function(_PredictedPriceEventSetAddressOnMap value)?
+        setAddressOnMap,
     required TResult orElse(),
   }) {
     if (getCurrentLocation != null) {
@@ -602,6 +638,7 @@ class _$_PredictedPriceEventTypeSearchLocation
         onMapCreated,
     required TResult Function(double lat, double long) getCurrentLocation,
     required TResult Function() typeSearchLocation,
+    required TResult Function(String address) setAddressOnMap,
   }) {
     return typeSearchLocation();
   }
@@ -613,6 +650,7 @@ class _$_PredictedPriceEventTypeSearchLocation
     TResult? Function(GoogleMapController googleController)? onMapCreated,
     TResult? Function(double lat, double long)? getCurrentLocation,
     TResult? Function()? typeSearchLocation,
+    TResult? Function(String address)? setAddressOnMap,
   }) {
     return typeSearchLocation?.call();
   }
@@ -624,6 +662,7 @@ class _$_PredictedPriceEventTypeSearchLocation
     TResult Function(GoogleMapController googleController)? onMapCreated,
     TResult Function(double lat, double long)? getCurrentLocation,
     TResult Function()? typeSearchLocation,
+    TResult Function(String address)? setAddressOnMap,
     required TResult orElse(),
   }) {
     if (typeSearchLocation != null) {
@@ -642,6 +681,8 @@ class _$_PredictedPriceEventTypeSearchLocation
         getCurrentLocation,
     required TResult Function(_PredictedPriceEventTypeSearchLocation value)
         typeSearchLocation,
+    required TResult Function(_PredictedPriceEventSetAddressOnMap value)
+        setAddressOnMap,
   }) {
     return typeSearchLocation(this);
   }
@@ -655,6 +696,8 @@ class _$_PredictedPriceEventTypeSearchLocation
         getCurrentLocation,
     TResult? Function(_PredictedPriceEventTypeSearchLocation value)?
         typeSearchLocation,
+    TResult? Function(_PredictedPriceEventSetAddressOnMap value)?
+        setAddressOnMap,
   }) {
     return typeSearchLocation?.call(this);
   }
@@ -668,6 +711,8 @@ class _$_PredictedPriceEventTypeSearchLocation
         getCurrentLocation,
     TResult Function(_PredictedPriceEventTypeSearchLocation value)?
         typeSearchLocation,
+    TResult Function(_PredictedPriceEventSetAddressOnMap value)?
+        setAddressOnMap,
     required TResult orElse(),
   }) {
     if (typeSearchLocation != null) {
@@ -684,12 +729,184 @@ abstract class _PredictedPriceEventTypeSearchLocation
 }
 
 /// @nodoc
+abstract class _$$_PredictedPriceEventSetAddressOnMapCopyWith<$Res> {
+  factory _$$_PredictedPriceEventSetAddressOnMapCopyWith(
+          _$_PredictedPriceEventSetAddressOnMap value,
+          $Res Function(_$_PredictedPriceEventSetAddressOnMap) then) =
+      __$$_PredictedPriceEventSetAddressOnMapCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String address});
+}
+
+/// @nodoc
+class __$$_PredictedPriceEventSetAddressOnMapCopyWithImpl<$Res>
+    extends _$PredictedPriceEventCopyWithImpl<$Res,
+        _$_PredictedPriceEventSetAddressOnMap>
+    implements _$$_PredictedPriceEventSetAddressOnMapCopyWith<$Res> {
+  __$$_PredictedPriceEventSetAddressOnMapCopyWithImpl(
+      _$_PredictedPriceEventSetAddressOnMap _value,
+      $Res Function(_$_PredictedPriceEventSetAddressOnMap) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? address = null,
+  }) {
+    return _then(_$_PredictedPriceEventSetAddressOnMap(
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PredictedPriceEventSetAddressOnMap
+    implements _PredictedPriceEventSetAddressOnMap {
+  _$_PredictedPriceEventSetAddressOnMap({required this.address});
+
+  @override
+  final String address;
+
+  @override
+  String toString() {
+    return 'PredictedPriceEvent.setAddressOnMap(address: $address)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PredictedPriceEventSetAddressOnMap &&
+            (identical(other.address, address) || other.address == address));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, address);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PredictedPriceEventSetAddressOnMapCopyWith<
+          _$_PredictedPriceEventSetAddressOnMap>
+      get copyWith => __$$_PredictedPriceEventSetAddressOnMapCopyWithImpl<
+          _$_PredictedPriceEventSetAddressOnMap>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function(GoogleMapController googleController)
+        onMapCreated,
+    required TResult Function(double lat, double long) getCurrentLocation,
+    required TResult Function() typeSearchLocation,
+    required TResult Function(String address) setAddressOnMap,
+  }) {
+    return setAddressOnMap(address);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function(GoogleMapController googleController)? onMapCreated,
+    TResult? Function(double lat, double long)? getCurrentLocation,
+    TResult? Function()? typeSearchLocation,
+    TResult? Function(String address)? setAddressOnMap,
+  }) {
+    return setAddressOnMap?.call(address);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function(GoogleMapController googleController)? onMapCreated,
+    TResult Function(double lat, double long)? getCurrentLocation,
+    TResult Function()? typeSearchLocation,
+    TResult Function(String address)? setAddressOnMap,
+    required TResult orElse(),
+  }) {
+    if (setAddressOnMap != null) {
+      return setAddressOnMap(address);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PredictedPriceEventStart value) start,
+    required TResult Function(_PredictedPriceEventOnMapCreated value)
+        onMapCreated,
+    required TResult Function(_PredictedPriceEventGetCurrentLocation value)
+        getCurrentLocation,
+    required TResult Function(_PredictedPriceEventTypeSearchLocation value)
+        typeSearchLocation,
+    required TResult Function(_PredictedPriceEventSetAddressOnMap value)
+        setAddressOnMap,
+  }) {
+    return setAddressOnMap(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PredictedPriceEventStart value)? start,
+    TResult? Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
+    TResult? Function(_PredictedPriceEventGetCurrentLocation value)?
+        getCurrentLocation,
+    TResult? Function(_PredictedPriceEventTypeSearchLocation value)?
+        typeSearchLocation,
+    TResult? Function(_PredictedPriceEventSetAddressOnMap value)?
+        setAddressOnMap,
+  }) {
+    return setAddressOnMap?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PredictedPriceEventStart value)? start,
+    TResult Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
+    TResult Function(_PredictedPriceEventGetCurrentLocation value)?
+        getCurrentLocation,
+    TResult Function(_PredictedPriceEventTypeSearchLocation value)?
+        typeSearchLocation,
+    TResult Function(_PredictedPriceEventSetAddressOnMap value)?
+        setAddressOnMap,
+    required TResult orElse(),
+  }) {
+    if (setAddressOnMap != null) {
+      return setAddressOnMap(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PredictedPriceEventSetAddressOnMap
+    implements PredictedPriceEvent {
+  factory _PredictedPriceEventSetAddressOnMap({required final String address}) =
+      _$_PredictedPriceEventSetAddressOnMap;
+
+  String get address;
+  @JsonKey(ignore: true)
+  _$$_PredictedPriceEventSetAddressOnMapCopyWith<
+          _$_PredictedPriceEventSetAddressOnMap>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$PredictedPriceState {
   bool get isLoading => throw _privateConstructorUsedError;
   LatLng get latLng => throw _privateConstructorUsedError;
   FormGroup? get formGroup => throw _privateConstructorUsedError;
   Completer<GoogleMapController>? get googleController =>
       throw _privateConstructorUsedError;
+  Predictions? get addressPredictions => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PredictedPriceStateCopyWith<PredictedPriceState> get copyWith =>
@@ -706,7 +923,10 @@ abstract class $PredictedPriceStateCopyWith<$Res> {
       {bool isLoading,
       LatLng latLng,
       FormGroup? formGroup,
-      Completer<GoogleMapController>? googleController});
+      Completer<GoogleMapController>? googleController,
+      Predictions? addressPredictions});
+
+  $PredictionsCopyWith<$Res>? get addressPredictions;
 }
 
 /// @nodoc
@@ -726,6 +946,7 @@ class _$PredictedPriceStateCopyWithImpl<$Res, $Val extends PredictedPriceState>
     Object? latLng = null,
     Object? formGroup = freezed,
     Object? googleController = freezed,
+    Object? addressPredictions = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -744,7 +965,23 @@ class _$PredictedPriceStateCopyWithImpl<$Res, $Val extends PredictedPriceState>
           ? _value.googleController
           : googleController // ignore: cast_nullable_to_non_nullable
               as Completer<GoogleMapController>?,
+      addressPredictions: freezed == addressPredictions
+          ? _value.addressPredictions
+          : addressPredictions // ignore: cast_nullable_to_non_nullable
+              as Predictions?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PredictionsCopyWith<$Res>? get addressPredictions {
+    if (_value.addressPredictions == null) {
+      return null;
+    }
+
+    return $PredictionsCopyWith<$Res>(_value.addressPredictions!, (value) {
+      return _then(_value.copyWith(addressPredictions: value) as $Val);
+    });
   }
 }
 
@@ -760,7 +997,11 @@ abstract class _$$_PredictedPriceStateCopyWith<$Res>
       {bool isLoading,
       LatLng latLng,
       FormGroup? formGroup,
-      Completer<GoogleMapController>? googleController});
+      Completer<GoogleMapController>? googleController,
+      Predictions? addressPredictions});
+
+  @override
+  $PredictionsCopyWith<$Res>? get addressPredictions;
 }
 
 /// @nodoc
@@ -778,6 +1019,7 @@ class __$$_PredictedPriceStateCopyWithImpl<$Res>
     Object? latLng = null,
     Object? formGroup = freezed,
     Object? googleController = freezed,
+    Object? addressPredictions = freezed,
   }) {
     return _then(_$_PredictedPriceState(
       isLoading: null == isLoading
@@ -796,6 +1038,10 @@ class __$$_PredictedPriceStateCopyWithImpl<$Res>
           ? _value.googleController
           : googleController // ignore: cast_nullable_to_non_nullable
               as Completer<GoogleMapController>?,
+      addressPredictions: freezed == addressPredictions
+          ? _value.addressPredictions
+          : addressPredictions // ignore: cast_nullable_to_non_nullable
+              as Predictions?,
     ));
   }
 }
@@ -807,7 +1053,8 @@ class _$_PredictedPriceState implements _PredictedPriceState {
       {required this.isLoading,
       required this.latLng,
       this.formGroup,
-      this.googleController});
+      this.googleController,
+      this.addressPredictions});
 
   @override
   final bool isLoading;
@@ -817,10 +1064,12 @@ class _$_PredictedPriceState implements _PredictedPriceState {
   final FormGroup? formGroup;
   @override
   final Completer<GoogleMapController>? googleController;
+  @override
+  final Predictions? addressPredictions;
 
   @override
   String toString() {
-    return 'PredictedPriceState(isLoading: $isLoading, latLng: $latLng, formGroup: $formGroup, googleController: $googleController)';
+    return 'PredictedPriceState(isLoading: $isLoading, latLng: $latLng, formGroup: $formGroup, googleController: $googleController, addressPredictions: $addressPredictions)';
   }
 
   @override
@@ -834,12 +1083,14 @@ class _$_PredictedPriceState implements _PredictedPriceState {
             (identical(other.formGroup, formGroup) ||
                 other.formGroup == formGroup) &&
             (identical(other.googleController, googleController) ||
-                other.googleController == googleController));
+                other.googleController == googleController) &&
+            (identical(other.addressPredictions, addressPredictions) ||
+                other.addressPredictions == addressPredictions));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, isLoading, latLng, formGroup, googleController);
+  int get hashCode => Object.hash(runtimeType, isLoading, latLng, formGroup,
+      googleController, addressPredictions);
 
   @JsonKey(ignore: true)
   @override
@@ -851,11 +1102,11 @@ class _$_PredictedPriceState implements _PredictedPriceState {
 
 abstract class _PredictedPriceState implements PredictedPriceState {
   factory _PredictedPriceState(
-          {required final bool isLoading,
-          required final LatLng latLng,
-          final FormGroup? formGroup,
-          final Completer<GoogleMapController>? googleController}) =
-      _$_PredictedPriceState;
+      {required final bool isLoading,
+      required final LatLng latLng,
+      final FormGroup? formGroup,
+      final Completer<GoogleMapController>? googleController,
+      final Predictions? addressPredictions}) = _$_PredictedPriceState;
 
   @override
   bool get isLoading;
@@ -865,6 +1116,8 @@ abstract class _PredictedPriceState implements PredictedPriceState {
   FormGroup? get formGroup;
   @override
   Completer<GoogleMapController>? get googleController;
+  @override
+  Predictions? get addressPredictions;
   @override
   @JsonKey(ignore: true)
   _$$_PredictedPriceStateCopyWith<_$_PredictedPriceState> get copyWith =>

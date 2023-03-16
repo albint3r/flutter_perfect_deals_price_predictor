@@ -1,13 +1,18 @@
-import 'package:flutter/cupertino.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:reactive_forms/reactive_forms.dart';
-import 'package:google_maps_webservice/src/places.dart';
+
+import 'predictions.dart';
 
 abstract class IPredictedPriceFacade {
   FormGroup get form;
 
   Future<void> init();
 
-  Future<void> searchLocation();
+  Future<Predictions> searchLocation();
 
   Future<void> predict();
+
+  Future<List<Location>> setLatLong({
+    required String address,
+  });
 }
