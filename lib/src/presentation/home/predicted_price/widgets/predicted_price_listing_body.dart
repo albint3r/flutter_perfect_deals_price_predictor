@@ -27,8 +27,6 @@ class PredictedPriceListingBody extends StatelessWidget {
 
   Future<void> _setCameraToCurrentLocation({
     required PredictedPriceState state,
-    required double lat,
-    required double long,
   }) async {
     final bool serviceEnable = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnable) {}
@@ -39,7 +37,7 @@ class PredictedPriceListingBody extends StatelessWidget {
       CameraUpdate.newCameraPosition(
         CameraPosition(
           bearing: 192.8334901395799,
-          target: LatLng(lat, long),
+          target: state.latLng,
           tilt: 59.440717697143555,
           zoom: 19.151926040649414,
         ),
@@ -63,8 +61,9 @@ class PredictedPriceListingBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<PredictedPriceBloc, PredictedPriceState>(
       listener: (context, state) {
-        // TODO: implement listener
+        _setCameraToCurrentLocation(state: state);
       },
+      listenWhen: (previous, current) => previous.latLng != current.latLng,
       builder: (context, state) {
         if (state.isLoading || state.formGroup == null) {
           return const Center(
@@ -96,18 +95,6 @@ class PredictedPriceListingBody extends StatelessWidget {
                   const RoomsField(),
                   const BathsField(),
                   const CarsField(),
-                  // Center(
-                  //   child: ElevatedButton(
-                  //       onPressed: () async {
-                  //         final currentLocation = await _getCurrentLocation();
-                  //         _setCameraToCurrentLocation(
-                  //           state: state,
-                  //           lat: currentLocation.latitude,
-                  //           long: currentLocation.longitude,
-                  //         );
-                  //       },
-                  //       child: const Text('Add lat long')),
-                  // ),
                   ReactiveFormConsumer(
                     builder: (context, formGroup, child) {
                       return Center(

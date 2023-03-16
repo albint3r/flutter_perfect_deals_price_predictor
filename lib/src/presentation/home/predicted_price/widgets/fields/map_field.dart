@@ -20,18 +20,29 @@ class MapField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = context.watch<PredictedPriceBloc>();
+    final state = bloc.state;
     return GoogleMap(
       myLocationEnabled: true,
+      zoomControlsEnabled: true,
+      scrollGesturesEnabled: true,
       onMapCreated: (controller) {
         _addGoogleControllerToBloc(controller: controller, context: context);
       },
-      initialCameraPosition: const CameraPosition(
+      initialCameraPosition: CameraPosition(
         zoom: 11,
-        target: LatLng(
-          20.500,
-          -103.44994,
-        ),
+        target: state.latLng,
       ),
+      markers: {
+        Marker(
+          markerId: const MarkerId('listingLocation'),
+          position: state.latLng,
+          draggable: true,
+          onDragEnd: (value) {
+            // TODO ADD UPDATE LAT AND LONG IN FORM CONTROL
+          },
+        )
+      },
     );
   }
 }

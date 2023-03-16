@@ -84,6 +84,10 @@ class PredictedPriceBloc
         emit(
           state.copyWith(
             addressPredictions: null,
+            latLng: LatLng(
+              locations.latitude,
+              locations.longitude,
+            ),
           ),
         );
       },

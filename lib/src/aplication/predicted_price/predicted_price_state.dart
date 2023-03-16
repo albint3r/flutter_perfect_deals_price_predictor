@@ -13,8 +13,8 @@ class PredictedPriceState with _$PredictedPriceState {
   factory PredictedPriceState.initialize() => PredictedPriceState(
         isLoading: false,
         latLng: const LatLng(
-          0,
-          0,
+          20.500,
+          -103.44994,
         ),
       );
 }
