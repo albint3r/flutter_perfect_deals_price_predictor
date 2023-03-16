@@ -19,4 +19,7 @@ class PredictedPriceEvent with _$PredictedPriceEvent {
   factory PredictedPriceEvent.setAddressOnMap({
     required String address,
   }) = _PredictedPriceEventSetAddressOnMap;
+
+  factory PredictedPriceEvent.onSubmitPrediction() =
+      _PredictedPriceEventOnSubmitPrediction;
 }

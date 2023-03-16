@@ -31,14 +31,6 @@ class PredictedPriceFacadeImpl implements IPredictedPriceFacade {
   @override
   Future<void> predict() async {
     // TODO: implement predict
-    // print('Valores de lat y long');
-    // print(form.control('lat').value);
-    // print(form.control('long').value);
-    // form.control('lat').value = 20.5455;
-    // form.control('long').value = -103.554;
-    // print('Valores previos');
-    // print(form.control('lat').value);
-    // print(form.control('long').value);
   }
 
   @override
@@ -50,11 +42,15 @@ class PredictedPriceFacadeImpl implements IPredictedPriceFacade {
   }
 
   @override
-  Future<List<Location>> setLatLong({required String address,}) async {
+  Future<Location> setLatLong({
+    required String address,
+  }) async {
     final locations = await locationFromAddress(
       address,
     );
-    print('locations->$locations');
-    return locations;
+    final location = locations[0];
+    form.control('lat').value = location.latitude;
+    form.control('long').value = location.longitude;
+    return locations[0];
   }
 }

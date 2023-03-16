@@ -24,6 +24,7 @@ mixin _$PredictedPriceEvent {
     required TResult Function(double lat, double long) getCurrentLocation,
     required TResult Function() typeSearchLocation,
     required TResult Function(String address) setAddressOnMap,
+    required TResult Function() onSubmitPrediction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,6 +34,7 @@ mixin _$PredictedPriceEvent {
     TResult? Function(double lat, double long)? getCurrentLocation,
     TResult? Function()? typeSearchLocation,
     TResult? Function(String address)? setAddressOnMap,
+    TResult? Function()? onSubmitPrediction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +44,7 @@ mixin _$PredictedPriceEvent {
     TResult Function(double lat, double long)? getCurrentLocation,
     TResult Function()? typeSearchLocation,
     TResult Function(String address)? setAddressOnMap,
+    TResult Function()? onSubmitPrediction,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +59,8 @@ mixin _$PredictedPriceEvent {
         typeSearchLocation,
     required TResult Function(_PredictedPriceEventSetAddressOnMap value)
         setAddressOnMap,
+    required TResult Function(_PredictedPriceEventOnSubmitPrediction value)
+        onSubmitPrediction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -68,6 +73,8 @@ mixin _$PredictedPriceEvent {
         typeSearchLocation,
     TResult? Function(_PredictedPriceEventSetAddressOnMap value)?
         setAddressOnMap,
+    TResult? Function(_PredictedPriceEventOnSubmitPrediction value)?
+        onSubmitPrediction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,6 +87,8 @@ mixin _$PredictedPriceEvent {
         typeSearchLocation,
     TResult Function(_PredictedPriceEventSetAddressOnMap value)?
         setAddressOnMap,
+    TResult Function(_PredictedPriceEventOnSubmitPrediction value)?
+        onSubmitPrediction,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -149,6 +158,7 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
     required TResult Function(double lat, double long) getCurrentLocation,
     required TResult Function() typeSearchLocation,
     required TResult Function(String address) setAddressOnMap,
+    required TResult Function() onSubmitPrediction,
   }) {
     return start();
   }
@@ -161,6 +171,7 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
     TResult? Function(double lat, double long)? getCurrentLocation,
     TResult? Function()? typeSearchLocation,
     TResult? Function(String address)? setAddressOnMap,
+    TResult? Function()? onSubmitPrediction,
   }) {
     return start?.call();
   }
@@ -173,6 +184,7 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
     TResult Function(double lat, double long)? getCurrentLocation,
     TResult Function()? typeSearchLocation,
     TResult Function(String address)? setAddressOnMap,
+    TResult Function()? onSubmitPrediction,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -193,6 +205,8 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
         typeSearchLocation,
     required TResult Function(_PredictedPriceEventSetAddressOnMap value)
         setAddressOnMap,
+    required TResult Function(_PredictedPriceEventOnSubmitPrediction value)
+        onSubmitPrediction,
   }) {
     return start(this);
   }
@@ -208,6 +222,8 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
         typeSearchLocation,
     TResult? Function(_PredictedPriceEventSetAddressOnMap value)?
         setAddressOnMap,
+    TResult? Function(_PredictedPriceEventOnSubmitPrediction value)?
+        onSubmitPrediction,
   }) {
     return start?.call(this);
   }
@@ -223,6 +239,8 @@ class _$_PredictedPriceEventStart implements _PredictedPriceEventStart {
         typeSearchLocation,
     TResult Function(_PredictedPriceEventSetAddressOnMap value)?
         setAddressOnMap,
+    TResult Function(_PredictedPriceEventOnSubmitPrediction value)?
+        onSubmitPrediction,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -313,6 +331,7 @@ class _$_PredictedPriceEventOnMapCreated
     required TResult Function(double lat, double long) getCurrentLocation,
     required TResult Function() typeSearchLocation,
     required TResult Function(String address) setAddressOnMap,
+    required TResult Function() onSubmitPrediction,
   }) {
     return onMapCreated(googleController);
   }
@@ -325,6 +344,7 @@ class _$_PredictedPriceEventOnMapCreated
     TResult? Function(double lat, double long)? getCurrentLocation,
     TResult? Function()? typeSearchLocation,
     TResult? Function(String address)? setAddressOnMap,
+    TResult? Function()? onSubmitPrediction,
   }) {
     return onMapCreated?.call(googleController);
   }
@@ -337,6 +357,7 @@ class _$_PredictedPriceEventOnMapCreated
     TResult Function(double lat, double long)? getCurrentLocation,
     TResult Function()? typeSearchLocation,
     TResult Function(String address)? setAddressOnMap,
+    TResult Function()? onSubmitPrediction,
     required TResult orElse(),
   }) {
     if (onMapCreated != null) {
@@ -357,6 +378,8 @@ class _$_PredictedPriceEventOnMapCreated
         typeSearchLocation,
     required TResult Function(_PredictedPriceEventSetAddressOnMap value)
         setAddressOnMap,
+    required TResult Function(_PredictedPriceEventOnSubmitPrediction value)
+        onSubmitPrediction,
   }) {
     return onMapCreated(this);
   }
@@ -372,6 +395,8 @@ class _$_PredictedPriceEventOnMapCreated
         typeSearchLocation,
     TResult? Function(_PredictedPriceEventSetAddressOnMap value)?
         setAddressOnMap,
+    TResult? Function(_PredictedPriceEventOnSubmitPrediction value)?
+        onSubmitPrediction,
   }) {
     return onMapCreated?.call(this);
   }
@@ -387,6 +412,8 @@ class _$_PredictedPriceEventOnMapCreated
         typeSearchLocation,
     TResult Function(_PredictedPriceEventSetAddressOnMap value)?
         setAddressOnMap,
+    TResult Function(_PredictedPriceEventOnSubmitPrediction value)?
+        onSubmitPrediction,
     required TResult orElse(),
   }) {
     if (onMapCreated != null) {
@@ -493,6 +520,7 @@ class _$_PredictedPriceEventGetCurrentLocation
     required TResult Function(double lat, double long) getCurrentLocation,
     required TResult Function() typeSearchLocation,
     required TResult Function(String address) setAddressOnMap,
+    required TResult Function() onSubmitPrediction,
   }) {
     return getCurrentLocation(lat, long);
   }
@@ -505,6 +533,7 @@ class _$_PredictedPriceEventGetCurrentLocation
     TResult? Function(double lat, double long)? getCurrentLocation,
     TResult? Function()? typeSearchLocation,
     TResult? Function(String address)? setAddressOnMap,
+    TResult? Function()? onSubmitPrediction,
   }) {
     return getCurrentLocation?.call(lat, long);
   }
@@ -517,6 +546,7 @@ class _$_PredictedPriceEventGetCurrentLocation
     TResult Function(double lat, double long)? getCurrentLocation,
     TResult Function()? typeSearchLocation,
     TResult Function(String address)? setAddressOnMap,
+    TResult Function()? onSubmitPrediction,
     required TResult orElse(),
   }) {
     if (getCurrentLocation != null) {
@@ -537,6 +567,8 @@ class _$_PredictedPriceEventGetCurrentLocation
         typeSearchLocation,
     required TResult Function(_PredictedPriceEventSetAddressOnMap value)
         setAddressOnMap,
+    required TResult Function(_PredictedPriceEventOnSubmitPrediction value)
+        onSubmitPrediction,
   }) {
     return getCurrentLocation(this);
   }
@@ -552,6 +584,8 @@ class _$_PredictedPriceEventGetCurrentLocation
         typeSearchLocation,
     TResult? Function(_PredictedPriceEventSetAddressOnMap value)?
         setAddressOnMap,
+    TResult? Function(_PredictedPriceEventOnSubmitPrediction value)?
+        onSubmitPrediction,
   }) {
     return getCurrentLocation?.call(this);
   }
@@ -567,6 +601,8 @@ class _$_PredictedPriceEventGetCurrentLocation
         typeSearchLocation,
     TResult Function(_PredictedPriceEventSetAddressOnMap value)?
         setAddressOnMap,
+    TResult Function(_PredictedPriceEventOnSubmitPrediction value)?
+        onSubmitPrediction,
     required TResult orElse(),
   }) {
     if (getCurrentLocation != null) {
@@ -639,6 +675,7 @@ class _$_PredictedPriceEventTypeSearchLocation
     required TResult Function(double lat, double long) getCurrentLocation,
     required TResult Function() typeSearchLocation,
     required TResult Function(String address) setAddressOnMap,
+    required TResult Function() onSubmitPrediction,
   }) {
     return typeSearchLocation();
   }
@@ -651,6 +688,7 @@ class _$_PredictedPriceEventTypeSearchLocation
     TResult? Function(double lat, double long)? getCurrentLocation,
     TResult? Function()? typeSearchLocation,
     TResult? Function(String address)? setAddressOnMap,
+    TResult? Function()? onSubmitPrediction,
   }) {
     return typeSearchLocation?.call();
   }
@@ -663,6 +701,7 @@ class _$_PredictedPriceEventTypeSearchLocation
     TResult Function(double lat, double long)? getCurrentLocation,
     TResult Function()? typeSearchLocation,
     TResult Function(String address)? setAddressOnMap,
+    TResult Function()? onSubmitPrediction,
     required TResult orElse(),
   }) {
     if (typeSearchLocation != null) {
@@ -683,6 +722,8 @@ class _$_PredictedPriceEventTypeSearchLocation
         typeSearchLocation,
     required TResult Function(_PredictedPriceEventSetAddressOnMap value)
         setAddressOnMap,
+    required TResult Function(_PredictedPriceEventOnSubmitPrediction value)
+        onSubmitPrediction,
   }) {
     return typeSearchLocation(this);
   }
@@ -698,6 +739,8 @@ class _$_PredictedPriceEventTypeSearchLocation
         typeSearchLocation,
     TResult? Function(_PredictedPriceEventSetAddressOnMap value)?
         setAddressOnMap,
+    TResult? Function(_PredictedPriceEventOnSubmitPrediction value)?
+        onSubmitPrediction,
   }) {
     return typeSearchLocation?.call(this);
   }
@@ -713,6 +756,8 @@ class _$_PredictedPriceEventTypeSearchLocation
         typeSearchLocation,
     TResult Function(_PredictedPriceEventSetAddressOnMap value)?
         setAddressOnMap,
+    TResult Function(_PredictedPriceEventOnSubmitPrediction value)?
+        onSubmitPrediction,
     required TResult orElse(),
   }) {
     if (typeSearchLocation != null) {
@@ -804,6 +849,7 @@ class _$_PredictedPriceEventSetAddressOnMap
     required TResult Function(double lat, double long) getCurrentLocation,
     required TResult Function() typeSearchLocation,
     required TResult Function(String address) setAddressOnMap,
+    required TResult Function() onSubmitPrediction,
   }) {
     return setAddressOnMap(address);
   }
@@ -816,6 +862,7 @@ class _$_PredictedPriceEventSetAddressOnMap
     TResult? Function(double lat, double long)? getCurrentLocation,
     TResult? Function()? typeSearchLocation,
     TResult? Function(String address)? setAddressOnMap,
+    TResult? Function()? onSubmitPrediction,
   }) {
     return setAddressOnMap?.call(address);
   }
@@ -828,6 +875,7 @@ class _$_PredictedPriceEventSetAddressOnMap
     TResult Function(double lat, double long)? getCurrentLocation,
     TResult Function()? typeSearchLocation,
     TResult Function(String address)? setAddressOnMap,
+    TResult Function()? onSubmitPrediction,
     required TResult orElse(),
   }) {
     if (setAddressOnMap != null) {
@@ -848,6 +896,8 @@ class _$_PredictedPriceEventSetAddressOnMap
         typeSearchLocation,
     required TResult Function(_PredictedPriceEventSetAddressOnMap value)
         setAddressOnMap,
+    required TResult Function(_PredictedPriceEventOnSubmitPrediction value)
+        onSubmitPrediction,
   }) {
     return setAddressOnMap(this);
   }
@@ -863,6 +913,8 @@ class _$_PredictedPriceEventSetAddressOnMap
         typeSearchLocation,
     TResult? Function(_PredictedPriceEventSetAddressOnMap value)?
         setAddressOnMap,
+    TResult? Function(_PredictedPriceEventOnSubmitPrediction value)?
+        onSubmitPrediction,
   }) {
     return setAddressOnMap?.call(this);
   }
@@ -878,6 +930,8 @@ class _$_PredictedPriceEventSetAddressOnMap
         typeSearchLocation,
     TResult Function(_PredictedPriceEventSetAddressOnMap value)?
         setAddressOnMap,
+    TResult Function(_PredictedPriceEventOnSubmitPrediction value)?
+        onSubmitPrediction,
     required TResult orElse(),
   }) {
     if (setAddressOnMap != null) {
@@ -897,6 +951,153 @@ abstract class _PredictedPriceEventSetAddressOnMap
   _$$_PredictedPriceEventSetAddressOnMapCopyWith<
           _$_PredictedPriceEventSetAddressOnMap>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_PredictedPriceEventOnSubmitPredictionCopyWith<$Res> {
+  factory _$$_PredictedPriceEventOnSubmitPredictionCopyWith(
+          _$_PredictedPriceEventOnSubmitPrediction value,
+          $Res Function(_$_PredictedPriceEventOnSubmitPrediction) then) =
+      __$$_PredictedPriceEventOnSubmitPredictionCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_PredictedPriceEventOnSubmitPredictionCopyWithImpl<$Res>
+    extends _$PredictedPriceEventCopyWithImpl<$Res,
+        _$_PredictedPriceEventOnSubmitPrediction>
+    implements _$$_PredictedPriceEventOnSubmitPredictionCopyWith<$Res> {
+  __$$_PredictedPriceEventOnSubmitPredictionCopyWithImpl(
+      _$_PredictedPriceEventOnSubmitPrediction _value,
+      $Res Function(_$_PredictedPriceEventOnSubmitPrediction) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_PredictedPriceEventOnSubmitPrediction
+    implements _PredictedPriceEventOnSubmitPrediction {
+  _$_PredictedPriceEventOnSubmitPrediction();
+
+  @override
+  String toString() {
+    return 'PredictedPriceEvent.onSubmitPrediction()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PredictedPriceEventOnSubmitPrediction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function(GoogleMapController googleController)
+        onMapCreated,
+    required TResult Function(double lat, double long) getCurrentLocation,
+    required TResult Function() typeSearchLocation,
+    required TResult Function(String address) setAddressOnMap,
+    required TResult Function() onSubmitPrediction,
+  }) {
+    return onSubmitPrediction();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function(GoogleMapController googleController)? onMapCreated,
+    TResult? Function(double lat, double long)? getCurrentLocation,
+    TResult? Function()? typeSearchLocation,
+    TResult? Function(String address)? setAddressOnMap,
+    TResult? Function()? onSubmitPrediction,
+  }) {
+    return onSubmitPrediction?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function(GoogleMapController googleController)? onMapCreated,
+    TResult Function(double lat, double long)? getCurrentLocation,
+    TResult Function()? typeSearchLocation,
+    TResult Function(String address)? setAddressOnMap,
+    TResult Function()? onSubmitPrediction,
+    required TResult orElse(),
+  }) {
+    if (onSubmitPrediction != null) {
+      return onSubmitPrediction();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PredictedPriceEventStart value) start,
+    required TResult Function(_PredictedPriceEventOnMapCreated value)
+        onMapCreated,
+    required TResult Function(_PredictedPriceEventGetCurrentLocation value)
+        getCurrentLocation,
+    required TResult Function(_PredictedPriceEventTypeSearchLocation value)
+        typeSearchLocation,
+    required TResult Function(_PredictedPriceEventSetAddressOnMap value)
+        setAddressOnMap,
+    required TResult Function(_PredictedPriceEventOnSubmitPrediction value)
+        onSubmitPrediction,
+  }) {
+    return onSubmitPrediction(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PredictedPriceEventStart value)? start,
+    TResult? Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
+    TResult? Function(_PredictedPriceEventGetCurrentLocation value)?
+        getCurrentLocation,
+    TResult? Function(_PredictedPriceEventTypeSearchLocation value)?
+        typeSearchLocation,
+    TResult? Function(_PredictedPriceEventSetAddressOnMap value)?
+        setAddressOnMap,
+    TResult? Function(_PredictedPriceEventOnSubmitPrediction value)?
+        onSubmitPrediction,
+  }) {
+    return onSubmitPrediction?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PredictedPriceEventStart value)? start,
+    TResult Function(_PredictedPriceEventOnMapCreated value)? onMapCreated,
+    TResult Function(_PredictedPriceEventGetCurrentLocation value)?
+        getCurrentLocation,
+    TResult Function(_PredictedPriceEventTypeSearchLocation value)?
+        typeSearchLocation,
+    TResult Function(_PredictedPriceEventSetAddressOnMap value)?
+        setAddressOnMap,
+    TResult Function(_PredictedPriceEventOnSubmitPrediction value)?
+        onSubmitPrediction,
+    required TResult orElse(),
+  }) {
+    if (onSubmitPrediction != null) {
+      return onSubmitPrediction(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PredictedPriceEventOnSubmitPrediction
+    implements PredictedPriceEvent {
+  factory _PredictedPriceEventOnSubmitPrediction() =
+      _$_PredictedPriceEventOnSubmitPrediction;
 }
 
 /// @nodoc

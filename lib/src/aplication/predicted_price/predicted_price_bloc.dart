@@ -77,6 +77,7 @@ class PredictedPriceBloc
       (event, emit) async {
         print('_PredictedPriceEventSetAddressOnMap----------------------');
         print('event-> $event');
+        // TODO ADD LAT AND LONG TO GOOGLE MARKER
         final locations = await facade.setLatLong(
           address: event.address,
         );
@@ -85,6 +86,12 @@ class PredictedPriceBloc
             addressPredictions: null,
           ),
         );
+      },
+    );
+    on<_PredictedPriceEventOnSubmitPrediction>(
+      (event, emit) {
+        // TODO SEND PREDICTION TO FAST API
+        print(state.formGroup?.rawValue);
       },
     );
   }

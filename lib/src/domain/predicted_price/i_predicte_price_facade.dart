@@ -12,7 +12,7 @@ abstract class IPredictedPriceFacade {
 
   Future<void> predict();
 
-  Future<List<Location>> setLatLong({
+  Future<Location> setLatLong({
     required String address,
   });
 }

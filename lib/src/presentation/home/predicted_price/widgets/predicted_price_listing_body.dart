@@ -19,8 +19,10 @@ import 'fields/rooms_field.dart';
 class PredictedPriceListingBody extends StatelessWidget {
   const PredictedPriceListingBody({super.key});
 
-  void _onSubmit(BuildContext context) {
-    // TODO HAD SOME LOGIC HERE
+  void _onSubmitPrediction(BuildContext context) {
+    context.read<PredictedPriceBloc>().add(
+          PredictedPriceEvent.onSubmitPrediction(),
+        );
   }
 
   Future<void> _setCameraToCurrentLocation({
@@ -54,7 +56,7 @@ class PredictedPriceListingBody extends StatelessWidget {
     if (permission == LocationPermission.deniedForever) {
       return Future.error('Location permission are permanently denied');
     }
-    return await Geolocator.getCurrentPosition();
+    return Geolocator.getCurrentPosition();
   }
 
   @override
@@ -112,7 +114,7 @@ class PredictedPriceListingBody extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: state.formGroup!.valid
                               ? () {
-                                  _onSubmit(context);
+                                  _onSubmitPrediction(context);
                                 }
                               : null,
                           child: Text(
