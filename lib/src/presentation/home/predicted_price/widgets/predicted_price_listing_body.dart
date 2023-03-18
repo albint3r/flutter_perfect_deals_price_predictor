@@ -14,6 +14,7 @@ import 'fields/google_maps_stack_container.dart';
 
 import 'fields/m2_const_field.dart';
 import 'fields/m2_land_field.dart';
+import 'fields/model_name_field.dart';
 import 'fields/rooms_field.dart';
 
 class PredictedPriceListingBody extends StatelessWidget {
@@ -79,6 +80,7 @@ class PredictedPriceListingBody extends StatelessWidget {
                 children: [
                   const GoogleMapsStackContainer(),
                   const Gap(15),
+                  const ModelNameField(),
                   SizedBox(
                     width: 500,
                     child: Row(

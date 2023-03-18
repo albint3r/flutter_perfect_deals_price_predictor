@@ -6,7 +6,8 @@ import '../../infrastructure/predicted_price/i_predicted_price_form.dart';
 @Injectable(as: IPredictedPriceForm)
 class PredictedPriceFormImpl implements IPredictedPriceForm {
   final FormGroup _form = FormGroup(
-    {
+    {  // model_name must stay with this name at the moment to avoid errors with the external api naming and renaming with the Reactive Forms
+      'model_name': FormControl<String>(validators: [Validators.required]),
       'address': FormControl<String>(),
       'm2_land': FormControl<double>(
         validators: [

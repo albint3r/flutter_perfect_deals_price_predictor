@@ -5,7 +5,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:injectable/injectable.dart';
 import 'package:reactive_forms/reactive_forms.dart';
-import 'package:geocoding/geocoding.dart';
 
 import '../../domain/predicted_price/i_predicte_price_facade.dart';
 import '../../domain/predicted_price/predictions.dart';
@@ -26,7 +25,7 @@ class PredictedPriceBloc
         //
         emit(state.copyWith(
           isLoading: true,
-        ));
+        ),);
         await facade.init();
         emit(
           state.copyWith(
@@ -93,8 +92,10 @@ class PredictedPriceBloc
       },
     );
     on<_PredictedPriceEventOnSubmitPrediction>(
-      (event, emit) {
-        facade.predict();
+      (event, emit) async {
+        final listingPredicted = await facade.predict();
+        // TODO SAVE RESULT OF THE PREDICTION.
+        print('listingPredicted-> $listingPredicted');
       },
     );
   }

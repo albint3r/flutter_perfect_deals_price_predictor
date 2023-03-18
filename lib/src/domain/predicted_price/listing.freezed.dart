@@ -21,19 +21,20 @@ Listing _$ListingFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Listing {
   @JsonKey(name: 'm2_land')
-  double get m2Land => throw _privateConstructorUsedError;
+  num? get m2Land => throw _privateConstructorUsedError;
   @JsonKey(name: 'm2_const')
-  double get m2Const => throw _privateConstructorUsedError;
+  num get m2Const => throw _privateConstructorUsedError;
   @JsonKey(name: 'price_const')
   double? get priceConst => throw _privateConstructorUsedError;
   @JsonKey(name: 'price_land')
   double? get priceLand => throw _privateConstructorUsedError;
-  double get rooms => throw _privateConstructorUsedError;
-  double get baths => throw _privateConstructorUsedError;
-  double get cars => throw _privateConstructorUsedError;
+  int get rooms => throw _privateConstructorUsedError;
+  int get baths => throw _privateConstructorUsedError;
+  int get cars => throw _privateConstructorUsedError;
   double get lat => throw _privateConstructorUsedError;
   double get long => throw _privateConstructorUsedError;
   double? get price => throw _privateConstructorUsedError;
+  @JsonKey(name: 'model_name')
   String? get modelName => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -47,17 +48,17 @@ abstract class $ListingCopyWith<$Res> {
       _$ListingCopyWithImpl<$Res, Listing>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'm2_land') double m2Land,
-      @JsonKey(name: 'm2_const') double m2Const,
+      {@JsonKey(name: 'm2_land') num? m2Land,
+      @JsonKey(name: 'm2_const') num m2Const,
       @JsonKey(name: 'price_const') double? priceConst,
       @JsonKey(name: 'price_land') double? priceLand,
-      double rooms,
-      double baths,
-      double cars,
+      int rooms,
+      int baths,
+      int cars,
       double lat,
       double long,
       double? price,
-      String? modelName});
+      @JsonKey(name: 'model_name') String? modelName});
 }
 
 /// @nodoc
@@ -73,7 +74,7 @@ class _$ListingCopyWithImpl<$Res, $Val extends Listing>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? m2Land = null,
+    Object? m2Land = freezed,
     Object? m2Const = null,
     Object? priceConst = freezed,
     Object? priceLand = freezed,
@@ -86,14 +87,14 @@ class _$ListingCopyWithImpl<$Res, $Val extends Listing>
     Object? modelName = freezed,
   }) {
     return _then(_value.copyWith(
-      m2Land: null == m2Land
+      m2Land: freezed == m2Land
           ? _value.m2Land
           : m2Land // ignore: cast_nullable_to_non_nullable
-              as double,
+              as num?,
       m2Const: null == m2Const
           ? _value.m2Const
           : m2Const // ignore: cast_nullable_to_non_nullable
-              as double,
+              as num,
       priceConst: freezed == priceConst
           ? _value.priceConst
           : priceConst // ignore: cast_nullable_to_non_nullable
@@ -105,15 +106,15 @@ class _$ListingCopyWithImpl<$Res, $Val extends Listing>
       rooms: null == rooms
           ? _value.rooms
           : rooms // ignore: cast_nullable_to_non_nullable
-              as double,
+              as int,
       baths: null == baths
           ? _value.baths
           : baths // ignore: cast_nullable_to_non_nullable
-              as double,
+              as int,
       cars: null == cars
           ? _value.cars
           : cars // ignore: cast_nullable_to_non_nullable
-              as double,
+              as int,
       lat: null == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
@@ -142,17 +143,17 @@ abstract class _$$_ListingCopyWith<$Res> implements $ListingCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'm2_land') double m2Land,
-      @JsonKey(name: 'm2_const') double m2Const,
+      {@JsonKey(name: 'm2_land') num? m2Land,
+      @JsonKey(name: 'm2_const') num m2Const,
       @JsonKey(name: 'price_const') double? priceConst,
       @JsonKey(name: 'price_land') double? priceLand,
-      double rooms,
-      double baths,
-      double cars,
+      int rooms,
+      int baths,
+      int cars,
       double lat,
       double long,
       double? price,
-      String? modelName});
+      @JsonKey(name: 'model_name') String? modelName});
 }
 
 /// @nodoc
@@ -165,7 +166,7 @@ class __$$_ListingCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? m2Land = null,
+    Object? m2Land = freezed,
     Object? m2Const = null,
     Object? priceConst = freezed,
     Object? priceLand = freezed,
@@ -178,14 +179,14 @@ class __$$_ListingCopyWithImpl<$Res>
     Object? modelName = freezed,
   }) {
     return _then(_$_Listing(
-      m2Land: null == m2Land
+      m2Land: freezed == m2Land
           ? _value.m2Land
           : m2Land // ignore: cast_nullable_to_non_nullable
-              as double,
+              as num?,
       m2Const: null == m2Const
           ? _value.m2Const
           : m2Const // ignore: cast_nullable_to_non_nullable
-              as double,
+              as num,
       priceConst: freezed == priceConst
           ? _value.priceConst
           : priceConst // ignore: cast_nullable_to_non_nullable
@@ -197,15 +198,15 @@ class __$$_ListingCopyWithImpl<$Res>
       rooms: null == rooms
           ? _value.rooms
           : rooms // ignore: cast_nullable_to_non_nullable
-              as double,
+              as int,
       baths: null == baths
           ? _value.baths
           : baths // ignore: cast_nullable_to_non_nullable
-              as double,
+              as int,
       cars: null == cars
           ? _value.cars
           : cars // ignore: cast_nullable_to_non_nullable
-              as double,
+              as int,
       lat: null == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
@@ -230,7 +231,7 @@ class __$$_ListingCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Listing extends _Listing {
   _$_Listing(
-      {@JsonKey(name: 'm2_land') required this.m2Land,
+      {@JsonKey(name: 'm2_land') this.m2Land,
       @JsonKey(name: 'm2_const') required this.m2Const,
       @JsonKey(name: 'price_const') this.priceConst,
       @JsonKey(name: 'price_land') this.priceLand,
@@ -240,7 +241,7 @@ class _$_Listing extends _Listing {
       required this.lat,
       required this.long,
       this.price,
-      this.modelName})
+      @JsonKey(name: 'model_name') this.modelName})
       : super._();
 
   factory _$_Listing.fromJson(Map<String, dynamic> json) =>
@@ -248,10 +249,10 @@ class _$_Listing extends _Listing {
 
   @override
   @JsonKey(name: 'm2_land')
-  final double m2Land;
+  final num? m2Land;
   @override
   @JsonKey(name: 'm2_const')
-  final double m2Const;
+  final num m2Const;
   @override
   @JsonKey(name: 'price_const')
   final double? priceConst;
@@ -259,11 +260,11 @@ class _$_Listing extends _Listing {
   @JsonKey(name: 'price_land')
   final double? priceLand;
   @override
-  final double rooms;
+  final int rooms;
   @override
-  final double baths;
+  final int baths;
   @override
-  final double cars;
+  final int cars;
   @override
   final double lat;
   @override
@@ -271,6 +272,7 @@ class _$_Listing extends _Listing {
   @override
   final double? price;
   @override
+  @JsonKey(name: 'model_name')
   final String? modelName;
 
   @override
@@ -320,27 +322,27 @@ class _$_Listing extends _Listing {
 
 abstract class _Listing extends Listing {
   factory _Listing(
-      {@JsonKey(name: 'm2_land') required final double m2Land,
-      @JsonKey(name: 'm2_const') required final double m2Const,
+      {@JsonKey(name: 'm2_land') final num? m2Land,
+      @JsonKey(name: 'm2_const') required final num m2Const,
       @JsonKey(name: 'price_const') final double? priceConst,
       @JsonKey(name: 'price_land') final double? priceLand,
-      required final double rooms,
-      required final double baths,
-      required final double cars,
+      required final int rooms,
+      required final int baths,
+      required final int cars,
       required final double lat,
       required final double long,
       final double? price,
-      final String? modelName}) = _$_Listing;
+      @JsonKey(name: 'model_name') final String? modelName}) = _$_Listing;
   _Listing._() : super._();
 
   factory _Listing.fromJson(Map<String, dynamic> json) = _$_Listing.fromJson;
 
   @override
   @JsonKey(name: 'm2_land')
-  double get m2Land;
+  num? get m2Land;
   @override
   @JsonKey(name: 'm2_const')
-  double get m2Const;
+  num get m2Const;
   @override
   @JsonKey(name: 'price_const')
   double? get priceConst;
@@ -348,11 +350,11 @@ abstract class _Listing extends Listing {
   @JsonKey(name: 'price_land')
   double? get priceLand;
   @override
-  double get rooms;
+  int get rooms;
   @override
-  double get baths;
+  int get baths;
   @override
-  double get cars;
+  int get cars;
   @override
   double get lat;
   @override
@@ -360,6 +362,7 @@ abstract class _Listing extends Listing {
   @override
   double? get price;
   @override
+  @JsonKey(name: 'model_name')
   String? get modelName;
   @override
   @JsonKey(ignore: true)

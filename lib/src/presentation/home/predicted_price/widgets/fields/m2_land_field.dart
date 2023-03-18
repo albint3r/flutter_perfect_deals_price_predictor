@@ -4,8 +4,8 @@ import '../../../../forms/widgets/wrapper_text_field.dart';
 
 class M2LandField extends StatelessWidget {
   const M2LandField({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
