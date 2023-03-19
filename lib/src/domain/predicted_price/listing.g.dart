@@ -7,8 +7,8 @@ part of 'listing.dart';
 // **************************************************************************
 
 _$_Listing _$$_ListingFromJson(Map<String, dynamic> json) => _$_Listing(
-      m2Land: json['m2_land'] as num?,
-      m2Const: json['m2_const'] as num,
+      m2Land: (json['m2_land'] as num?)?.toDouble(),
+      m2Const: (json['m2_const'] as num).toDouble(),
       priceConst: (json['price_const'] as num?)?.toDouble(),
       priceLand: (json['price_land'] as num?)?.toDouble(),
       rooms: json['rooms'] as int,

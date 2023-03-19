@@ -21,9 +21,9 @@ Listing _$ListingFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Listing {
   @JsonKey(name: 'm2_land')
-  num? get m2Land => throw _privateConstructorUsedError;
+  double? get m2Land => throw _privateConstructorUsedError;
   @JsonKey(name: 'm2_const')
-  num get m2Const => throw _privateConstructorUsedError;
+  double get m2Const => throw _privateConstructorUsedError;
   @JsonKey(name: 'price_const')
   double? get priceConst => throw _privateConstructorUsedError;
   @JsonKey(name: 'price_land')
@@ -48,8 +48,8 @@ abstract class $ListingCopyWith<$Res> {
       _$ListingCopyWithImpl<$Res, Listing>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'm2_land') num? m2Land,
-      @JsonKey(name: 'm2_const') num m2Const,
+      {@JsonKey(name: 'm2_land') double? m2Land,
+      @JsonKey(name: 'm2_const') double m2Const,
       @JsonKey(name: 'price_const') double? priceConst,
       @JsonKey(name: 'price_land') double? priceLand,
       int rooms,
@@ -90,11 +90,11 @@ class _$ListingCopyWithImpl<$Res, $Val extends Listing>
       m2Land: freezed == m2Land
           ? _value.m2Land
           : m2Land // ignore: cast_nullable_to_non_nullable
-              as num?,
+              as double?,
       m2Const: null == m2Const
           ? _value.m2Const
           : m2Const // ignore: cast_nullable_to_non_nullable
-              as num,
+              as double,
       priceConst: freezed == priceConst
           ? _value.priceConst
           : priceConst // ignore: cast_nullable_to_non_nullable
@@ -143,8 +143,8 @@ abstract class _$$_ListingCopyWith<$Res> implements $ListingCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'm2_land') num? m2Land,
-      @JsonKey(name: 'm2_const') num m2Const,
+      {@JsonKey(name: 'm2_land') double? m2Land,
+      @JsonKey(name: 'm2_const') double m2Const,
       @JsonKey(name: 'price_const') double? priceConst,
       @JsonKey(name: 'price_land') double? priceLand,
       int rooms,
@@ -182,11 +182,11 @@ class __$$_ListingCopyWithImpl<$Res>
       m2Land: freezed == m2Land
           ? _value.m2Land
           : m2Land // ignore: cast_nullable_to_non_nullable
-              as num?,
+              as double?,
       m2Const: null == m2Const
           ? _value.m2Const
           : m2Const // ignore: cast_nullable_to_non_nullable
-              as num,
+              as double,
       priceConst: freezed == priceConst
           ? _value.priceConst
           : priceConst // ignore: cast_nullable_to_non_nullable
@@ -249,10 +249,10 @@ class _$_Listing extends _Listing {
 
   @override
   @JsonKey(name: 'm2_land')
-  final num? m2Land;
+  final double? m2Land;
   @override
   @JsonKey(name: 'm2_const')
-  final num m2Const;
+  final double m2Const;
   @override
   @JsonKey(name: 'price_const')
   final double? priceConst;
@@ -322,8 +322,8 @@ class _$_Listing extends _Listing {
 
 abstract class _Listing extends Listing {
   factory _Listing(
-      {@JsonKey(name: 'm2_land') final num? m2Land,
-      @JsonKey(name: 'm2_const') required final num m2Const,
+      {@JsonKey(name: 'm2_land') final double? m2Land,
+      @JsonKey(name: 'm2_const') required final double m2Const,
       @JsonKey(name: 'price_const') final double? priceConst,
       @JsonKey(name: 'price_land') final double? priceLand,
       required final int rooms,
@@ -339,10 +339,10 @@ abstract class _Listing extends Listing {
 
   @override
   @JsonKey(name: 'm2_land')
-  num? get m2Land;
+  double? get m2Land;
   @override
   @JsonKey(name: 'm2_const')
-  num get m2Const;
+  double get m2Const;
   @override
   @JsonKey(name: 'price_const')
   double? get priceConst;

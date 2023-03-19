@@ -62,8 +62,9 @@ dependencies:
   http: ^0.13.5
   lint: ^2.0.1
   dart_code_metrics: ^5.6.0
-  address_search_field: ^5.0.3
   google_fonts: ^4.0.3
+  sqflite: ^2.2.6
+  path: ^1.8.2
 
 
 

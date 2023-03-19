@@ -6,7 +6,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:injectable/injectable.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
-import '../../domain/predicted_price/i_predicte_price_facade.dart';
+import '../../domain/predicted_price/i_predicted_price_facade.dart';
+import '../../domain/predicted_price/listing.dart';
 import '../../domain/predicted_price/predictions.dart';
 
 part 'predicted_price_bloc.freezed.dart';
@@ -23,9 +24,11 @@ class PredictedPriceBloc
     on<_PredictedPriceEventStart>(
       (event, emit) async {
         //
-        emit(state.copyWith(
-          isLoading: true,
-        ),);
+        emit(
+          state.copyWith(
+            isLoading: true,
+          ),
+        );
         await facade.init();
         emit(
           state.copyWith(
@@ -74,9 +77,6 @@ class PredictedPriceBloc
     );
     on<_PredictedPriceEventSetAddressOnMap>(
       (event, emit) async {
-        print('_PredictedPriceEventSetAddressOnMap----------------------');
-        print('event-> $event');
-        // TODO ADD LAT AND LONG TO GOOGLE MARKER
         final locations = await facade.setLatLong(
           address: event.address,
         );
@@ -93,9 +93,18 @@ class PredictedPriceBloc
     );
     on<_PredictedPriceEventOnSubmitPrediction>(
       (event, emit) async {
+        // Add a loading until the predict process finished.
+        emit(
+          state.copyWith(
+            isLoading: true,
+          ),
+        );
         final listingPredicted = await facade.predict();
-        // TODO SAVE RESULT OF THE PREDICTION.
-        print('listingPredicted-> $listingPredicted');
+        // Update value to predict.
+        emit(state.copyWith(
+          isLoading: false,
+          listing: listingPredicted,
+        ));
       },
     );
   }

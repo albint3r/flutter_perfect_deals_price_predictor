@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
@@ -58,13 +59,31 @@ class PredictedPriceListingBody extends StatelessWidget {
     return Geolocator.getCurrentPosition();
   }
 
+  void _goToViewListingPrediction(
+    BuildContext context,
+    PredictedPriceState state,
+  ) {
+    if (state.listing != null) {
+      print('_goToViewListingPrediction');
+      print('_goToViewListingPrediction');
+      print('_goToViewListingPrediction');
+      print('_goToViewListingPrediction');
+      print('_goToViewListingPrediction');
+      print('_goToViewListingPrediction');
+      // context.router.replace(route);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<PredictedPriceBloc, PredictedPriceState>(
+      listenWhen: (previous, current) =>
+          previous.latLng != current.latLng || current.listing != null,
       listener: (context, state) {
         _setCameraToCurrentLocation(state: state);
+        // Validate to avoid another trigger event.
+        _goToViewListingPrediction(context, state);
       },
-      listenWhen: (previous, current) => previous.latLng != current.latLng,
       builder: (context, state) {
         if (state.isLoading || state.formGroup == null) {
           return const Center(

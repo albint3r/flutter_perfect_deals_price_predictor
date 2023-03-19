@@ -16,4 +16,6 @@ abstract class IPredictedPriceFacade {
   Future<Location> setLatLong({
     required String address,
   });
+
+  Future<void> saveListing();
 }

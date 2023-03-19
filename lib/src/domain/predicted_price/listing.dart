@@ -7,8 +7,8 @@ part 'listing.g.dart';
 @freezed
 class Listing with _$Listing {
   factory Listing({
-    @JsonKey(name: 'm2_land') num? m2Land,
-    @JsonKey(name: 'm2_const')required num m2Const,
+    @JsonKey(name: 'm2_land') double? m2Land,
+    @JsonKey(name: 'm2_const')required double m2Const,
     @JsonKey(name: 'price_const') double? priceConst,
     @JsonKey(name: 'price_land') double? priceLand,
     required int rooms,
