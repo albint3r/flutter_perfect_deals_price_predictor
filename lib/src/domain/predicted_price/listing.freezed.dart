@@ -36,6 +36,8 @@ mixin _$Listing {
   double? get price => throw _privateConstructorUsedError;
   @JsonKey(name: 'model_name')
   String? get modelName => throw _privateConstructorUsedError;
+  @JsonKey(name: 'created_at')
+  String? get createdAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -58,7 +60,8 @@ abstract class $ListingCopyWith<$Res> {
       double lat,
       double long,
       double? price,
-      @JsonKey(name: 'model_name') String? modelName});
+      @JsonKey(name: 'model_name') String? modelName,
+      @JsonKey(name: 'created_at') String? createdAt});
 }
 
 /// @nodoc
@@ -85,6 +88,7 @@ class _$ListingCopyWithImpl<$Res, $Val extends Listing>
     Object? long = null,
     Object? price = freezed,
     Object? modelName = freezed,
+    Object? createdAt = freezed,
   }) {
     return _then(_value.copyWith(
       m2Land: freezed == m2Land
@@ -131,6 +135,10 @@ class _$ListingCopyWithImpl<$Res, $Val extends Listing>
           ? _value.modelName
           : modelName // ignore: cast_nullable_to_non_nullable
               as String?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -153,7 +161,8 @@ abstract class _$$_ListingCopyWith<$Res> implements $ListingCopyWith<$Res> {
       double lat,
       double long,
       double? price,
-      @JsonKey(name: 'model_name') String? modelName});
+      @JsonKey(name: 'model_name') String? modelName,
+      @JsonKey(name: 'created_at') String? createdAt});
 }
 
 /// @nodoc
@@ -177,6 +186,7 @@ class __$$_ListingCopyWithImpl<$Res>
     Object? long = null,
     Object? price = freezed,
     Object? modelName = freezed,
+    Object? createdAt = freezed,
   }) {
     return _then(_$_Listing(
       m2Land: freezed == m2Land
@@ -223,6 +233,10 @@ class __$$_ListingCopyWithImpl<$Res>
           ? _value.modelName
           : modelName // ignore: cast_nullable_to_non_nullable
               as String?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -241,7 +255,8 @@ class _$_Listing extends _Listing {
       required this.lat,
       required this.long,
       this.price,
-      @JsonKey(name: 'model_name') this.modelName})
+      @JsonKey(name: 'model_name') this.modelName,
+      @JsonKey(name: 'created_at') this.createdAt})
       : super._();
 
   factory _$_Listing.fromJson(Map<String, dynamic> json) =>
@@ -274,10 +289,13 @@ class _$_Listing extends _Listing {
   @override
   @JsonKey(name: 'model_name')
   final String? modelName;
+  @override
+  @JsonKey(name: 'created_at')
+  final String? createdAt;
 
   @override
   String toString() {
-    return 'Listing(m2Land: $m2Land, m2Const: $m2Const, priceConst: $priceConst, priceLand: $priceLand, rooms: $rooms, baths: $baths, cars: $cars, lat: $lat, long: $long, price: $price, modelName: $modelName)';
+    return 'Listing(m2Land: $m2Land, m2Const: $m2Const, priceConst: $priceConst, priceLand: $priceLand, rooms: $rooms, baths: $baths, cars: $cars, lat: $lat, long: $long, price: $price, modelName: $modelName, createdAt: $createdAt)';
   }
 
   @override
@@ -298,13 +316,15 @@ class _$_Listing extends _Listing {
             (identical(other.long, long) || other.long == long) &&
             (identical(other.price, price) || other.price == price) &&
             (identical(other.modelName, modelName) ||
-                other.modelName == modelName));
+                other.modelName == modelName) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, m2Land, m2Const, priceConst,
-      priceLand, rooms, baths, cars, lat, long, price, modelName);
+      priceLand, rooms, baths, cars, lat, long, price, modelName, createdAt);
 
   @JsonKey(ignore: true)
   @override
@@ -332,7 +352,8 @@ abstract class _Listing extends Listing {
       required final double lat,
       required final double long,
       final double? price,
-      @JsonKey(name: 'model_name') final String? modelName}) = _$_Listing;
+      @JsonKey(name: 'model_name') final String? modelName,
+      @JsonKey(name: 'created_at') final String? createdAt}) = _$_Listing;
   _Listing._() : super._();
 
   factory _Listing.fromJson(Map<String, dynamic> json) = _$_Listing.fromJson;
@@ -364,6 +385,9 @@ abstract class _Listing extends Listing {
   @override
   @JsonKey(name: 'model_name')
   String? get modelName;
+  @override
+  @JsonKey(name: 'created_at')
+  String? get createdAt;
   @override
   @JsonKey(ignore: true)
   _$$_ListingCopyWith<_$_Listing> get copyWith =>

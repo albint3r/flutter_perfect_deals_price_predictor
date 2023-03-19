@@ -18,6 +18,7 @@ _$_Listing _$$_ListingFromJson(Map<String, dynamic> json) => _$_Listing(
       long: (json['long'] as num).toDouble(),
       price: (json['price'] as num?)?.toDouble(),
       modelName: json['model_name'] as String?,
+      createdAt: json['created_at'] as String?,
     );
 
 Map<String, dynamic> _$$_ListingToJson(_$_Listing instance) =>
@@ -33,4 +34,5 @@ Map<String, dynamic> _$$_ListingToJson(_$_Listing instance) =>
       'long': instance.long,
       'price': instance.price,
       'model_name': instance.modelName,
+      'created_at': instance.createdAt,
     };

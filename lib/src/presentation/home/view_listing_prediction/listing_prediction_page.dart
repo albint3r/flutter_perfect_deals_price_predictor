@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../domain/predicted_price/listing.dart';
+import 'widgets/body_listing_prediction.dart';
 
 class ListingPredictionPage extends StatelessWidget {
   const ListingPredictionPage({
@@ -13,8 +14,8 @@ class ListingPredictionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('${listing.price}'),
+      body: BodyListingPrediction(
+        listing: listing,
       ),
     );
   }

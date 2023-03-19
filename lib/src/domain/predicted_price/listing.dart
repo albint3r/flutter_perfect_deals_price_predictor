@@ -18,6 +18,7 @@ class Listing with _$Listing {
     required double long,
     double? price,
     @JsonKey(name: 'model_name')String? modelName,
+    @JsonKey(name: 'created_at')String? createdAt,
   }) = _Listing;
 
   Listing._();
