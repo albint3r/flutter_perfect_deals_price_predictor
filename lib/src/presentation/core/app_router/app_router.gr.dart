@@ -41,6 +41,16 @@ class _$AppRouter extends RootStackRouter {
         child: const PredictedPriceListingPage(),
       );
     },
+    ListingPredictionRoute.name: (routeData) {
+      final args = routeData.argsAs<ListingPredictionRouteArgs>();
+      return MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: ListingPredictionPage(
+          listing: args.listing,
+          key: args.key,
+        ),
+      );
+    },
   };
 
   @override
@@ -60,6 +70,10 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(
           PredictedPriceListingRoute.name,
           path: '/predicted_price_listing',
+        ),
+        RouteConfig(
+          ListingPredictionRoute.name,
+          path: '/view_listing_prediction/',
         ),
       ];
 }
@@ -110,4 +124,38 @@ class PredictedPriceListingRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'PredictedPriceListingRoute';
+}
+
+/// generated route for
+/// [ListingPredictionPage]
+class ListingPredictionRoute extends PageRouteInfo<ListingPredictionRouteArgs> {
+  ListingPredictionRoute({
+    required Listing listing,
+    Key? key,
+  }) : super(
+          ListingPredictionRoute.name,
+          path: '/view_listing_prediction/',
+          args: ListingPredictionRouteArgs(
+            listing: listing,
+            key: key,
+          ),
+        );
+
+  static const String name = 'ListingPredictionRoute';
+}
+
+class ListingPredictionRouteArgs {
+  const ListingPredictionRouteArgs({
+    required this.listing,
+    this.key,
+  });
+
+  final Listing listing;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'ListingPredictionRouteArgs{listing: $listing, key: $key}';
+  }
 }

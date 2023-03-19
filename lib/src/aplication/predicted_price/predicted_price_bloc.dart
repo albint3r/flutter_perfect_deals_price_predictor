@@ -101,10 +101,12 @@ class PredictedPriceBloc
         );
         final listingPredicted = await facade.predict();
         // Update value to predict.
-        emit(state.copyWith(
-          isLoading: false,
-          listing: listingPredicted,
-        ));
+        emit(
+          state.copyWith(
+            isLoading: false,
+            listing: listingPredicted,
+          ),
+        );
       },
     );
   }

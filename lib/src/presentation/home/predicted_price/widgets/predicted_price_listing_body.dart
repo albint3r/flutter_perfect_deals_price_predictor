@@ -6,6 +6,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 import '../../../../aplication/predicted_price/predicted_price_bloc.dart';
+import '../../../core/app_router/app_router.dart';
 import '../../../core/common_widgets/gap.dart';
 import '../../../core/common_widgets/wrapper_scaffold_body.dart';
 
@@ -64,13 +65,9 @@ class PredictedPriceListingBody extends StatelessWidget {
     PredictedPriceState state,
   ) {
     if (state.listing != null) {
-      print('_goToViewListingPrediction');
-      print('_goToViewListingPrediction');
-      print('_goToViewListingPrediction');
-      print('_goToViewListingPrediction');
-      print('_goToViewListingPrediction');
-      print('_goToViewListingPrediction');
-      // context.router.replace(route);
+      context.router.replace(
+        ListingPredictionRoute(listing: state.listing!),
+      );
     }
   }
 
