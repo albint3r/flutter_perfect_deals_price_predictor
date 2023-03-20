@@ -1109,6 +1109,7 @@ mixin _$PredictedPriceState {
       throw _privateConstructorUsedError;
   Predictions? get addressPredictions => throw _privateConstructorUsedError;
   Listing? get listing => throw _privateConstructorUsedError;
+  bool? get isError => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PredictedPriceStateCopyWith<PredictedPriceState> get copyWith =>
@@ -1127,7 +1128,8 @@ abstract class $PredictedPriceStateCopyWith<$Res> {
       FormGroup? formGroup,
       Completer<GoogleMapController>? googleController,
       Predictions? addressPredictions,
-      Listing? listing});
+      Listing? listing,
+      bool? isError});
 
   $PredictionsCopyWith<$Res>? get addressPredictions;
   $ListingCopyWith<$Res>? get listing;
@@ -1152,6 +1154,7 @@ class _$PredictedPriceStateCopyWithImpl<$Res, $Val extends PredictedPriceState>
     Object? googleController = freezed,
     Object? addressPredictions = freezed,
     Object? listing = freezed,
+    Object? isError = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -1178,6 +1181,10 @@ class _$PredictedPriceStateCopyWithImpl<$Res, $Val extends PredictedPriceState>
           ? _value.listing
           : listing // ignore: cast_nullable_to_non_nullable
               as Listing?,
+      isError: freezed == isError
+          ? _value.isError
+          : isError // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 
@@ -1220,7 +1227,8 @@ abstract class _$$_PredictedPriceStateCopyWith<$Res>
       FormGroup? formGroup,
       Completer<GoogleMapController>? googleController,
       Predictions? addressPredictions,
-      Listing? listing});
+      Listing? listing,
+      bool? isError});
 
   @override
   $PredictionsCopyWith<$Res>? get addressPredictions;
@@ -1245,6 +1253,7 @@ class __$$_PredictedPriceStateCopyWithImpl<$Res>
     Object? googleController = freezed,
     Object? addressPredictions = freezed,
     Object? listing = freezed,
+    Object? isError = freezed,
   }) {
     return _then(_$_PredictedPriceState(
       isLoading: null == isLoading
@@ -1271,6 +1280,10 @@ class __$$_PredictedPriceStateCopyWithImpl<$Res>
           ? _value.listing
           : listing // ignore: cast_nullable_to_non_nullable
               as Listing?,
+      isError: freezed == isError
+          ? _value.isError
+          : isError // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -1284,7 +1297,8 @@ class _$_PredictedPriceState implements _PredictedPriceState {
       this.formGroup,
       this.googleController,
       this.addressPredictions,
-      this.listing});
+      this.listing,
+      this.isError});
 
   @override
   final bool isLoading;
@@ -1298,10 +1312,12 @@ class _$_PredictedPriceState implements _PredictedPriceState {
   final Predictions? addressPredictions;
   @override
   final Listing? listing;
+  @override
+  final bool? isError;
 
   @override
   String toString() {
-    return 'PredictedPriceState(isLoading: $isLoading, latLng: $latLng, formGroup: $formGroup, googleController: $googleController, addressPredictions: $addressPredictions, listing: $listing)';
+    return 'PredictedPriceState(isLoading: $isLoading, latLng: $latLng, formGroup: $formGroup, googleController: $googleController, addressPredictions: $addressPredictions, listing: $listing, isError: $isError)';
   }
 
   @override
@@ -1318,12 +1334,13 @@ class _$_PredictedPriceState implements _PredictedPriceState {
                 other.googleController == googleController) &&
             (identical(other.addressPredictions, addressPredictions) ||
                 other.addressPredictions == addressPredictions) &&
-            (identical(other.listing, listing) || other.listing == listing));
+            (identical(other.listing, listing) || other.listing == listing) &&
+            (identical(other.isError, isError) || other.isError == isError));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, isLoading, latLng, formGroup,
-      googleController, addressPredictions, listing);
+      googleController, addressPredictions, listing, isError);
 
   @JsonKey(ignore: true)
   @override
@@ -1340,7 +1357,8 @@ abstract class _PredictedPriceState implements PredictedPriceState {
       final FormGroup? formGroup,
       final Completer<GoogleMapController>? googleController,
       final Predictions? addressPredictions,
-      final Listing? listing}) = _$_PredictedPriceState;
+      final Listing? listing,
+      final bool? isError}) = _$_PredictedPriceState;
 
   @override
   bool get isLoading;
@@ -1354,6 +1372,8 @@ abstract class _PredictedPriceState implements PredictedPriceState {
   Predictions? get addressPredictions;
   @override
   Listing? get listing;
+  @override
+  bool? get isError;
   @override
   @JsonKey(ignore: true)
   _$$_PredictedPriceStateCopyWith<_$_PredictedPriceState> get copyWith =>

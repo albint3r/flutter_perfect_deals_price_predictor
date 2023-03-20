@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:perfect_deals_price_predictor/src/presentation/home/view_listing_prediction/widgets/tile_feature_info.dart';
+import 'tile_feature_info.dart';
 
 import '../../../../domain/predicted_price/listing.dart';
 import 'feature_listing_info.dart';

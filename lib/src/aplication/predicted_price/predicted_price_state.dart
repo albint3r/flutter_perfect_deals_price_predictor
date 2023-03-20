@@ -9,6 +9,7 @@ class PredictedPriceState with _$PredictedPriceState {
     Completer<GoogleMapController>? googleController,
     Predictions? addressPredictions,
     Listing? listing,
+    bool? isError,
   }) = _PredictedPriceState;
 
   factory PredictedPriceState.initialize() => PredictedPriceState(

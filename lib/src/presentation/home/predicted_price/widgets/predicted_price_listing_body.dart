@@ -71,15 +71,41 @@ class PredictedPriceListingBody extends StatelessWidget {
     }
   }
 
+  void _showErrorDialog(
+    BuildContext context,
+    PredictedPriceState state,
+  ) {
+    if (state.isError != null && state.isError!) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          backgroundColor: Colors.red,
+          elevation: 5,
+          duration: const Duration(seconds: 5),
+          padding: const EdgeInsets.all(20),
+          content: const Text(
+            '¡Ups! Parece que no hay resultados. Inténtalo de nuevo o comunícate con el servicio al cliente.',
+          ),
+          action: SnackBarAction(
+            onPressed: () {},
+            label: 'Cerrar',
+          ),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<PredictedPriceBloc, PredictedPriceState>(
       listenWhen: (previous, current) =>
-          previous.latLng != current.latLng || current.listing != null,
+          previous.latLng != current.latLng ||
+          current.listing != null ||
+          (previous.isError != current.isError),
       listener: (context, state) {
         _setCameraToCurrentLocation(state: state);
         // Validate to avoid another trigger event.
         _goToViewListingPrediction(context, state);
+        _showErrorDialog(context, state);
       },
       builder: (context, state) {
         if (state.isLoading || state.formGroup == null) {

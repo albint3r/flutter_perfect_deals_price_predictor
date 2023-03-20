@@ -28,6 +28,7 @@ class AddressField extends StatelessWidget {
         labelText: 'Ubicación del inmueble',
         icon: Icons.search,
         enableSend: true,
+        textInputType: TextInputType.streetAddress,
         onTapSendIcon: () {
           _eventTypeSearchLocation(context);
         },

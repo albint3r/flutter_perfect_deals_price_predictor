@@ -15,6 +15,7 @@ class M2ConstField extends StatelessWidget {
       icon: Icons.location_city,
       validationMessages: null,
       enableSend: false,
+      textInputType: TextInputType.number,
     );
   }
 }

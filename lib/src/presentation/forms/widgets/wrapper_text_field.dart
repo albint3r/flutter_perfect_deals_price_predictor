@@ -11,6 +11,7 @@ class WrapperTextField extends StatelessWidget {
     this.obscureText,
     this.onTap,
     this.onTapSendIcon,
+    this.textInputType,
     super.key,
   });
 
@@ -22,6 +23,7 @@ class WrapperTextField extends StatelessWidget {
   final bool? obscureText;
   final void Function(FormControl<dynamic>)? onTap;
   final void Function()? onTapSendIcon;
+  final TextInputType? textInputType;
 
 
   @override
@@ -29,6 +31,7 @@ class WrapperTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: ReactiveTextField(
+        keyboardType: textInputType ?? TextInputType.text,
         onChanged: (control) {
           onTapSendIcon!();
         },

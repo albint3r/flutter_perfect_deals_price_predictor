@@ -36,15 +36,19 @@ class PredictedPriceFacadeImpl implements IPredictedPriceFacade {
   }
 
   @override
-  Future<Listing> predict() async {
+  Future<Listing?> predict() async {
+    // Transform the Form Values to a Listing
     final listing = Listing.fromJson(Map<String, dynamic>.from(_form.rawValue));
     final response = await pricePredictorDataService.getPriceListing(
       listing: listing,
     );
-    final parsed = jsonDecode(response!.body);
-    final resultListing =  Listing.fromJson(parsed);
-    await localStorageDataSource.saveData(resultListing);
-    return resultListing;
+    if(response != null && response.statusCode == 200) {
+      final parsed = jsonDecode(response.body);
+      final resultListing =  Listing.fromJson(parsed);
+      await localStorageDataSource.saveData(resultListing);
+      return resultListing;
+    }
+    return null;
   }
 
   @override

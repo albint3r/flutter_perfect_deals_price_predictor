@@ -15,6 +15,7 @@ class M2LandField extends StatelessWidget {
       icon: Icons.photo_size_select_large,
       validationMessages: null,
       enableSend: false,
+      textInputType: TextInputType.number,
     );
   }
 }

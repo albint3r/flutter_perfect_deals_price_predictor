@@ -13,7 +13,7 @@ class CarsField extends StatelessWidget {
     return const WrapperSliderField(
       controlName: 'cars',
       labelText: 'Carros',
-      icon: Icons.car_repair,
+      icon: Icons.directions_car,
       validationMessages: null,
     );
   }

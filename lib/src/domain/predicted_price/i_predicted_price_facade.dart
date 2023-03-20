@@ -11,7 +11,7 @@ abstract class IPredictedPriceFacade {
 
   Future<Predictions> searchLocation();
 
-  Future<Listing> predict();
+  Future<Listing?> predict();
 
   Future<Location> setLatLong({
     required String address,

@@ -97,16 +97,28 @@ class PredictedPriceBloc
         emit(
           state.copyWith(
             isLoading: true,
+            isError: null,
           ),
         );
         final listingPredicted = await facade.predict();
         // Update value to predict.
-        emit(
-          state.copyWith(
-            isLoading: false,
-            listing: listingPredicted,
-          ),
-        );
+        if (listingPredicted != null) {
+          emit(
+            state.copyWith(
+              isLoading: false,
+              listing: listingPredicted,
+              isError: null,
+            ),
+          );
+          // if the listing is empty it will cause error!
+        } else {
+          emit(
+            state.copyWith(
+              isLoading: false,
+              isError: true,
+            ),
+          );
+        }
       },
     );
   }
