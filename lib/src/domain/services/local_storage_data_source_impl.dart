@@ -81,6 +81,7 @@ class LocalStorageDataSourceImpl implements ILocalStorageDataSource {
       onCreate: (Database db, int version) async {
         // When creating the db, create the table
         await db.execute('CREATE TABLE listing (id INTEGER PRIMARY KEY,'
+            'address TEXT,'
             'm2_land REAL,'
             'm2_const REAL NOT NULL,'
             'price_const REAL,'

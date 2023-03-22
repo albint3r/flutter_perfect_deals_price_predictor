@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../aplication/auth/auth_bloc.dart';
+import '../../aplication/my_listing_predictions/my_listing_predictions_bloc.dart';
 import '../core/app_router/app_router.dart';
 import '../core/common_widgets/app_bar/app_bar_page.dart';
 import '../core/common_widgets/drawer/body_app_drawer.dart';
+import 'my_listings_predictions/body_my_listings_predictions.dart';
 import 'predicted_price/predicted_price_listing_page.dart';
 import 'well_come/well_come_page.dart';
 
@@ -25,6 +27,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = context.watch<MyListingPredictionsBloc>();
+    final state = bloc.state;
     return Scaffold(
       appBar: AppBarPage.getBar(
         title: 'Perfect Deals',
@@ -33,9 +37,12 @@ class HomePage extends StatelessWidget {
       body: BlocListener<AuthBloc, AuthState>(
         listener: _logOutUserRedirectToLogIn,
         child: PageView(
-          children: const [
-            WellComePage(),
-            PredictedPriceListingPage(),
+          children: [
+            if (state.myListings == null)
+              const WellComePage()
+            else
+              const BodyMyListingsPredictions(),
+            const PredictedPriceListingPage(),
           ],
         ),
       ),

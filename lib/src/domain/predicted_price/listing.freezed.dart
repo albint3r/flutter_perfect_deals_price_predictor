@@ -34,6 +34,7 @@ mixin _$Listing {
   double get lat => throw _privateConstructorUsedError;
   double get long => throw _privateConstructorUsedError;
   double? get price => throw _privateConstructorUsedError;
+  String? get address => throw _privateConstructorUsedError;
   @JsonKey(name: 'model_name')
   String? get modelName => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
@@ -60,6 +61,7 @@ abstract class $ListingCopyWith<$Res> {
       double lat,
       double long,
       double? price,
+      String? address,
       @JsonKey(name: 'model_name') String? modelName,
       @JsonKey(name: 'created_at') String? createdAt});
 }
@@ -87,6 +89,7 @@ class _$ListingCopyWithImpl<$Res, $Val extends Listing>
     Object? lat = null,
     Object? long = null,
     Object? price = freezed,
+    Object? address = freezed,
     Object? modelName = freezed,
     Object? createdAt = freezed,
   }) {
@@ -131,6 +134,10 @@ class _$ListingCopyWithImpl<$Res, $Val extends Listing>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double?,
+      address: freezed == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String?,
       modelName: freezed == modelName
           ? _value.modelName
           : modelName // ignore: cast_nullable_to_non_nullable
@@ -161,6 +168,7 @@ abstract class _$$_ListingCopyWith<$Res> implements $ListingCopyWith<$Res> {
       double lat,
       double long,
       double? price,
+      String? address,
       @JsonKey(name: 'model_name') String? modelName,
       @JsonKey(name: 'created_at') String? createdAt});
 }
@@ -185,6 +193,7 @@ class __$$_ListingCopyWithImpl<$Res>
     Object? lat = null,
     Object? long = null,
     Object? price = freezed,
+    Object? address = freezed,
     Object? modelName = freezed,
     Object? createdAt = freezed,
   }) {
@@ -229,6 +238,10 @@ class __$$_ListingCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double?,
+      address: freezed == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String?,
       modelName: freezed == modelName
           ? _value.modelName
           : modelName // ignore: cast_nullable_to_non_nullable
@@ -255,6 +268,7 @@ class _$_Listing extends _Listing {
       required this.lat,
       required this.long,
       this.price,
+      this.address,
       @JsonKey(name: 'model_name') this.modelName,
       @JsonKey(name: 'created_at') this.createdAt})
       : super._();
@@ -287,6 +301,8 @@ class _$_Listing extends _Listing {
   @override
   final double? price;
   @override
+  final String? address;
+  @override
   @JsonKey(name: 'model_name')
   final String? modelName;
   @override
@@ -295,7 +311,7 @@ class _$_Listing extends _Listing {
 
   @override
   String toString() {
-    return 'Listing(m2Land: $m2Land, m2Const: $m2Const, priceConst: $priceConst, priceLand: $priceLand, rooms: $rooms, baths: $baths, cars: $cars, lat: $lat, long: $long, price: $price, modelName: $modelName, createdAt: $createdAt)';
+    return 'Listing(m2Land: $m2Land, m2Const: $m2Const, priceConst: $priceConst, priceLand: $priceLand, rooms: $rooms, baths: $baths, cars: $cars, lat: $lat, long: $long, price: $price, address: $address, modelName: $modelName, createdAt: $createdAt)';
   }
 
   @override
@@ -315,6 +331,7 @@ class _$_Listing extends _Listing {
             (identical(other.lat, lat) || other.lat == lat) &&
             (identical(other.long, long) || other.long == long) &&
             (identical(other.price, price) || other.price == price) &&
+            (identical(other.address, address) || other.address == address) &&
             (identical(other.modelName, modelName) ||
                 other.modelName == modelName) &&
             (identical(other.createdAt, createdAt) ||
@@ -323,8 +340,21 @@ class _$_Listing extends _Listing {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, m2Land, m2Const, priceConst,
-      priceLand, rooms, baths, cars, lat, long, price, modelName, createdAt);
+  int get hashCode => Object.hash(
+      runtimeType,
+      m2Land,
+      m2Const,
+      priceConst,
+      priceLand,
+      rooms,
+      baths,
+      cars,
+      lat,
+      long,
+      price,
+      address,
+      modelName,
+      createdAt);
 
   @JsonKey(ignore: true)
   @override
@@ -352,6 +382,7 @@ abstract class _Listing extends Listing {
       required final double lat,
       required final double long,
       final double? price,
+      final String? address,
       @JsonKey(name: 'model_name') final String? modelName,
       @JsonKey(name: 'created_at') final String? createdAt}) = _$_Listing;
   _Listing._() : super._();
@@ -382,6 +413,8 @@ abstract class _Listing extends Listing {
   double get long;
   @override
   double? get price;
+  @override
+  String? get address;
   @override
   @JsonKey(name: 'model_name')
   String? get modelName;

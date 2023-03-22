@@ -33,7 +33,6 @@ class ShowDialogListing extends StatelessWidget {
         decoration: gradientBackground,
         child: AlertDialog(
           backgroundColor: Colors.transparent,
-          contentPadding: const EdgeInsets.all(0),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),

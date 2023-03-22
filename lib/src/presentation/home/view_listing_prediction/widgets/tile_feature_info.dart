@@ -37,7 +37,7 @@ class TileFeatureInfo extends StatelessWidget {
           ],
         ),
         subtitle: Text(
-          myFormat.format(value.round()),
+          myFormat.format(value),
           textAlign: TextAlign.right,
           style: theme.textTheme.titleLarge,
         ),

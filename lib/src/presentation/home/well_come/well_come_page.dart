@@ -31,7 +31,6 @@ class WellComePage extends StatelessWidget {
                   WellComeHeader(),
                   WellComeTextBody(),
                   LottieSwipeLeft(),
-                  // SignOutElevatedButton(),
                 ],
               ),
             ),
