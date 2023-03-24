@@ -103,7 +103,6 @@ class SingleListingCard extends StatelessWidget {
           children: [
             Image.network(
               defaultCoverImage,
-
             ),
             ListTile(
               title: Column(

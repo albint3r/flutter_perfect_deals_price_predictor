@@ -47,26 +47,26 @@ class LocalStorageDataSourceImpl implements ILocalStorageDataSource {
   @override
   Future<void> saveData(Listing listing) async {
     await _openDataBase();
-    final query = getQueryByListingType(listing);
+    final query = _getQueryByListingType(listing);
     await _db.rawQuery(query);
   }
 
-  String getQueryByListingType(Listing listing) {
+  String _getQueryByListingType(Listing listing) {
     final String prefixQuery;
     final String query;
     const String insertQuery = 'INSERT INTO listing ';
     if (listing.modelName?.toLowerCase() == 'casa' ||
         listing.modelName?.toLowerCase() == 'house') {
       prefixQuery =
-          '(m2_land, m2_const, rooms, baths, cars, lat, long, price, model_name)';
+          '(m2_land, m2_const, rooms, baths, cars, lat, long, price, model_name, address)';
       query =
-          ' VALUES (${listing.m2Land}, ${listing.m2Const}, ${listing.rooms}, ${listing.baths}, ${listing.cars}, ${listing.lat}, ${listing.long}, ${listing.price}, "house");';
+          ' VALUES (${listing.m2Land}, ${listing.m2Const}, ${listing.rooms}, ${listing.baths}, ${listing.cars}, ${listing.lat}, ${listing.long}, ${listing.price}, "house", "${listing.address}");';
       return insertQuery + prefixQuery + query;
     }
     prefixQuery =
-        '(m2_const, rooms, baths, cars, lat, long, price, model_name)';
+        '(m2_const, rooms, baths, cars, lat, long, price, model_name, address)';
     query =
-        ' VALUES (${listing.m2Const}, ${listing.rooms}, ${listing.baths}, ${listing.cars}, ${listing.lat}, ${listing.long}, ${listing.price}, "apartment");';
+        ' VALUES (${listing.m2Const}, ${listing.rooms}, ${listing.baths}, ${listing.cars}, ${listing.lat}, ${listing.long}, ${listing.price}, "apartment", "${listing.address}");';
     return insertQuery + prefixQuery + query;
   }
 
