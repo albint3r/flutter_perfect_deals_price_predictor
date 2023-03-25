@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../aplication/my_listing_predictions/my_listing_predictions_bloc.dart';
 import '../../../../domain/predicted_price/listing.dart';
 import '../../../core/app_router/app_router.dart';
 import 'content_alert.dart';
@@ -25,6 +27,15 @@ class ShowDialogListing extends StatelessWidget {
 
   final Listing listing;
 
+  void _continueToNextPage(BuildContext context) {
+    context.read<MyListingPredictionsBloc>().add(
+          MyListingPredictionsEvent.start(),
+        );
+    context.router.push(
+      const HomeRoute(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -33,8 +44,10 @@ class ShowDialogListing extends StatelessWidget {
         decoration: gradientBackground,
         child: AlertDialog(
           backgroundColor: Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(15),
+            ),
           ),
           title: TitleAlert(
             listing: listing,
@@ -46,9 +59,7 @@ class ShowDialogListing extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () {
-                context.router.push(
-                  const HomeRoute(),
-                );
+                _continueToNextPage(context);
               },
               child: const Text('Continuar'),
             ),

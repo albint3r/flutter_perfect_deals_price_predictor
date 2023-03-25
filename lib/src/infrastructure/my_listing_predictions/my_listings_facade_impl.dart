@@ -32,12 +32,11 @@ class MyListingsFacadeImpl implements IMyListingsFacade {
   void resetForm({
     required Listing listing,
   }) {
-    // TODO DEFINIR SI SE QUEDARA ASI LOS ARGUMENTOS O SE HARA UN NESTED UPDATE EN EL STATE PARA QUE UPDATE EL NUEVO VALOR.
-    editListingForm.note.value = null;
+    editListingForm.note.value = listing.note;
   }
 
   @override
-  Future<Listing> updateListing({
+  Future<void> updateListing({
     required Listing listing,
   }) async {
     final Listing updatedListing = listing.copyWith(
@@ -46,6 +45,5 @@ class MyListingsFacadeImpl implements IMyListingsFacade {
     await localStorageDataSource.updateListing(
       updatedListing,
     );
-    return updatedListing;
   }
 }

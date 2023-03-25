@@ -10,7 +10,7 @@ abstract class IMyListingsFacade {
   void resetForm({
     required Listing listing,
   });
-  Future<Listing> updateListing({
+  Future<void> updateListing({
     required Listing listing,
   });
 }

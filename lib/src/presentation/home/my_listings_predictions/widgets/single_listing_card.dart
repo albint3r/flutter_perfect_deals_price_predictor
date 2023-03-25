@@ -99,7 +99,6 @@ class SingleListingCard extends StatelessWidget {
     showDialog(
       context: context,
       builder: (context) {
-        // TODO CHECAR ESTA PARTE PARA VER POR QUE NO SE ESTA ACTUALIZANDO EL ESTADO EN EL FORM UNA VEZ QUE SE GUARDO EL RESULTADO
         context.read<MyListingPredictionsBloc>().add(
               MyListingPredictionsEvent.editListing(
                 listing: listing!,
@@ -119,10 +118,10 @@ class SingleListingCard extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     return InkWell(
       radius: 10,
-      highlightColor: Colors.greenAccent,
+      highlightColor: theme.primaryColor.withOpacity(.25),
       borderRadius: const BorderRadius.only(
-        bottomRight: Radius.circular(70),
-        topLeft: Radius.circular(70),
+        topRight: Radius.circular(70),
+        bottomLeft: Radius.circular(70),
       ),
       onLongPress: () {
         _editListing(context);

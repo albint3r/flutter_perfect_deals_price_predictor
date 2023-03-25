@@ -32,13 +32,6 @@ class MyListingPredictionsBloc
     });
     on<_MyListingPredictionsEventEditListing>(
       (event, emit) {
-        print('_MyListingPredictionsEventEditListing');
-        print('_MyListingPredictionsEventEditListing');
-        print('_MyListingPredictionsEventEditListing');
-        print('_MyListingPredictionsEventEditListing');
-        print('_MyListingPredictionsEventEditListing');
-        print('_MyListingPredictionsEventEditListing');
-        print('event.listing-> ${event.listing}');
         emit(
           state.copyWith(
             listingToEdit: event.listing,
@@ -51,12 +44,14 @@ class MyListingPredictionsBloc
     );
     on<_MyListingPredictionsEventUpdateListing>(
       (event, emit) async {
-        final Listing updatedListing = await facade.updateListing(
+        await facade.updateListing(
           listing: state.listingToEdit!,
         );
+        // Update the listings of the user.
+        final myListing = await facade.getData();
         emit(
           state.copyWith(
-            listingToEdit: updatedListing,
+            myListings: myListing,
           ),
         );
       },
