@@ -52,7 +52,7 @@ abstract class ConstTextTheme {
         ),
         button: TextStyle(
           fontSize: 14,
-          color: colorScheme.secondary,
+          color: colorScheme.onPrimary,
         ),
         caption: TextStyle(
           fontSize: 12,

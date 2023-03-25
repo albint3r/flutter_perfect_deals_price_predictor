@@ -10,6 +10,7 @@ import '../../../core/app_router/app_router.dart';
 import '../../../core/common_widgets/gap.dart';
 import '../../../core/common_widgets/wrapper_scaffold_body.dart';
 
+import 'buttons/submit_predictions_button.dart';
 import 'fields/baths_field.dart';
 import 'fields/cars_field.dart';
 import 'fields/google_maps_stack_container.dart';
@@ -21,12 +22,6 @@ import 'fields/rooms_field.dart';
 
 class PredictedPriceListingBody extends StatelessWidget {
   const PredictedPriceListingBody({super.key});
-
-  void _onSubmitPrediction(BuildContext context) {
-    context.read<PredictedPriceBloc>().add(
-          PredictedPriceEvent.onSubmitPrediction(),
-        );
-  }
 
   Future<void> _setCameraToCurrentLocation({
     required PredictedPriceState state,
@@ -48,17 +43,17 @@ class PredictedPriceListingBody extends StatelessWidget {
     );
   }
 
-  Future<Position> _getCurrentLocation() async {
-    final bool serviceEnable = await Geolocator.isLocationServiceEnabled();
-    if (!serviceEnable) {
-      return Future.error('Location service are disable');
-    }
-    final LocationPermission permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.deniedForever) {
-      return Future.error('Location permission are permanently denied');
-    }
-    return Geolocator.getCurrentPosition();
-  }
+  // Future<Position> _getCurrentLocation() async {
+  //   final bool serviceEnable = await Geolocator.isLocationServiceEnabled();
+  //   if (!serviceEnable) {
+  //     return Future.error('Location service are disable');
+  //   }
+  //   final LocationPermission permission = await Geolocator.checkPermission();
+  //   if (permission == LocationPermission.deniedForever) {
+  //     return Future.error('Location permission are permanently denied');
+  //   }
+  //   return Geolocator.getCurrentPosition();
+  // }
 
   void _goToViewListingPrediction(
     BuildContext context,
@@ -139,24 +134,8 @@ class PredictedPriceListingBody extends StatelessWidget {
                   const RoomsField(),
                   const BathsField(),
                   const CarsField(),
-                  ReactiveFormConsumer(
-                    builder: (context, formGroup, child) {
-                      return Center(
-                        child: ElevatedButton(
-                          onPressed: state.formGroup!.valid
-                              ? () {
-                                  _onSubmitPrediction(context);
-                                }
-                              : null,
-                          child: Text(
-                            'Generar Opinion de Valor',
-                            style: Theme.of(context).textTheme.button,
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      );
-                    },
-                  ),
+                  const Divider(),
+                  const SubmitPredictionsButton(),
                 ],
               ),
             ),

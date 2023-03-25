@@ -7,13 +7,23 @@ abstract class ConstButtonStyle {
       ElevatedButtonThemeData(
         style: ButtonStyle(
           alignment: Alignment.center,
-          fixedSize: MaterialStateProperty.all(
-            const Size(150, 50),
+          shadowColor: MaterialStatePropertyAll(colorScheme.secondary),
+          shape: const MaterialStatePropertyAll(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(100),
+                topLeft: Radius.circular(100),
+              ),
+            ),
           ),
-          elevation: MaterialStateProperty.all(5),
+          fixedSize: MaterialStateProperty.all(
+            const Size(400, 80),
+          ),
+          elevation: MaterialStateProperty.all(20),
           backgroundColor: MaterialStateProperty.resolveWith<Color?>(
               (Set<MaterialState> states) {
             if (states.contains(MaterialState.disabled)) {
+              // return colorScheme.outline;
               return colorScheme.outline;
             }
             if (states.contains(MaterialState.hovered)) {

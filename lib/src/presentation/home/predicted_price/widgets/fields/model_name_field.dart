@@ -8,20 +8,28 @@ class ModelNameField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        children: [
-          ReactiveRadioListTile(
-            formControlName: 'model_name', value: 'Casa',
-            title: const Text('Casa'),
+    final theme = Theme.of(context);
+    final textTheme =
+        theme.textTheme.button?.copyWith(color: theme.primaryColor);
+    return Column(
+      children: [
+        ReactiveRadioListTile(
+          formControlName: 'model_name',
+          value: 'Casa',
+          title: Text(
+            'Casa',
+            style: textTheme,
           ),
-          ReactiveRadioListTile(
-            formControlName: 'model_name', value: 'Departamento',
-            title: const Text('Departamento'),
-          )
-        ],
-      ),
+        ),
+        ReactiveRadioListTile(
+          formControlName: 'model_name',
+          value: 'Departamento',
+          title: Text(
+            'Departamento',
+            style: textTheme,
+          ),
+        )
+      ],
     );
   }
 }
