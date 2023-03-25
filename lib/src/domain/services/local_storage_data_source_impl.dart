@@ -51,6 +51,16 @@ class LocalStorageDataSourceImpl implements ILocalStorageDataSource {
     await _db.rawQuery(query);
   }
 
+  @override
+  Future<void> updateListing(
+    Listing listing,
+  ) async {
+    await _openDataBase();
+    final String query =
+        'UPDATE  listing SET note = "${listing.note}" WHERE id = ${listing.id}';
+    await _db.rawQuery(query);
+  }
+
   String _getQueryByListingType(Listing listing) {
     final String prefixQuery;
     final String query;
@@ -93,6 +103,7 @@ class LocalStorageDataSourceImpl implements ILocalStorageDataSource {
             'long REAL NOT NULL,'
             'price REAL,'
             'model_name TEXT,'
+            'note TEXT,'
             'created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP'
             ');');
       },

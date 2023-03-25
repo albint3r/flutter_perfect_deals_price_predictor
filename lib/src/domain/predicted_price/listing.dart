@@ -27,6 +27,7 @@ class Listing with _$Listing {
     String? modelName,
     @JsonKey(name: 'created_at')
     String? createdAt,
+    String? note,
   }) = _Listing;
 
   Listing._();

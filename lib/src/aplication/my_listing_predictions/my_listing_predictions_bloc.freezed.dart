@@ -19,39 +19,48 @@ mixin _$MyListingPredictionsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() start,
-    required TResult Function() editListing,
+    required TResult Function(Listing listing) editListing,
+    required TResult Function() updateListing,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? start,
-    TResult? Function()? editListing,
+    TResult? Function(Listing listing)? editListing,
+    TResult? Function()? updateListing,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? start,
-    TResult Function()? editListing,
+    TResult Function(Listing listing)? editListing,
+    TResult Function()? updateListing,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_MyListingPredictionsEvent value) start,
+    required TResult Function(_MyListingPredictionsEventStart value) start,
     required TResult Function(_MyListingPredictionsEventEditListing value)
         editListing,
+    required TResult Function(_MyListingPredictionsEventUpdateListing value)
+        updateListing,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_MyListingPredictionsEvent value)? start,
+    TResult? Function(_MyListingPredictionsEventStart value)? start,
     TResult? Function(_MyListingPredictionsEventEditListing value)? editListing,
+    TResult? Function(_MyListingPredictionsEventUpdateListing value)?
+        updateListing,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_MyListingPredictionsEvent value)? start,
+    TResult Function(_MyListingPredictionsEventStart value)? start,
     TResult Function(_MyListingPredictionsEventEditListing value)? editListing,
+    TResult Function(_MyListingPredictionsEventUpdateListing value)?
+        updateListing,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -77,28 +86,29 @@ class _$MyListingPredictionsEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_MyListingPredictionsEventCopyWith<$Res> {
-  factory _$$_MyListingPredictionsEventCopyWith(
-          _$_MyListingPredictionsEvent value,
-          $Res Function(_$_MyListingPredictionsEvent) then) =
-      __$$_MyListingPredictionsEventCopyWithImpl<$Res>;
+abstract class _$$_MyListingPredictionsEventStartCopyWith<$Res> {
+  factory _$$_MyListingPredictionsEventStartCopyWith(
+          _$_MyListingPredictionsEventStart value,
+          $Res Function(_$_MyListingPredictionsEventStart) then) =
+      __$$_MyListingPredictionsEventStartCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_MyListingPredictionsEventCopyWithImpl<$Res>
+class __$$_MyListingPredictionsEventStartCopyWithImpl<$Res>
     extends _$MyListingPredictionsEventCopyWithImpl<$Res,
-        _$_MyListingPredictionsEvent>
-    implements _$$_MyListingPredictionsEventCopyWith<$Res> {
-  __$$_MyListingPredictionsEventCopyWithImpl(
-      _$_MyListingPredictionsEvent _value,
-      $Res Function(_$_MyListingPredictionsEvent) _then)
+        _$_MyListingPredictionsEventStart>
+    implements _$$_MyListingPredictionsEventStartCopyWith<$Res> {
+  __$$_MyListingPredictionsEventStartCopyWithImpl(
+      _$_MyListingPredictionsEventStart _value,
+      $Res Function(_$_MyListingPredictionsEventStart) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_MyListingPredictionsEvent implements _MyListingPredictionsEvent {
-  _$_MyListingPredictionsEvent();
+class _$_MyListingPredictionsEventStart
+    implements _MyListingPredictionsEventStart {
+  _$_MyListingPredictionsEventStart();
 
   @override
   String toString() {
@@ -109,7 +119,7 @@ class _$_MyListingPredictionsEvent implements _MyListingPredictionsEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MyListingPredictionsEvent);
+            other is _$_MyListingPredictionsEventStart);
   }
 
   @override
@@ -119,7 +129,8 @@ class _$_MyListingPredictionsEvent implements _MyListingPredictionsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() start,
-    required TResult Function() editListing,
+    required TResult Function(Listing listing) editListing,
+    required TResult Function() updateListing,
   }) {
     return start();
   }
@@ -128,7 +139,8 @@ class _$_MyListingPredictionsEvent implements _MyListingPredictionsEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? start,
-    TResult? Function()? editListing,
+    TResult? Function(Listing listing)? editListing,
+    TResult? Function()? updateListing,
   }) {
     return start?.call();
   }
@@ -137,7 +149,8 @@ class _$_MyListingPredictionsEvent implements _MyListingPredictionsEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? start,
-    TResult Function()? editListing,
+    TResult Function(Listing listing)? editListing,
+    TResult Function()? updateListing,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -149,9 +162,11 @@ class _$_MyListingPredictionsEvent implements _MyListingPredictionsEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_MyListingPredictionsEvent value) start,
+    required TResult Function(_MyListingPredictionsEventStart value) start,
     required TResult Function(_MyListingPredictionsEventEditListing value)
         editListing,
+    required TResult Function(_MyListingPredictionsEventUpdateListing value)
+        updateListing,
   }) {
     return start(this);
   }
@@ -159,8 +174,10 @@ class _$_MyListingPredictionsEvent implements _MyListingPredictionsEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_MyListingPredictionsEvent value)? start,
+    TResult? Function(_MyListingPredictionsEventStart value)? start,
     TResult? Function(_MyListingPredictionsEventEditListing value)? editListing,
+    TResult? Function(_MyListingPredictionsEventUpdateListing value)?
+        updateListing,
   }) {
     return start?.call(this);
   }
@@ -168,8 +185,10 @@ class _$_MyListingPredictionsEvent implements _MyListingPredictionsEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_MyListingPredictionsEvent value)? start,
+    TResult Function(_MyListingPredictionsEventStart value)? start,
     TResult Function(_MyListingPredictionsEventEditListing value)? editListing,
+    TResult Function(_MyListingPredictionsEventUpdateListing value)?
+        updateListing,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -179,8 +198,9 @@ class _$_MyListingPredictionsEvent implements _MyListingPredictionsEvent {
   }
 }
 
-abstract class _MyListingPredictionsEvent implements MyListingPredictionsEvent {
-  factory _MyListingPredictionsEvent() = _$_MyListingPredictionsEvent;
+abstract class _MyListingPredictionsEventStart
+    implements MyListingPredictionsEvent {
+  factory _MyListingPredictionsEventStart() = _$_MyListingPredictionsEventStart;
 }
 
 /// @nodoc
@@ -189,6 +209,10 @@ abstract class _$$_MyListingPredictionsEventEditListingCopyWith<$Res> {
           _$_MyListingPredictionsEventEditListing value,
           $Res Function(_$_MyListingPredictionsEventEditListing) then) =
       __$$_MyListingPredictionsEventEditListingCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Listing listing});
+
+  $ListingCopyWith<$Res> get listing;
 }
 
 /// @nodoc
@@ -200,56 +224,92 @@ class __$$_MyListingPredictionsEventEditListingCopyWithImpl<$Res>
       _$_MyListingPredictionsEventEditListing _value,
       $Res Function(_$_MyListingPredictionsEventEditListing) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? listing = null,
+  }) {
+    return _then(_$_MyListingPredictionsEventEditListing(
+      listing: null == listing
+          ? _value.listing
+          : listing // ignore: cast_nullable_to_non_nullable
+              as Listing,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ListingCopyWith<$Res> get listing {
+    return $ListingCopyWith<$Res>(_value.listing, (value) {
+      return _then(_value.copyWith(listing: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$_MyListingPredictionsEventEditListing
     implements _MyListingPredictionsEventEditListing {
-  _$_MyListingPredictionsEventEditListing();
+  _$_MyListingPredictionsEventEditListing({required this.listing});
+
+  @override
+  final Listing listing;
 
   @override
   String toString() {
-    return 'MyListingPredictionsEvent.editListing()';
+    return 'MyListingPredictionsEvent.editListing(listing: $listing)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MyListingPredictionsEventEditListing);
+            other is _$_MyListingPredictionsEventEditListing &&
+            (identical(other.listing, listing) || other.listing == listing));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, listing);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_MyListingPredictionsEventEditListingCopyWith<
+          _$_MyListingPredictionsEventEditListing>
+      get copyWith => __$$_MyListingPredictionsEventEditListingCopyWithImpl<
+          _$_MyListingPredictionsEventEditListing>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() start,
-    required TResult Function() editListing,
+    required TResult Function(Listing listing) editListing,
+    required TResult Function() updateListing,
   }) {
-    return editListing();
+    return editListing(listing);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? start,
-    TResult? Function()? editListing,
+    TResult? Function(Listing listing)? editListing,
+    TResult? Function()? updateListing,
   }) {
-    return editListing?.call();
+    return editListing?.call(listing);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? start,
-    TResult Function()? editListing,
+    TResult Function(Listing listing)? editListing,
+    TResult Function()? updateListing,
     required TResult orElse(),
   }) {
     if (editListing != null) {
-      return editListing();
+      return editListing(listing);
     }
     return orElse();
   }
@@ -257,9 +317,11 @@ class _$_MyListingPredictionsEventEditListing
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_MyListingPredictionsEvent value) start,
+    required TResult Function(_MyListingPredictionsEventStart value) start,
     required TResult Function(_MyListingPredictionsEventEditListing value)
         editListing,
+    required TResult Function(_MyListingPredictionsEventUpdateListing value)
+        updateListing,
   }) {
     return editListing(this);
   }
@@ -267,8 +329,10 @@ class _$_MyListingPredictionsEventEditListing
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_MyListingPredictionsEvent value)? start,
+    TResult? Function(_MyListingPredictionsEventStart value)? start,
     TResult? Function(_MyListingPredictionsEventEditListing value)? editListing,
+    TResult? Function(_MyListingPredictionsEventUpdateListing value)?
+        updateListing,
   }) {
     return editListing?.call(this);
   }
@@ -276,8 +340,10 @@ class _$_MyListingPredictionsEventEditListing
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_MyListingPredictionsEvent value)? start,
+    TResult Function(_MyListingPredictionsEventStart value)? start,
     TResult Function(_MyListingPredictionsEventEditListing value)? editListing,
+    TResult Function(_MyListingPredictionsEventUpdateListing value)?
+        updateListing,
     required TResult orElse(),
   }) {
     if (editListing != null) {
@@ -289,14 +355,142 @@ class _$_MyListingPredictionsEventEditListing
 
 abstract class _MyListingPredictionsEventEditListing
     implements MyListingPredictionsEvent {
-  factory _MyListingPredictionsEventEditListing() =
+  factory _MyListingPredictionsEventEditListing(
+          {required final Listing listing}) =
       _$_MyListingPredictionsEventEditListing;
+
+  Listing get listing;
+  @JsonKey(ignore: true)
+  _$$_MyListingPredictionsEventEditListingCopyWith<
+          _$_MyListingPredictionsEventEditListing>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_MyListingPredictionsEventUpdateListingCopyWith<$Res> {
+  factory _$$_MyListingPredictionsEventUpdateListingCopyWith(
+          _$_MyListingPredictionsEventUpdateListing value,
+          $Res Function(_$_MyListingPredictionsEventUpdateListing) then) =
+      __$$_MyListingPredictionsEventUpdateListingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_MyListingPredictionsEventUpdateListingCopyWithImpl<$Res>
+    extends _$MyListingPredictionsEventCopyWithImpl<$Res,
+        _$_MyListingPredictionsEventUpdateListing>
+    implements _$$_MyListingPredictionsEventUpdateListingCopyWith<$Res> {
+  __$$_MyListingPredictionsEventUpdateListingCopyWithImpl(
+      _$_MyListingPredictionsEventUpdateListing _value,
+      $Res Function(_$_MyListingPredictionsEventUpdateListing) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_MyListingPredictionsEventUpdateListing
+    implements _MyListingPredictionsEventUpdateListing {
+  _$_MyListingPredictionsEventUpdateListing();
+
+  @override
+  String toString() {
+    return 'MyListingPredictionsEvent.updateListing()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_MyListingPredictionsEventUpdateListing);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function(Listing listing) editListing,
+    required TResult Function() updateListing,
+  }) {
+    return updateListing();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function(Listing listing)? editListing,
+    TResult? Function()? updateListing,
+  }) {
+    return updateListing?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function(Listing listing)? editListing,
+    TResult Function()? updateListing,
+    required TResult orElse(),
+  }) {
+    if (updateListing != null) {
+      return updateListing();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MyListingPredictionsEventStart value) start,
+    required TResult Function(_MyListingPredictionsEventEditListing value)
+        editListing,
+    required TResult Function(_MyListingPredictionsEventUpdateListing value)
+        updateListing,
+  }) {
+    return updateListing(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MyListingPredictionsEventStart value)? start,
+    TResult? Function(_MyListingPredictionsEventEditListing value)? editListing,
+    TResult? Function(_MyListingPredictionsEventUpdateListing value)?
+        updateListing,
+  }) {
+    return updateListing?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MyListingPredictionsEventStart value)? start,
+    TResult Function(_MyListingPredictionsEventEditListing value)? editListing,
+    TResult Function(_MyListingPredictionsEventUpdateListing value)?
+        updateListing,
+    required TResult orElse(),
+  }) {
+    if (updateListing != null) {
+      return updateListing(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MyListingPredictionsEventUpdateListing
+    implements MyListingPredictionsEvent {
+  factory _MyListingPredictionsEventUpdateListing() =
+      _$_MyListingPredictionsEventUpdateListing;
 }
 
 /// @nodoc
 mixin _$MyListingPredictionsState {
   bool get isLoading => throw _privateConstructorUsedError;
   MyListings? get myListings => throw _privateConstructorUsedError;
+  Listing? get listingToEdit => throw _privateConstructorUsedError;
+  FormGroup? get formGroup => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MyListingPredictionsStateCopyWith<MyListingPredictionsState> get copyWith =>
@@ -309,9 +503,14 @@ abstract class $MyListingPredictionsStateCopyWith<$Res> {
           $Res Function(MyListingPredictionsState) then) =
       _$MyListingPredictionsStateCopyWithImpl<$Res, MyListingPredictionsState>;
   @useResult
-  $Res call({bool isLoading, MyListings? myListings});
+  $Res call(
+      {bool isLoading,
+      MyListings? myListings,
+      Listing? listingToEdit,
+      FormGroup? formGroup});
 
   $MyListingsCopyWith<$Res>? get myListings;
+  $ListingCopyWith<$Res>? get listingToEdit;
 }
 
 /// @nodoc
@@ -330,6 +529,8 @@ class _$MyListingPredictionsStateCopyWithImpl<$Res,
   $Res call({
     Object? isLoading = null,
     Object? myListings = freezed,
+    Object? listingToEdit = freezed,
+    Object? formGroup = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -340,6 +541,14 @@ class _$MyListingPredictionsStateCopyWithImpl<$Res,
           ? _value.myListings
           : myListings // ignore: cast_nullable_to_non_nullable
               as MyListings?,
+      listingToEdit: freezed == listingToEdit
+          ? _value.listingToEdit
+          : listingToEdit // ignore: cast_nullable_to_non_nullable
+              as Listing?,
+      formGroup: freezed == formGroup
+          ? _value.formGroup
+          : formGroup // ignore: cast_nullable_to_non_nullable
+              as FormGroup?,
     ) as $Val);
   }
 
@@ -354,6 +563,18 @@ class _$MyListingPredictionsStateCopyWithImpl<$Res,
       return _then(_value.copyWith(myListings: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ListingCopyWith<$Res>? get listingToEdit {
+    if (_value.listingToEdit == null) {
+      return null;
+    }
+
+    return $ListingCopyWith<$Res>(_value.listingToEdit!, (value) {
+      return _then(_value.copyWith(listingToEdit: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -365,10 +586,16 @@ abstract class _$$_MyListingPredictionsStateCopyWith<$Res>
       __$$_MyListingPredictionsStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, MyListings? myListings});
+  $Res call(
+      {bool isLoading,
+      MyListings? myListings,
+      Listing? listingToEdit,
+      FormGroup? formGroup});
 
   @override
   $MyListingsCopyWith<$Res>? get myListings;
+  @override
+  $ListingCopyWith<$Res>? get listingToEdit;
 }
 
 /// @nodoc
@@ -386,6 +613,8 @@ class __$$_MyListingPredictionsStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = null,
     Object? myListings = freezed,
+    Object? listingToEdit = freezed,
+    Object? formGroup = freezed,
   }) {
     return _then(_$_MyListingPredictionsState(
       isLoading: null == isLoading
@@ -396,6 +625,14 @@ class __$$_MyListingPredictionsStateCopyWithImpl<$Res>
           ? _value.myListings
           : myListings // ignore: cast_nullable_to_non_nullable
               as MyListings?,
+      listingToEdit: freezed == listingToEdit
+          ? _value.listingToEdit
+          : listingToEdit // ignore: cast_nullable_to_non_nullable
+              as Listing?,
+      formGroup: freezed == formGroup
+          ? _value.formGroup
+          : formGroup // ignore: cast_nullable_to_non_nullable
+              as FormGroup?,
     ));
   }
 }
@@ -403,16 +640,24 @@ class __$$_MyListingPredictionsStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_MyListingPredictionsState implements _MyListingPredictionsState {
-  _$_MyListingPredictionsState({required this.isLoading, this.myListings});
+  _$_MyListingPredictionsState(
+      {required this.isLoading,
+      this.myListings,
+      this.listingToEdit,
+      this.formGroup});
 
   @override
   final bool isLoading;
   @override
   final MyListings? myListings;
+  @override
+  final Listing? listingToEdit;
+  @override
+  final FormGroup? formGroup;
 
   @override
   String toString() {
-    return 'MyListingPredictionsState(isLoading: $isLoading, myListings: $myListings)';
+    return 'MyListingPredictionsState(isLoading: $isLoading, myListings: $myListings, listingToEdit: $listingToEdit, formGroup: $formGroup)';
   }
 
   @override
@@ -423,11 +668,16 @@ class _$_MyListingPredictionsState implements _MyListingPredictionsState {
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.myListings, myListings) ||
-                other.myListings == myListings));
+                other.myListings == myListings) &&
+            (identical(other.listingToEdit, listingToEdit) ||
+                other.listingToEdit == listingToEdit) &&
+            (identical(other.formGroup, formGroup) ||
+                other.formGroup == formGroup));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, myListings);
+  int get hashCode =>
+      Object.hash(runtimeType, isLoading, myListings, listingToEdit, formGroup);
 
   @JsonKey(ignore: true)
   @override
@@ -440,12 +690,18 @@ class _$_MyListingPredictionsState implements _MyListingPredictionsState {
 abstract class _MyListingPredictionsState implements MyListingPredictionsState {
   factory _MyListingPredictionsState(
       {required final bool isLoading,
-      final MyListings? myListings}) = _$_MyListingPredictionsState;
+      final MyListings? myListings,
+      final Listing? listingToEdit,
+      final FormGroup? formGroup}) = _$_MyListingPredictionsState;
 
   @override
   bool get isLoading;
   @override
   MyListings? get myListings;
+  @override
+  Listing? get listingToEdit;
+  @override
+  FormGroup? get formGroup;
   @override
   @JsonKey(ignore: true)
   _$$_MyListingPredictionsStateCopyWith<_$_MyListingPredictionsState>

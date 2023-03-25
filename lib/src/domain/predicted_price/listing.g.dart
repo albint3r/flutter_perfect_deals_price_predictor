@@ -21,6 +21,7 @@ _$_Listing _$$_ListingFromJson(Map<String, dynamic> json) => _$_Listing(
       address: json['address'] as String?,
       modelName: json['model_name'] as String?,
       createdAt: json['created_at'] as String?,
+      note: json['note'] as String?,
     );
 
 Map<String, dynamic> _$$_ListingToJson(_$_Listing instance) =>
@@ -39,4 +40,5 @@ Map<String, dynamic> _$$_ListingToJson(_$_Listing instance) =>
       'address': instance.address,
       'model_name': instance.modelName,
       'created_at': instance.createdAt,
+      'note': instance.note,
     };

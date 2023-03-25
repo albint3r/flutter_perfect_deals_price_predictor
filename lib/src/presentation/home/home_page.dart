@@ -1,8 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:perfect_deals_price_predictor/src/presentation/home/predicted_price/widgets/buttons/submit_predictions_button.dart';
-
 import '../../aplication/auth/auth_bloc.dart';
 import '../../aplication/my_listing_predictions/my_listing_predictions_bloc.dart';
 import '../core/app_router/app_router.dart';

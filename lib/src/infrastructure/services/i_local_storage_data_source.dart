@@ -5,6 +5,8 @@ abstract class ILocalStorageDataSource {
 
   Future<void> saveData(Listing listing);
 
+  Future<void> updateListing(Listing listing);
+
   Future<void> deleteData(String key);
 
   Future<void> clearAllData();

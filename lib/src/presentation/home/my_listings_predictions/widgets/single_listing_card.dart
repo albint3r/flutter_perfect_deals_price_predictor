@@ -1,10 +1,14 @@
 import 'dart:math';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
+import '../../../../aplication/my_listing_predictions/my_listing_predictions_bloc.dart';
 import '../../../../domain/predicted_price/listing.dart';
 import '../../view_listing_prediction/widgets/feature_listing_info.dart';
+import 'edit_listing_container.dart';
 
 class SingleListingCard extends StatelessWidget {
   const SingleListingCard({
@@ -91,67 +95,86 @@ class SingleListingCard extends StatelessWidget {
   String get defaultDirectionTitle =>
       'Boulevard Perfect Deals #1234, C.P 45110, Zapopan Jalisco, México';
 
+  void _editListing(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        // TODO CHECAR ESTA PARTE PARA VER POR QUE NO SE ESTA ACTUALIZANDO EL ESTADO EN EL FORM UNA VEZ QUE SE GUARDO EL RESULTADO
+        context.read<MyListingPredictionsBloc>().add(
+              MyListingPredictionsEvent.editListing(
+                listing: listing!,
+              ),
+            );
+        return EditListingContainer(
+          listing: listing,
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final NumberFormat myFormat = NumberFormat.decimalPattern('es');
     final height = MediaQuery.of(context).size.height;
     return InkWell(
-      radius: 50,
+      radius: 10,
       highlightColor: Colors.greenAccent,
       borderRadius: const BorderRadius.only(
         bottomRight: Radius.circular(70),
         topLeft: Radius.circular(70),
       ),
       onLongPress: () {
-        // TODO DESCUBRIR COMO GUARDAR UNA IMAGEN EN EL MOBIL
-        print('Edit card now!listing${listing?.id}');
+        _editListing(context);
       },
-      child: Card(
-        elevation: 10,
-        child: SizedBox(
-          // height: 450,
-          height: height * .55,
-          child: Column(
-            children: [
-              Image.network(
-                fit: BoxFit.contain,
-                defaultCoverImage,
-              ),
-              ListTile(
-                title: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 5),
-                      child: Text(
-                        listing?.address ?? defaultDirectionTitle,
-                        overflow: TextOverflow.fade,
-                        maxLines: 2,
-                      ),
-                    ),
-                    Divider(
-                      color: theme.colorScheme.primary,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: _getFeaturesInfo,
-                    ),
-                  ],
+      child: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: Card(
+          elevation: 10,
+          child: SizedBox(
+            // height: 450,
+            height: height * .55,
+            child: Column(
+              children: [
+                Image.network(
+                  fit: BoxFit.contain,
+                  defaultCoverImage,
                 ),
-                subtitle: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20),
-                  child: Text(
-                    '\$ ${myFormat.format(listing?.price)}',
-                    style: theme.textTheme.headline5,
-                    textAlign: TextAlign.right,
+                ListTile(
+                  title: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                        child: Text(
+                          listing?.address ?? defaultDirectionTitle,
+                          overflow: TextOverflow.fade,
+                          maxLines: 2,
+                        ),
+                      ),
+                      Divider(
+                        color: theme.colorScheme.primary,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: _getFeaturesInfo,
+                      ),
+                    ],
+                  ),
+                  subtitle: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    child: Text(
+                      '\$ ${myFormat.format(listing?.price)}',
+                      style: theme.textTheme.headline5,
+                      textAlign: TextAlign.right,
+                    ),
+                  ),
+                  leading: Icon(
+                    Icons.location_on,
+                    color: theme.colorScheme.primary,
                   ),
                 ),
-                leading: Icon(
-                  Icons.location_on,
-                  color: theme.colorScheme.primary,
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
