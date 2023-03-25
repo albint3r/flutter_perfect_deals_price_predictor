@@ -118,39 +118,37 @@ class SingleListingCard extends StatelessWidget {
                 fit: BoxFit.contain,
                 defaultCoverImage,
               ),
-              Expanded(
-                child: ListTile(
-                  title: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 5),
-                        child: Text(
-                          listing?.address ?? defaultDirectionTitle,
-                          overflow: TextOverflow.fade,
-                          maxLines: 2,
-                        ),
+              ListTile(
+                title: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 5),
+                      child: Text(
+                        listing?.address ?? defaultDirectionTitle,
+                        overflow: TextOverflow.fade,
+                        maxLines: 2,
                       ),
-                      Divider(
-                        color: theme.colorScheme.primary,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: _getFeaturesInfo,
-                      ),
-                    ],
-                  ),
-                  subtitle: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20),
-                    child: Text(
-                      '\$ ${myFormat.format(listing?.price)}',
-                      style: theme.textTheme.headline5,
-                      textAlign: TextAlign.right,
                     ),
+                    Divider(
+                      color: theme.colorScheme.primary,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: _getFeaturesInfo,
+                    ),
+                  ],
+                ),
+                subtitle: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: Text(
+                    '\$ ${myFormat.format(listing?.price)}',
+                    style: theme.textTheme.headline5,
+                    textAlign: TextAlign.right,
                   ),
-                  leading: Icon(
-                    Icons.location_on,
-                    color: theme.colorScheme.primary,
-                  ),
+                ),
+                leading: Icon(
+                  Icons.location_on,
+                  color: theme.colorScheme.primary,
                 ),
               ),
             ],
