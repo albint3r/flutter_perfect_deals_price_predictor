@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reactive_forms/reactive_forms.dart';
+import 'single_radio_list_tile.dart';
 
 class ModelNameField extends StatelessWidget {
   const ModelNameField({
@@ -8,27 +8,20 @@ class ModelNameField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final textTheme =
-        theme.textTheme.button?.copyWith(color: theme.primaryColor);
     return Column(
-      children: [
-        ReactiveRadioListTile(
+      children: const [
+        SingleRadioListTile(
           formControlName: 'model_name',
           value: 'Casa',
-          title: Text(
-            'Casa',
-            style: textTheme,
-          ),
+          text: 'Casa',
+          icon: Icons.house,
         ),
-        ReactiveRadioListTile(
+        SingleRadioListTile(
           formControlName: 'model_name',
           value: 'Departamento',
-          title: Text(
-            'Departamento',
-            style: textTheme,
-          ),
-        )
+          text: 'Departamento',
+          icon: Icons.apartment,
+        ),
       ],
     );
   }

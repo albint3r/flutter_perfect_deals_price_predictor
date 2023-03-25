@@ -108,37 +108,38 @@ class PredictedPriceListingBody extends StatelessWidget {
             child: CircularProgressIndicator(),
           );
         }
-        return WrapperScaffoldBody(
-          child: ReactiveForm(
-            formGroup: state.formGroup!,
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const GoogleMapsStackContainer(),
-                  const Gap(15),
-                  const ModelNameField(),
-                  SizedBox(
-                    width: 500,
-                    child: Row(
-                      children: const [
-                        Expanded(
-                          child: M2LandField(),
-                        ),
-                        Expanded(
-                          child: M2ConstField(),
-                        ),
-                      ],
+        return ReactiveForm(
+          formGroup: state.formGroup!,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: ListView(
+                  children: [
+                    const GoogleMapsStackContainer(),
+                    const Gap(15),
+                    const ModelNameField(),
+                    SizedBox(
+                      width: 500,
+                      child: Row(
+                        children: const [
+                          Expanded(
+                            child: M2LandField(),
+                          ),
+                          Expanded(
+                            child: M2ConstField(),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  const RoomsField(),
-                  const BathsField(),
-                  const CarsField(),
-                  const Divider(),
-                  const SubmitPredictionsButton(),
-                ],
+                    const RoomsField(),
+                    const BathsField(),
+                    const CarsField(),
+                  ],
+                ),
               ),
-            ),
+              const SubmitPredictionsButton(),
+            ],
           ),
         );
       },
