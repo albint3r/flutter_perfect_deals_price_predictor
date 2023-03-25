@@ -19,32 +19,39 @@ mixin _$MyListingPredictionsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() start,
+    required TResult Function() editListing,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? start,
+    TResult? Function()? editListing,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? start,
+    TResult Function()? editListing,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_MyListingPredictionsEvent value) start,
+    required TResult Function(_MyListingPredictionsEventEditListing value)
+        editListing,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_MyListingPredictionsEvent value)? start,
+    TResult? Function(_MyListingPredictionsEventEditListing value)? editListing,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MyListingPredictionsEvent value)? start,
+    TResult Function(_MyListingPredictionsEventEditListing value)? editListing,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -112,6 +119,7 @@ class _$_MyListingPredictionsEvent implements _MyListingPredictionsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() start,
+    required TResult Function() editListing,
   }) {
     return start();
   }
@@ -120,6 +128,7 @@ class _$_MyListingPredictionsEvent implements _MyListingPredictionsEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? start,
+    TResult? Function()? editListing,
   }) {
     return start?.call();
   }
@@ -128,6 +137,7 @@ class _$_MyListingPredictionsEvent implements _MyListingPredictionsEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? start,
+    TResult Function()? editListing,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -140,6 +150,8 @@ class _$_MyListingPredictionsEvent implements _MyListingPredictionsEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_MyListingPredictionsEvent value) start,
+    required TResult Function(_MyListingPredictionsEventEditListing value)
+        editListing,
   }) {
     return start(this);
   }
@@ -148,6 +160,7 @@ class _$_MyListingPredictionsEvent implements _MyListingPredictionsEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_MyListingPredictionsEvent value)? start,
+    TResult? Function(_MyListingPredictionsEventEditListing value)? editListing,
   }) {
     return start?.call(this);
   }
@@ -156,6 +169,7 @@ class _$_MyListingPredictionsEvent implements _MyListingPredictionsEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MyListingPredictionsEvent value)? start,
+    TResult Function(_MyListingPredictionsEventEditListing value)? editListing,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -167,6 +181,116 @@ class _$_MyListingPredictionsEvent implements _MyListingPredictionsEvent {
 
 abstract class _MyListingPredictionsEvent implements MyListingPredictionsEvent {
   factory _MyListingPredictionsEvent() = _$_MyListingPredictionsEvent;
+}
+
+/// @nodoc
+abstract class _$$_MyListingPredictionsEventEditListingCopyWith<$Res> {
+  factory _$$_MyListingPredictionsEventEditListingCopyWith(
+          _$_MyListingPredictionsEventEditListing value,
+          $Res Function(_$_MyListingPredictionsEventEditListing) then) =
+      __$$_MyListingPredictionsEventEditListingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_MyListingPredictionsEventEditListingCopyWithImpl<$Res>
+    extends _$MyListingPredictionsEventCopyWithImpl<$Res,
+        _$_MyListingPredictionsEventEditListing>
+    implements _$$_MyListingPredictionsEventEditListingCopyWith<$Res> {
+  __$$_MyListingPredictionsEventEditListingCopyWithImpl(
+      _$_MyListingPredictionsEventEditListing _value,
+      $Res Function(_$_MyListingPredictionsEventEditListing) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_MyListingPredictionsEventEditListing
+    implements _MyListingPredictionsEventEditListing {
+  _$_MyListingPredictionsEventEditListing();
+
+  @override
+  String toString() {
+    return 'MyListingPredictionsEvent.editListing()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_MyListingPredictionsEventEditListing);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function() editListing,
+  }) {
+    return editListing();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function()? editListing,
+  }) {
+    return editListing?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function()? editListing,
+    required TResult orElse(),
+  }) {
+    if (editListing != null) {
+      return editListing();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MyListingPredictionsEvent value) start,
+    required TResult Function(_MyListingPredictionsEventEditListing value)
+        editListing,
+  }) {
+    return editListing(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MyListingPredictionsEvent value)? start,
+    TResult? Function(_MyListingPredictionsEventEditListing value)? editListing,
+  }) {
+    return editListing?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MyListingPredictionsEvent value)? start,
+    TResult Function(_MyListingPredictionsEventEditListing value)? editListing,
+    required TResult orElse(),
+  }) {
+    if (editListing != null) {
+      return editListing(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MyListingPredictionsEventEditListing
+    implements MyListingPredictionsEvent {
+  factory _MyListingPredictionsEventEditListing() =
+      _$_MyListingPredictionsEventEditListing;
 }
 
 /// @nodoc

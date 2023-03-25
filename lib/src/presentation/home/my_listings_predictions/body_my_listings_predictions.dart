@@ -18,7 +18,9 @@ class BodyMyListingsPredictions extends StatelessWidget {
     }
     return Column(
       children: const [
-        ListingsViewBuilder(),
+        Expanded(
+          child: ListingsViewBuilder(),
+        ),
       ],
     );
   }

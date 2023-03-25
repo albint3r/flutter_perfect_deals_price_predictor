@@ -95,49 +95,66 @@ class SingleListingCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final NumberFormat myFormat = NumberFormat.decimalPattern('es');
-    return Card(
-      elevation: 10,
-      child: SizedBox(
-        height: 450,
-        child: Column(
-          children: [
-            Image.network(
-              defaultCoverImage,
-            ),
-            ListTile(
-              title: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5),
+    final height = MediaQuery.of(context).size.height;
+    return InkWell(
+      radius: 50,
+      highlightColor: Colors.greenAccent,
+      borderRadius: const BorderRadius.only(
+        bottomRight: Radius.circular(70),
+        topLeft: Radius.circular(70),
+      ),
+      onLongPress: () {
+        // TODO DESCUBRIR COMO GUARDAR UNA IMAGEN EN EL MOBIL
+        print('Edit card now!listing${listing?.id}');
+      },
+      child: Card(
+        elevation: 10,
+        child: SizedBox(
+          // height: 450,
+          height: height * .55,
+          child: Column(
+            children: [
+              Image.network(
+                fit: BoxFit.contain,
+                defaultCoverImage,
+              ),
+              Expanded(
+                child: ListTile(
+                  title: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                        child: Text(
+                          listing?.address ?? defaultDirectionTitle,
+                          overflow: TextOverflow.fade,
+                          maxLines: 2,
+                        ),
+                      ),
+                      Divider(
+                        color: theme.colorScheme.primary,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: _getFeaturesInfo,
+                      ),
+                    ],
+                  ),
+                  subtitle: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
                     child: Text(
-                      listing?.address ?? defaultDirectionTitle,
-                      overflow: TextOverflow.fade,
-                      maxLines: 2,
+                      '\$ ${myFormat.format(listing?.price)}',
+                      style: theme.textTheme.headline5,
+                      textAlign: TextAlign.right,
                     ),
                   ),
-                  Divider(
+                  leading: Icon(
+                    Icons.location_on,
                     color: theme.colorScheme.primary,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: _getFeaturesInfo,
-                  ),
-                ],
-              ),
-              subtitle: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                child: Text(
-                  '\$ ${myFormat.format(listing?.price)}',
-                  style: theme.textTheme.headline5,
-                  textAlign: TextAlign.right,
                 ),
               ),
-              leading: Icon(
-                Icons.location_on,
-                color: theme.colorScheme.primary,
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

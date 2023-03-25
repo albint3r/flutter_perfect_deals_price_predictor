@@ -20,6 +20,7 @@ Listing _$ListingFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Listing {
+  int? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'm2_land')
   double? get m2Land => throw _privateConstructorUsedError;
   @JsonKey(name: 'm2_const')
@@ -51,7 +52,8 @@ abstract class $ListingCopyWith<$Res> {
       _$ListingCopyWithImpl<$Res, Listing>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'm2_land') double? m2Land,
+      {int? id,
+      @JsonKey(name: 'm2_land') double? m2Land,
       @JsonKey(name: 'm2_const') double m2Const,
       @JsonKey(name: 'price_const') double? priceConst,
       @JsonKey(name: 'price_land') double? priceLand,
@@ -79,6 +81,7 @@ class _$ListingCopyWithImpl<$Res, $Val extends Listing>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? m2Land = freezed,
     Object? m2Const = null,
     Object? priceConst = freezed,
@@ -94,6 +97,10 @@ class _$ListingCopyWithImpl<$Res, $Val extends Listing>
     Object? createdAt = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       m2Land: freezed == m2Land
           ? _value.m2Land
           : m2Land // ignore: cast_nullable_to_non_nullable
@@ -158,7 +165,8 @@ abstract class _$$_ListingCopyWith<$Res> implements $ListingCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'm2_land') double? m2Land,
+      {int? id,
+      @JsonKey(name: 'm2_land') double? m2Land,
       @JsonKey(name: 'm2_const') double m2Const,
       @JsonKey(name: 'price_const') double? priceConst,
       @JsonKey(name: 'price_land') double? priceLand,
@@ -183,6 +191,7 @@ class __$$_ListingCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? m2Land = freezed,
     Object? m2Const = null,
     Object? priceConst = freezed,
@@ -198,6 +207,10 @@ class __$$_ListingCopyWithImpl<$Res>
     Object? createdAt = freezed,
   }) {
     return _then(_$_Listing(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       m2Land: freezed == m2Land
           ? _value.m2Land
           : m2Land // ignore: cast_nullable_to_non_nullable
@@ -258,7 +271,8 @@ class __$$_ListingCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Listing extends _Listing {
   _$_Listing(
-      {@JsonKey(name: 'm2_land') this.m2Land,
+      {this.id,
+      @JsonKey(name: 'm2_land') this.m2Land,
       @JsonKey(name: 'm2_const') required this.m2Const,
       @JsonKey(name: 'price_const') this.priceConst,
       @JsonKey(name: 'price_land') this.priceLand,
@@ -276,6 +290,8 @@ class _$_Listing extends _Listing {
   factory _$_Listing.fromJson(Map<String, dynamic> json) =>
       _$$_ListingFromJson(json);
 
+  @override
+  final int? id;
   @override
   @JsonKey(name: 'm2_land')
   final double? m2Land;
@@ -311,7 +327,7 @@ class _$_Listing extends _Listing {
 
   @override
   String toString() {
-    return 'Listing(m2Land: $m2Land, m2Const: $m2Const, priceConst: $priceConst, priceLand: $priceLand, rooms: $rooms, baths: $baths, cars: $cars, lat: $lat, long: $long, price: $price, address: $address, modelName: $modelName, createdAt: $createdAt)';
+    return 'Listing(id: $id, m2Land: $m2Land, m2Const: $m2Const, priceConst: $priceConst, priceLand: $priceLand, rooms: $rooms, baths: $baths, cars: $cars, lat: $lat, long: $long, price: $price, address: $address, modelName: $modelName, createdAt: $createdAt)';
   }
 
   @override
@@ -319,6 +335,7 @@ class _$_Listing extends _Listing {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Listing &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.m2Land, m2Land) || other.m2Land == m2Land) &&
             (identical(other.m2Const, m2Const) || other.m2Const == m2Const) &&
             (identical(other.priceConst, priceConst) ||
@@ -342,6 +359,7 @@ class _$_Listing extends _Listing {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
       m2Land,
       m2Const,
       priceConst,
@@ -372,7 +390,8 @@ class _$_Listing extends _Listing {
 
 abstract class _Listing extends Listing {
   factory _Listing(
-      {@JsonKey(name: 'm2_land') final double? m2Land,
+      {final int? id,
+      @JsonKey(name: 'm2_land') final double? m2Land,
       @JsonKey(name: 'm2_const') required final double m2Const,
       @JsonKey(name: 'price_const') final double? priceConst,
       @JsonKey(name: 'price_land') final double? priceLand,
@@ -389,6 +408,8 @@ abstract class _Listing extends Listing {
 
   factory _Listing.fromJson(Map<String, dynamic> json) = _$_Listing.fromJson;
 
+  @override
+  int? get id;
   @override
   @JsonKey(name: 'm2_land')
   double? get m2Land;
