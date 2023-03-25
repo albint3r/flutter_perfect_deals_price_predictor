@@ -25,19 +25,23 @@ class BodySignInForm extends StatelessWidget {
         return WrapperScaffoldBody(
           child: ReactiveForm(
             formGroup: state.signInFormModel.form,
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const LottieHouseSignIn(),
-                  const UserNameField(),
-                  EmailField(validationErrorMsg: validationErrorMsg),
-                  PasswordField(validationErrorMsg: validationErrorMsg),
-                  const ConfirmationPasswordField(),
-                  const NavToLoginTextButton(),
-                  const SubmitButtonSignInForm(),
-                ],
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: ListView(
+                    children: [
+                      const LottieHouseSignIn(),
+                      const UserNameField(),
+                      EmailField(validationErrorMsg: validationErrorMsg),
+                      PasswordField(validationErrorMsg: validationErrorMsg),
+                      const ConfirmationPasswordField(),
+                      const NavToLoginTextButton(),
+                    ],
+                  ),
+                ),
+                const SubmitButtonSignInForm(),
+              ],
             ),
           ),
         );

@@ -23,17 +23,19 @@ class BodyLoginForm extends StatelessWidget {
         return WrapperScaffoldBody(
           child: ReactiveForm(
             formGroup: state.loginFormModel.form,
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const LottieHouseSignIn(),
-                  EmailField(validationErrorMsg: validationErrorMsg),
-                  PasswordField(validationErrorMsg: validationErrorMsg),
-                  const NavToSigInTextButton(),
-                  const SubmitButtonLoginForm()
-                ],
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(child: ListView(
+                  children: [
+                    const LottieHouseSignIn(),
+                    EmailField(validationErrorMsg: validationErrorMsg),
+                    PasswordField(validationErrorMsg: validationErrorMsg),
+                    const NavToSigInTextButton(),
+                  ],
+                ),),
+                const SubmitButtonLoginForm()
+              ],
             ),
           ),
         );
