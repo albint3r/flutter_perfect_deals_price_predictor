@@ -10,7 +10,7 @@ import 'fields/confirmation_password_field.dart';
 import 'fields/email_field.dart';
 import 'fields/password_field.dart';
 import 'fields/user_name_field.dart';
-import 'lottie_house_sign_in.dart';
+import 'circle_company_logo.dart';
 
 class BodySignInForm extends StatelessWidget {
   const BodySignInForm({
@@ -22,16 +22,16 @@ class BodySignInForm extends StatelessWidget {
     return BlocBuilder<SigningBloc, SigningState>(
       builder: (context, state) {
         final validationErrorMsg = state.signInFormModel.validationErrorMsg;
-        return WrapperScaffoldBody(
-          child: ReactiveForm(
-            formGroup: state.signInFormModel.form,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
+        return ReactiveForm(
+          formGroup: state.signInFormModel.form,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: WrapperScaffoldBody(
                   child: ListView(
                     children: [
-                      const LottieHouseSignIn(),
+                      const CircleCompanyLogo(),
                       const UserNameField(),
                       EmailField(validationErrorMsg: validationErrorMsg),
                       PasswordField(validationErrorMsg: validationErrorMsg),
@@ -40,9 +40,9 @@ class BodySignInForm extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SubmitButtonSignInForm(),
-              ],
-            ),
+              ),
+              const SubmitButtonSignInForm(),
+            ],
           ),
         );
       },

@@ -9,7 +9,7 @@ import '../../../core/common_widgets/wrapper_error_snack_bar.dart';
 import '../../../forms/widgets/wrapper_submit_login_or_sigin_elevated_button.dart';
 
 class SubmitButtonLoginForm extends StatelessWidget {
-  const SubmitButtonLoginForm({Key? key}) : super(key: key);
+  const SubmitButtonLoginForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class SubmitButtonLoginForm extends StatelessWidget {
         return BlocBuilder<LoginBloc, LoginState>(
           builder: (context, logInState) {
             return WrapperSubmitLoginOrSigInElevatedButton(
-              buttonText: 'Log in your account',
+              buttonText: 'Entrar a cuenta',
               onSubmit: ((context) {
                 context.read<AuthBloc>().add(
                       AuthEvent.logInAccount(

@@ -12,20 +12,18 @@ class WrapperSubmitLoginOrSigInElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16.0),
-      child: Center(
-        child: ReactiveFormConsumer(
-          builder: (context, formGroup, child) {
-            return ElevatedButton(
-              onPressed: formGroup.valid ? () => onSubmit(context) : null,
-              child: Text(
-                textAlign: TextAlign.center,
-                buttonText,
-              ),
-            );
-          },
-        ),
+    final theme = Theme.of(context);
+    return Center(
+      child: ReactiveFormConsumer(
+        builder: (context, formGroup, child) {
+          return ElevatedButton(
+            onPressed: formGroup.valid ? () => onSubmit(context) : null,
+            child: Text(
+              textAlign: TextAlign.center,
+              buttonText, style: theme.textTheme.button,
+            ),
+          );
+        },
       ),
     );
   }

@@ -39,9 +39,7 @@ class SubmitPredictionsButton extends StatelessWidget {
                 const Gap(10),
                 Text(
                   'Generar Opinion de Valor',
-                  style: theme.textTheme.button?.copyWith(
-                    fontSize: 20,
-                  ),
+                  style: theme.textTheme.button,
                   textAlign: TextAlign.center,
                 ),
               ],

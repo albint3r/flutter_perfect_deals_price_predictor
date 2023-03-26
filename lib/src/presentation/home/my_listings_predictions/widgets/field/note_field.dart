@@ -17,7 +17,7 @@ class NoteField extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: ReactiveTextField(
-          maxLines: 20,
+          maxLines: 15,
           style: theme.textTheme.headline6,
           textAlign: TextAlign.center,
           // style: const TextStyle(

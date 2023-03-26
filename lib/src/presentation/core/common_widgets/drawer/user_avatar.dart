@@ -10,7 +10,9 @@ class UserAvatar extends StatelessWidget {
       child: CircleAvatar(
         child: Transform.scale(
           scale: 2,
-          child: Image.asset('assets/images/no_image_user_avatar.png'),
+          child: Image.asset(
+            'assets/images/no_image_user_avatar.png',
+          ),
         ),
       ),
     );

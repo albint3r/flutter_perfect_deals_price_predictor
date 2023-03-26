@@ -8,7 +8,7 @@ import 'buttons/submit_button_login_form.dart';
 import 'buttons/nav_to_sigin_text_button.dart';
 import 'fields/email_field.dart';
 import 'fields/password_field.dart';
-import 'lottie_house_sign_in.dart';
+import 'circle_company_logo.dart';
 
 class BodyLoginForm extends StatelessWidget {
   const BodyLoginForm({
@@ -20,23 +20,25 @@ class BodyLoginForm extends StatelessWidget {
     return BlocBuilder<LoginBloc, LoginState>(
       builder: (context, state) {
         final validationErrorMsg = state.loginFormModel.validationErrorMsg;
-        return WrapperScaffoldBody(
-          child: ReactiveForm(
-            formGroup: state.loginFormModel.form,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(child: ListView(
-                  children: [
-                    const LottieHouseSignIn(),
-                    EmailField(validationErrorMsg: validationErrorMsg),
-                    PasswordField(validationErrorMsg: validationErrorMsg),
-                    const NavToSigInTextButton(),
-                  ],
-                ),),
-                const SubmitButtonLoginForm()
-              ],
-            ),
+        return ReactiveForm(
+          formGroup: state.loginFormModel.form,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: WrapperScaffoldBody(
+                  child: ListView(
+                    children: [
+                      const CircleCompanyLogo(),
+                      EmailField(validationErrorMsg: validationErrorMsg),
+                      PasswordField(validationErrorMsg: validationErrorMsg),
+                      const NavToSigInTextButton(),
+                    ],
+                  ),
+                ),
+              ),
+              const SubmitButtonLoginForm()
+            ],
           ),
         );
       },
