@@ -23,9 +23,8 @@ class MapField extends StatelessWidget {
     final bloc = context.watch<PredictedPriceBloc>();
     final state = bloc.state;
     return GoogleMap(
+      myLocationButtonEnabled: true,
       myLocationEnabled: true,
-      zoomControlsEnabled: true,
-      scrollGesturesEnabled: true,
       onMapCreated: (controller) {
         _addGoogleControllerToBloc(controller: controller, context: context);
       },
@@ -39,6 +38,11 @@ class MapField extends StatelessWidget {
           position: state.latLng,
           draggable: true,
           onDragEnd: (value) {
+            print('value->$value');
+            print('value->$value');
+            print('value->$value');
+            print('value->$value');
+            print('value->$value');
             // TODO ADD UPDATE LAT AND LONG IN FORM CONTROL
           },
         )

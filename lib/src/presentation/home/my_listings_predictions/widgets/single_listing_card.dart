@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 
 import '../../../../aplication/my_listing_predictions/my_listing_predictions_bloc.dart';
 import '../../../../domain/predicted_price/listing.dart';
+import '../../../core/common_widgets/gap.dart';
 import '../../view_listing_prediction/widgets/feature_listing_info.dart';
 import 'edit_listing_container.dart';
 
@@ -132,7 +133,7 @@ class SingleListingCard extends StatelessWidget {
           elevation: 10,
           child: SizedBox(
             // height: 450,
-            height: height * .55,
+            height: height * .58,
             child: Column(
               children: [
                 Image.network(
@@ -161,10 +162,29 @@ class SingleListingCard extends StatelessWidget {
                   ),
                   subtitle: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 20),
-                    child: Text(
-                      '\$ ${myFormat.format(listing?.price)}',
-                      style: theme.textTheme.headline5,
-                      textAlign: TextAlign.right,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          '\$ ${myFormat.format(listing?.price)}',
+                          style: theme.textTheme.headline5,
+                          textAlign: TextAlign.right,
+                        ),
+                        const Gap(15),
+                        if (listing?.note != null)
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Icon(
+                                Icons.chat,
+                                color: theme.colorScheme.secondary,
+                              )
+                            ],
+                          )
+                        else
+                          const Icon(Icons.chat)
+                      ],
                     ),
                   ),
                   leading: Icon(

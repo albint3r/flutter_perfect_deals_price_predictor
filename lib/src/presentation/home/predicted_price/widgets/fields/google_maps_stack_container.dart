@@ -21,9 +21,7 @@ class _GoogleMapsStackContainerState extends State<GoogleMapsStackContainer> {
   Widget build(BuildContext context) {
     final bloc = context.watch<PredictedPriceBloc>();
     final state = bloc.state;
-    print('state.addressPredictions->${state.addressPredictions}');
-    print('state.addressPredictions->${state.addressPredictions}');
-    print('state.addressPredictions->${state.addressPredictions}');
+    final size = MediaQuery.of(context).size;
     return BlocListener<PredictedPriceBloc, PredictedPriceState>(
       listener: (BuildContext context, state) {
         // TODO ADD SOME LOGIC HERE
@@ -37,13 +35,13 @@ class _GoogleMapsStackContainerState extends State<GoogleMapsStackContainer> {
               borderRadius: BorderRadius.all(Radius.circular(50)),
             ),
             child: SizedBox(
-              height: 200,
+              height: size.height * .40,
               width: 500,
               child: Stack(
                 children: [
                   const MapField(),
                   if (state.addressPredictions == null)
-                    SizedBox()
+                    const SizedBox()
                   else
                     Positioned(
                       top: 50,
