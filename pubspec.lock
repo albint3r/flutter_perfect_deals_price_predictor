@@ -155,6 +155,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.2"
+  cli_util:
+    dependency: transitive
+    description:
+      name: cli_util
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.5"
   clock:
     dependency: transitive
     description:
@@ -370,6 +377,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  flutter_launcher_icons:
+    dependency: "direct main"
+    description:
+      name: flutter_launcher_icons
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.12.0"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -569,6 +583,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.2"
+  image:
+    dependency: transitive
+    description:
+      name: image
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.15"
   injectable:
     dependency: "direct main"
     description:
